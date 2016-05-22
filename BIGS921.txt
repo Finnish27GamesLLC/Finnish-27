@@ -1,0 +1,3403 @@
+'I. BACKGROUND INFORMATION
+
+'A combination-dependent-playing strategy is the best playing
+'strategy for the play of the player's hand given the user-
+'defined set of game rules, and given the combination of card
+'ranks assigned to the cards removed from the stack and dealt
+'face up to form the set of hands consisting of the player's
+'initial hand and the dealer's initial hand. The combination-
+'dependent-playing-strategy table provides a combination-
+'dependent-playing strategy for each of the combinations of card
+'ranks that could be the combination of card ranks assign to the
+'cards removed from the stack and dealt face up to form the set
+'of hands consisting of the player's initial hand and the
+'dealer's initial hand.
+
+'If the user-defined set of game rules does not give the option
+'to split to the player, then a set of combination-dependent-
+'playing-strategy tables consists of one combination-dependent-
+'playing-strategy table found for the eleven-thousand-twenty-five
+'unique combinations of card ranks that are possible for the four
+'cards in the set of hands consisting of the player's initial
+'hand and the dealer's initial hand. If the user-defined set of
+'game rules does give the option to split to the player, then the
+'set of combination-dependent-playing-strategy tables consists of
+'three tables. The first table is a combination-dependent-
+'playing-strategy table found for the eleven-thousand-twenty-five
+'unique combinations of card ranks that are possible for the four
+'cards in the set of hands consisting of the player's initial
+'hand and the dealer's initial hand. The second of the three
+'tables is a combination-dependent-playing-strategy table found
+'for the eleven-thousand-twenty-five unique combinations of card
+'ranks that are possible for the four cards in the set of hands
+'consisting of the player's post-split-initial hand and the
+'dealer's initial hand wherein: The value of variable pc1 is
+'equal to or greater than the value of variable pc2. The third of
+'the three tables is a combination-dependent-playing-strategy
+'table found for the eleven-thousand-twenty-five unique
+'combinations of card ranks that are possible for the four cards
+'in the set of hands consisting of the player's post-split-
+'initial hand and the dealer's initial hand wherein: The value of
+'variable pc1 is less than or equal to the value of variable pc2.
+'Under most circumstances, the player refers to the set of
+'combination-dependent-playing-strategy tables one time per each
+'player's initial hand.
+
+'The values given to variables named pc1 and pc2 correspond to
+'the ranks of the first two cards of a player's hand. The values
+'given to variables named dc1 and dc2 correspond to the ranks of
+'the first two cards of a dealer's hand. A value of zero
+'corresponds to the rank of joker. A value of one corresponds to
+'a rank of ace. Values two through ten correspond to the ranks of
+'two through ten respectively. A value of eleven corresponds to
+'the rank of jack. A value of twelve corresponds to the rank of
+'queen. A value of thirteen corresponds to the rank of king.
+
+'The main draw back of the set of combination-dependent-playing-
+'strategy tables is: The combinations of card ranks that are
+'possible for the cards removed from the stack and dealt face up
+'to form the set of hands consisting of the player's initial hand
+'and the dealer's initial hand number in the thousands. The vast
+'number of possible combinations of card ranks makes it difficult
+'for skilled players to memorize and/or make use of the set of
+'combination-dependent-playing-strategy tables.
+
+'A total-dependent-basic strategy is the best strategy for the
+'play of the player's hand given the user-defined set of game
+'rules, and given a set of hand totals consisting of the player's
+'hand total and the dealer's hand total.  A total-dependent-
+'basic-strategy table provides a total-dependent-basic strategy
+'for each set of hand totals that is possible for the set of
+'hands consisting of the player's hand and the dealer's hand. The
+'set of hand totals that are possible for the dealer's hand
+'consists of all hard totals that are possible for the dealer's
+'initial hand and all soft totals that are possible for the
+'dealer's initial hand. The set of hand totals that are possible
+'for the player's hand consists of all non-pair-hard totals that
+'are possible for the player's hand, all non-pair-soft totals
+'that are possible for the player's hand, and all pair-hand
+'totals that are possible for the player's hand wherein: A pair
+'is an initial hand consisting of two cards assigned identical
+'ranks. The player refers to the total-dependent-basic-strategy
+'table each time the player makes a decision on how to play the
+'player's hand.
+
+'The main advantage of the total-dependent-basic-strategy table
+'is the number of sets of hand totals that are possible for the
+'set of hands consisting of the player's hand and the dealer's
+'hand is far smaller than the number of combinations of card
+'ranks that are possible for the cards removed from the stack and
+'dealt face up to form the set of hands consisting of the
+'player's initial hand and the dealer's initial hand. The far
+'smaller number of sets of hand totals makes it easier for
+'skilled players to memorize and/or make use of the total-
+'dependent-basic-strategy table than it is for skilled players to
+'memorize and/or make use of the set of combination-dependent-
+'playing-strategy tables.
+
+'II. GENERAL DESCRIPTION OF FUNCTIONS
+
+'The BIGS907 software application is capable of producing a set
+'of files containing data about the expected value of the game
+'wager and the set of combination-dependent-playing-strategy
+'tables for an optional embodiment of the double-exposure game of
+'the present invention that is subject to a user-defined set of
+'game rules. The user-defined set of game rules assigns card
+'ranks to the combination of cards removed from the stack and
+'dealt face up to form the set of hands consisting of the
+'player's initial hand and the dealer's initial hand. Eleven-
+'thousand-twenty-five unique combinations of card ranks are
+'possible for the combination of cards removed from the stack and
+'dealt face up to form the set of hands consisting of the
+'player's initial hand and the dealer's initial hand.
+
+'For each of these combinations of card ranks, the BIGS907
+'software application performs an abbreviated-combinatorial
+'analysis to calculate the expected value of the game wager for
+'each of the strategies for the play of the player's hand that
+'have at least a chance of being optimal, and saves these
+'expected values to a data file with a 't' character as the file
+'name suffix. The BIGS907 software application calculates the
+'probability of the occurrence of each of these combinations of
+'card ranks and saves these calculations to a data file with a
+''p' character as the file name suffix.
+
+'The BIGS921 software application uses the data contained in
+'these files to convert the set of combination-dependent-playing-
+'strategy tables into a total-dependent-basic-strategy table.
+'Therefore, the BIGS921 software application is capable of
+'producing a set of files containing data about the total-
+'dependent-basic strategy table for an optional embodiment of the
+'double-exposure game of the present invention that is subject to
+'a user-defined set of game rules
+
+'III. PROCEDURE FOR LOADING DATA ABOUT A COMBINATION-DEPENDENT-
+'BASIC STRATEGY SAVED TO A SET OF FILES BY THE BIGS907 SOFTWARE
+'APPLICATION
+
+'Go ahead and start the BIGS921 software application. The BIGS921
+'software application will display some introductory remarks. Go
+'ahead and read those remarks.
+
+'After the BIGS921 software application displays some
+'introductory remarks, the BIGS921 software application prompts
+'the user to 'enter the folder/file name prefix of the set of
+'files containing data about the user-defined set of game rules
+'and matching set of combination-dependent-playing-strategy
+'tables to be loaded into program memory'. The BIGS907 software
+'application saved a set of files containing data about the
+'expected value of the game wager, data about the set of
+'combination-dependent-playing-strategy tables, and data about
+'the user-defined set of game rules. Here the BIGS921 software
+'application is giving the user an opportunity to load this data
+'into program memory.
+
+
+'After the user enters the folder/file name prefix of the set of
+'files containing data about the user-defined set of game rules
+'and matching set of combination-dependent-playing strategy
+'tables to be loaded into program memory, the BIGS921 software
+'application prints to the application window a brief description
+'of the user-defined set of game rules. Afterward the BIGS921
+'software application prompts the user with the following
+'message.  'If this is acceptable, then type 'y' and 'enter'.
+'Here the BIGS921 software application is giving the user an
+'opportunity to read the brief description and to verify that the
+'contents of the correct set of files have been loaded into
+'program memory. If there was an error, the user should simply
+'press 'enter' and the BIGS921 software application will go back
+'to the point in the program where the user can reenter the
+'folder/file name prefix of the files containing data about the
+'user-defined set of game rules and matching set of combination-
+'dependent-playing-strategy tables to be loaded into program
+'memory. If there was no error, then the user should type 'y' and
+'press 'enter'.
+
+'IV. SUGGESTED FILE NAMING PROTOCOL
+
+'If the user does type 'y' and 'enter' in response to the above-
+'described prompt, then the BIGS921 software application prompts
+'the user to 'enter the 'folder/file name prefix' to be used to
+'store application output'. Here the BIGS921 software application
+'is prompting the user to enter one of three parts of a file
+'name. The three parts are a file name prefix, a file name
+'suffix,  and a file name extension.
+
+'The file name prefix is a user-definable name. The file name
+'prefix is common to each file of a set of files saved as
+'application output.
+
+'The file name suffix consists of a single letter. The BIGS921
+'software application adds a file name suffix to the file name
+'prefix of each file of the set of files saved as application
+'output. Each file name suffix is unique to each file of the set
+'of files saved as application output. Accordingly, the
+'combination of the file name prefix and the file name suffix
+'enables users and other applications in the BIGS collection to
+'identify the specific contents of each file of the set of files.
+
+'The file name extension consists of a period followed by a set
+'of three or four characters. The file name extension indicates
+'the type of file. The three types of file that are handled by
+'the BIGS921 software application are text, html, and data. If
+'the type of file is a text file, then '.txt' is the file name
+'extension. If the type of file is a html file, then '.html' is
+'the file name extension. If the type of file is a data file,
+'then .dat is the file name extension.
+
+'There is a need for an intelligent way of naming files for later
+'reference. Data flows from a set of files saved by the BIGS907
+'software application into the BIGS921 software application.
+'Therefore, I suggest the user use the folder/filename prefix
+'that was used by the BIGS907 software application to save the
+'files containing the data loaded into the program memory of the
+'BIGS921 software application, as the first part of the folder/
+'filename prefix used by the BIGS921 software application to
+'store application output. For example, if the folder/filename
+'prefix used by the BIGS907 software application to save the
+'files containing data about the user-defined set of game rules
+'and matching set of combination-dependent-playing-strategy
+'tables to be loaded into the program memory of the BIGS921
+'software application was 'J23h23s6d/game1', then I suggest the
+'user make 'J23h23s6d/game1' the first part of the folder/
+'filename prefix used by the BIGS921 software application to
+'store application output.
+
+'Furthermore, I suggest the user add the characters 'TD' to the
+'first part of this folder/filename prefix. For example, if
+''J23h23s6d/game1' is the folder/filename prefix used by the
+'BIGS907 software application to save the files containing data
+'about the user-defined set of game rules and matching set of
+'combination-dependent-playing-strategy tables to be loaded into
+'the program memory of the BIGS921 software application, then I
+'suggest the user enter 'J23h23s6d/game1TD' as the folder/
+'filename prefix to be used by the BIGS921 software application
+'to store application output. Here the letters 'TD' are short for
+'the phrase 'total dependent'.
+
+'The user may want to use data about a single set of combination-
+'dependent-playing-strategy tables saved to a set of files by the
+'BIGS907 software application to produce a plurality of sets of
+'files containing data about a plurality of total-dependent-
+'basic-strategy tables. Therefore, in addition to the above-
+'described suggestions for the file name prefix, I suggest the
+'user add a letter to indicate the chronological order of the
+'placement of each set of files within the folder. For example,
+''game1TDA' as the file name prefix of the first set of files put
+'within the folder, 'game1TDB' as the file name prefix of the
+'second set of files put in the folder and so on.
+
+'V. PROMPTS FOR ADDITIONAL USER INPUT
+
+'After the user enters the 'folder/file name prefix' to be used
+'to store application output, the BIGS921 software application
+'prompts the user to do the following. "Press 1 and enter to
+'manually enter one of eighty-one-supported strategies for the
+'player's use of the hit option for each of a set of possible
+'dealer's hand totals and enable the BIGS921 software application
+'to insert the set of strategies into the total-dependent-basic-
+'strategy table saved to file by the BIGS921 software
+'application.' 'press 2 and enter to manually enter one of
+'eighty-one-supported strategies for the use of the hit option
+'and enable the BIGS921 software application to insert this
+'strategy into the total-dependent-basic-strategy table saved to
+'file by the BIGS921 software application as the strategy for the
+'play of all player hands.' 'Else press enter'. Here the BIGS921
+'software application is giving the user the opportunity to skip
+'the routine that the BIGS921 software application normally uses
+'to determine the best strategy for the player's use of the hit
+'option for each of the set of hard totals and soft totals
+'possible for the sum of the point values assigned to the cards
+'in the dealer's initial hand.
+
+'VI. EIGHTY-ONE-SUPPORTED STRATEGIES FOR THE PLAYER'S USE OF THE
+'HIT OPTION
+
+'Each of the eighty-one-supported strategies for the player's use
+'of the hit option specifies a unique combination of a target-
+'numerical sum for the play of the player's hard hands and a
+'target-numerical sum for the play of the player's soft
+'hands.Each of the eighty-one-supported strategies for the
+'player's use of the hit option works as follows. If the player's
+'hand total is less than the target-numerical sum specified for
+'the type of hand the player has, then the player must hit. If
+'the player's hand total is at least equal to the target-
+'numerical sum specified for the type of hand the player has,
+'then the player must stand. The eighty-one-supported strategies
+'for the player's use of the hit option specify the following set
+'of eighty-one unique combinations of target-numerical sums
+'consisting of the following hard total/soft total combinations.
+
+'15/A5, 15/A6, 15/A7, 15/A8, 15/A9, 15/AT, 15/AJ, 15/AQ, 15/AK,
+'16/A5, 16/A6, 16/A7, 16/A8, 16/A9, 16/AT, 16/AJ, 16/AQ, 16/AK,
+'17/A5, 17/A6, 17/A7, 17/A8, 17/A9, 17/AT, 17/AJ, 17/AQ, 17/AK,
+'18/A5, 18/A6, 18/A7, 18/A8, 18/A9, 18/AT, 18/AJ, 18/AQ, 18/AK,
+'19/A5, 19/A6, 19/A7, 19/A8, 19/A9, 19/AT, 19/AJ, 19/AQ, 19/AK,
+'20/A6, 20/A7, 20/A8, 20/A9, 20/AT, 20/AJ, 20/AQ, 20/AK, 21/A7,
+'21/A8, 21/A9, 21/AT, 21/AJ, 21/AQ, 21/AK, 22/A8, 22/A9, 22/AT,
+'22/AJ, 22/AQ, 22/AK, 23/A9, 23/AT, 23/AJ, 23/AQ, 23/AK, 24/AT,
+'24/AJ, 24/AQ, 24/AK, 25/AJ, 25/AQ, 25/AK, 26/AQ, 26/AK,
+'and 27/AK.
+
+'VII. IF THE USER DOES PRESS THE '2' KEY AND THE 'ENTER' KEY
+
+'If the user does press the '2' key and the 'enter' key, then the
+'BIGS921 software application will prompt the user to 'input the
+'hard score the player stands at'. After the user does so, then
+'the BIGS921 software application will prompt the user to 'input
+'the soft score the player stands at'.
+
+'The hard score that the player stands at is the target-numerical
+'sum for the play of the player's hard hands specified by one of
+'the eighty-one supported strategies for the player's use of the
+'hit option. The soft score that the player stands at is the
+'target-numerical sum for the play of the player's soft hands
+'specified by one of the eighty-one supported strategies for the
+'player's use of the hit option. Accordingly, in response to the
+'above-described set of prompts, the user should input a set of
+'integers. The set of integers should be representative of a hard
+'total/soft total combination. The hard total/soft total
+'combination should be representative of the set of target-
+'numerical sums specified by one of the eighty-one-supported
+'strategies for the player's use of the hit option
+
+
+'After the user responds to the above-described prompts, the
+'BIGS921 software application inserts the strategy for the
+'player's use of the hit option specified by the user into the
+'total-dependent-basic-strategy table saved to file by the
+'BIGS921 software application as the strategy for the player's
+'use of the hit option specified for the play of all player hands
+'against all dealer hands.
+
+'VIII. SUGGESTED FILE NAMING PROTOCOL
+
+'If the user intends to program the BIGS921 software application
+'to insert a single strategy for the player's use of the hit
+'option as the strategy for the player's use of the hit option
+'specified for the play of all player hands and against all
+'dealer hands, then there is a need for an intelligent way of
+'naming files for later reference. Data flows from a set of files
+'saved by the BIGS907 software application into the BIGS921
+'software application. Therefore, I suggest the user use the
+'folder/filename prefix that was used by the BIGS907 software
+'application to save the files containing the data loaded into
+'the program memory of the BIGS921 software application, as the
+'first part of the folder/filename prefix used by the BIGS921
+'software application to store application output. For example,
+'if the folder/filename prefix used by the BIGS907 software
+'application to save the files containing data about the user-
+'defined set of game rules and matching set of combination-
+'dependent-playing-strategy tables loaded into the program memory
+'of the BIGS921 software application was 'J23h23s6d/game1', then
+'I suggest the user make 'J23h23s6d/game1' the first part of the
+'folder/filename prefix used by the BIGS921 software application
+'to store application output.
+
+'To complete the folder/filename prefix to be used by the BIGS921
+'software application to store application output, I suggest the
+'user add five additional characters. The first of the five
+'additional characters is the character 'T' to represent the word
+''target'. The second and third of the five additional characters
+'represent the target-numerical sum for the play of the player's
+'hard hands, for example '22' for hard twenty-two. The fourth and
+'fifth of the five additional characters represent the target-
+'numerical sum for the play of the player's soft hands, for
+'example 'AQ' for soft twenty-six.
+
+'IX. IF THE USER DOES PRESS THE '1' KEY AND THE 'ENTER' KEY
+
+'If the user does press the '1' key and the 'enter' key, then the
+'BIGS921 software application will initiate a series of prompts
+'for user input. The series of prompts for user input consists of
+'a pair of prompts for each hand total that is possible for the
+'dealer's initial hand. In response to each pair of prompts, the
+'user should input a set of integers. The set of integers should
+'be representative of a hard total/soft total combination. The
+'hard total/soft total combination should be representative of
+'the set of target-numerical sums specified by one of the eighty-
+'one-supported strategies for the player's use of the hit option.
+'After the user responds to all of the above-described pairs of
+'prompts, the BIGS921 software application inserts each strategy
+'for the player's use of the hit option specified by the user
+'into the total-dependent-basic-strategy table saved to a set of
+'files by the BIGS921 software application.
+
+'Enabling the user to input data manually may be of value as a
+'way of determining the house edge in cases wherein: Players are
+'routinely making decisions about how to play their hands that
+'are consistently different from those decisions called for by
+'the total-dependent-basic-strategy table. For example, suppose
+'players are consistently hitting to a higher target-numerical
+'sum than is specified by the total-dependent-basic-strategy
+'table for an optional embodiment of the double-exposure game of
+'the present invention. The user could press the '1' key and the
+''enter' key in response to the above-described prompt, input
+'manually values for the target-numerical sums that closely
+'approximate those used by players, and save data about the
+'modified-total-dependent-basic-strategy table to a set of files.
+'The user could then load this data into the BIGS908 software
+'application. The BIGS908 software application is a game
+'simulator with a computer-controlled player that the user can
+'program to make decisions about how to play the player's hand
+'using data about the modified-total-dependent-basic-strategy
+'table saved to a set of files by the BIGS921 software
+'application. Simulation results would enable the user to
+'determine the size of the increase in the house edge caused by a
+'player consistently hitting to a higher target-numerical sum
+'than is specified by the total-dependent-basic-strategy table
+'for an optional embodiment of the double-exposure game of the
+'present invention.
+
+'Alternatively, the user could load the set of files into the
+'BIGS928 software application. The BIGS928 software application
+'can load data about the modified-total-dependent-basic-strategy
+'table into program memory and calculate the expected value of
+'the game wager by performing an abbreviated-combinatorial
+'analysis. Use of the BIGS928 software application would thereby
+'enable the user to determine the increase in the house edge
+'caused by a player using the modified-total-dependent-basic-
+'strategy table to make decisions about how to play the player's
+'hand in an optional embodiment of the double-exposure game of
+'the present invention. However, the BIGS928 software application
+'is only capable of doing so for an optional embodiment of the
+'double-exposure game of the present invention under the
+'following set of conditions. The user-defined set of game rules
+'does not include rules to specify that the dealer pays bonuses
+'to the player for winning-player hands that make qualifying-
+'five-card-poker hands.
+
+'X. IF THE USER DOES PRESS THE 'ENTER' KEY ONLY
+
+'If the user does press the 'enter' key only, then, for each of
+'the sets of hand totals that are possible for the set of hands
+'consisting of the player's hand and the dealer's initial hand,
+'the BIGS921 software application will determine the best option
+'for the play of the player's hand given all available options
+'for the play of the player's hand selected from a group c
+'consisting of stand, hit,  double down, split, double down after
+'a split, and surrender. If the player is not allowed to split a
+'pair, then the BIGS921 software application will prompt the user
+'to 'press 1 and enter to make the strategy for the play of a
+'player's initial hand consisting of a pair be the same as the
+'strategy for the play of any other player's initial hand of an
+'equal numerical sum value, else press enter'. Here the BIGS921
+'software application is giving the user an opportunity to
+'further simplify the total-dependent-basic-strategy table. If
+'the user does press the '1' key and the 'enter' key, then the
+'BIGS921 software application will find the single best strategy
+'for the player's use of the hit option given each of the set of
+'hard totals and soft totals possible for the sum of the point
+'values assigned to the cards in the dealer's initial hand. The
+'alternative is to simply press the 'enter' key in response to
+'the above-described prompt. In that event, the BIGS921 software
+'application will find the best strategy for the player's use of
+'the hit option while playing a pair, and the BIGS921 software
+'application will find the best strategy for the player's use of
+'the hit option while playing a non-pair. In that event, if the
+'best strategy for the player's use of the hit option while
+'playing a pair is different from the best strategy for the
+'player's use of the hit option while playing a non-pair, then
+'this difference will appear in the data about the total-
+'dependent-basic-strategy table saved to a set of files by the
+'BIGS921 software application.
+
+'XI. CREATES A BRIEF DESCRIPTION OF THE PROGRAM PARAMETERS
+
+'After the user responds to the above-described prompt, the
+'BIGS921 software application automatically creates a brief
+'description of the program parameters in the following format.
+'Open (folder/file name prefix + 'i.txt') to see a list of
+'program parameters'. For example, suppose the user entered
+'J23h23s6d/game1TDA as the folder/file name prefix to be used to
+'store BIGS921 software application output. In that case, the
+'BIGS921 software application will automatically make the
+'following brief description of the program parameters. 'Open
+'J23h23s6d/game1TDAi.txt to see a list of user-defined program
+'parameters'.
+
+'XII. FINDS THE TOTAL-DEPENDENT-BASIC-STRATEGY TABLE ACCORDING TO
+'RESPONSES TO PROMPTS FOR USER INPUT
+
+'After the BIGS921 software application creates a brief
+'description of the program parameters, the BIGS921 software
+'application finds the total-dependent-basic-strategy table for
+'an optional embodiment of the double-exposure game of the
+'present invention that is subject to the user-defined set of
+'game rules. The total-dependent-basic-strategy table saved by
+'the BIGS921 software application either corresponds to the data
+'about the expected value of the game wager for each of a set of
+'possible strategies for the play of the player's hand saved to a
+'set of files by the BIGS907 software application, or it
+'corresponds to the values input manually by the user. In any
+'case, the BIGS921 software application finishes by saving a set
+'of files containing data about the total-dependent-basic-
+'strategy table for the optional embodiment of the double-
+'exposure game of the present invention that is subject to the
+'user-defined set of game rules.
+
+'XIIII. DESCRIPTION OF APPLICATION OUTPUT
+
+'The following set of files is for use by other of the set of
+'software applications made available to users by way of source
+'code found in the computer-program-listing appendix attached to
+'the present patent application. The BIGS921 software application
+'saves the user-defined set of game rules to a data file named
+'with an 'a' character as the file name suffix. The BIGS921
+'software application saves data about the total-dependent-basic-
+'strategy table in the format of a set of combination-dependent-
+'playing-strategy tables to a data file named with a 'b'
+'character as the file name suffix. The user can load the data
+'contained in these files into other software applications as a
+'software means for communicating data about the user-defined set
+'of game rules and total-dependent-basic-strategy table for an
+'optional embodiment of the double-exposure game of the present
+'invention that is subject to the user-defined set of game rules.
+
+'The following set of files is for use by the user. The BIGS921
+'software application saves a total-dependent-basic-strategy
+'table to a text file named with a 'c' character as the file name
+'suffix. The user can open this text file to view data about the
+'total-dependent-basic-strategy table. The BIGS921 software
+'application saves data about the total-dependent-basic-strategy
+'table in the format of a set of combination-dependent-playing-
+'strategy tables to a text file named with a 'd' character as the
+'file name suffix. The user can open this text file to view data
+'about the total-dependent-basic-strategy table presented in the
+'format of a set of combination-dependent-playing-strategy
+'tables. The BIGS921 software application saves data about the
+'total-dependent-basic-strategy table in the language of html to
+'a html file named with a 'h' character as the file name suffix.
+'The user can open this file, view data about the total-
+'dependent-basic strategy table presented in the html language,
+'and paste the contents of this file into a web application so as
+'to enable the web application to display the data. The BIGS921
+'software application saves a meaningful selection of text to a
+'text file named with an 'i' character as the file name suffix.
+'The meaningful selection of text consists of the text of the
+'prompts for user input and the user responses that appeared in
+'the application window while the BIGS921 software application
+'performed its' functions. The contents are intended to serve as
+'a record giving the user a summary of the user responses to
+'prompts for user input made by the BIGS921 software application.
+
+_TITLE "BIGS921 software application"
+TYPE bsrules
+    c0 AS INTEGER
+    c1 AS INTEGER
+    c2 AS INTEGER
+    c3 AS INTEGER
+    c4 AS INTEGER
+    c5 AS INTEGER
+    c6 AS INTEGER
+    c7 AS INTEGER
+    c8 AS INTEGER
+    c9 AS INTEGER
+    cT AS INTEGER
+    cJ AS INTEGER
+    cQ AS INTEGER
+    cK AS INTEGER
+    jojo AS INTEGER
+    jojopo AS SINGLE
+    joanca AS INTEGER
+    joancash AS INTEGER
+    joancapo AS SINGLE
+    jowi AS INTEGER
+    d28p AS INTEGER
+    bshw AS INTEGER
+    dhf AS INTEGER
+    j AS INTEGER
+    dwt AS INTEGER
+    dbc AS INTEGER
+    hole AS INTEGER
+    nchw AS INTEGER
+    ls AS INTEGER
+    early AS INTEGER
+    splt AS INTEGER
+    nsh AS INTEGER
+    rsa AS INTEGER
+    das AS INTEGER
+    dh AS INTEGER
+    ld AS INTEGER
+    ins AS INTEGER
+    bigslick AS SINGLE
+    dsa AS INTEGER
+    bssh AS INTEGER
+    deck AS INTEGER
+    shf AS INTEGER
+    immed AS INTEGER
+    pbd AS INTEGER
+    b27po AS INTEGER
+    ms999 AS SINGLE
+    ss999 AS SINGLE
+    sp999 AS SINGLE
+    jp999 AS SINGLE
+    po6c27 AS SINGLE
+    po7c27 AS SINGLE
+    po8c27 AS SINGLE
+    po9c27 AS SINGLE
+    ms89T AS SINGLE
+    ss89T AS SINGLE
+    sp89T AS SINGLE
+    dd AS INTEGER
+    dd3 AS INTEGER
+    dd4 AS INTEGER
+    dd5 AS INTEGER
+    dd6 AS INTEGER
+    dd7 AS INTEGER
+    dd8 AS INTEGER
+    description AS STRING * 80
+END TYPE
+TYPE bs
+    far AS INTEGER
+    sar AS INTEGER
+    r AS INTEGER
+    hit AS SINGLE
+END TYPE
+TYPE qbase
+    dat0 AS SINGLE
+    dat1 AS SINGLE
+    dat2 AS SINGLE
+    dat3 AS SINGLE
+    dat4 AS SINGLE
+    dat5 AS SINGLE
+    dat6 AS SINGLE
+    dat7 AS SINGLE
+    dat8 AS SINGLE
+    dat9 AS SINGLE
+    dat10 AS SINGLE
+    dat11 AS SINGLE
+    dat12 AS SINGLE
+    dat13 AS SINGLE
+    dat14 AS SINGLE
+END TYPE
+DIM g(84) AS INTEGER
+DIM h(84) AS INTEGER
+DIM i(86) AS INTEGER
+DIM sd AS bsrules
+DIM num AS bs
+DIM database AS qbase
+DIM hit(104, 104) AS SINGLE
+DIM sar(104, 104) AS INTEGER
+DIM far(104, 104) AS INTEGER
+DIM br(104, 104) AS INTEGER
+DIM mc27po(11) AS SINGLE
+DIM hp(26, 13) AS INTEGER
+DIM sp(12, 13) AS INTEGER
+DIM hh(26, 23) AS INTEGER
+DIM hs(26, 12) AS INTEGER
+DIM sh(12, 23) AS INTEGER
+DIM ss(12, 12) AS INTEGER
+DIM hp1(26, 13) AS INTEGER
+DIM sp1(12, 13) AS INTEGER
+DIM hh1(26, 23) AS INTEGER
+DIM hs1(26, 12) AS INTEGER
+DIM sh1(12, 23) AS INTEGER
+DIM ss1(12, 12) AS INTEGER
+DIM htotal(39, 84) AS SINGLE
+DIM stotal(39, 84) AS SINGLE
+DIM dd(3 TO 8) AS INTEGER
+DIM sprob(39, 84) AS SINGLE
+DIM hprob(39, 84) AS SINGLE
+DIM pop(5) AS SINGLE
+DIM m(38, 49) AS INTEGER
+DIM aq(104, 104, 84) AS SINGLE
+DIM prob(104, 104) AS SINGLE
+DIM psum(84, 36) AS SINGLE
+DIM card(22) AS INTEGER
+DIM hf(39) AS INTEGER
+DIM sf(39) AS INTEGER
+DIM rc(39) AS INTEGER
+DIM arc(39, 13) AS INTEGER
+DIM bshc(104) AS INTEGER
+DIM hr(104, 104) AS INTEGER
+CLS: PRINT "The BIGS9O7 software application performs ";
+PRINT "an abbreviated-combinatorial"
+PRINT "analysis to calculate the expected value of ";
+PRINT "game wager and find a set of"
+PRINT "combination-dependent-playing-strategy tables ";
+PRINT "for a double-exposure game of"
+PRINT "an optional embodiment that is subject to any ";
+PRINT "one of a number, diversity,"
+PRINT "and variety of possible user-defined sets of ";
+PRINT "game rules and saves this"
+PRINT "data to a set of files. The BIGS921 software ";
+PRINT "application enables the"
+PRINT "user to load into program memory data about ";
+PRINT "the set of combination-dependent-"
+PRINT "playing-strategy tables saved by the BIGS907 ";
+PRINT "software application. The"
+PRINT "BIGS921 software application uses this data ";
+PRINT "to derive a corresponding"
+PRINT "total-dependent-basic-strategy table. The ";
+PRINT "BIGS921 software application"
+PRINT "saves data about the corresponding ";
+PRINT "total-dependent-basic-strategy table"
+PRINT "to a set of files."
+PRINT ""
+
+o$ = "     Stand15/A615/A715/A815/A915/AT15/AJ15/AQ15/AK"
+o$ = o$ + "16/A516/A616/A716/A816/A916/AT16/AJ16/AQ16/AK"
+o$ = o$ + "17/A517/A617/A717/A817/A917/AT17/AJ17/AQ17/AK"
+o$ = o$ + "18/A518/A618/A718/A818/A918/AT18/AJ18/AQ18/AK"
+o$ = o$ + "19/A519/A619/A719/A819/A919/AT19/AJ19/AQ19/AK"
+o$ = o$ + "20/A620/A720/A820/A920/AT20/AJ20/AQ20/AK21/A7"
+o$ = o$ + "21/A821/A921/AT21/AJ21/AQ21/AK22/A822/A922/AT"
+o$ = o$ + "22/AJ22/AQ22/AK23/A923/AT23/AJ23/AQ23/AK24/AT"
+o$ = o$ + "24/AJ24/AQ24/AK25/AJ25/AQ25/AK26/AQ26/AK27/AK"
+o$ = o$ + "SplitSrndrDDown"
+
+n$ = "     Stand15   15   15   15   15   15   15   15   "
+n$ = n$ + "16   16   16   16   16   16   16   16   16   "
+n$ = n$ + "17   17   17   17   17   17   17   17   17   "
+n$ = n$ + "18   18   18   18   18   18   18   18   18   "
+n$ = n$ + "19   19   19   19   19   19   19   19   19   "
+n$ = n$ + "20   20   20   20   20   20   20   20   21   "
+n$ = n$ + "21   21   21   21   21   21   22   22   22   "
+n$ = n$ + "22   22   22   23   23   23   23   23   24   "
+n$ = n$ + "24   24   24   25   25   25   26   26   27   "
+n$ = n$ + "SplitSrndrDDown"
+
+69 PRINT "enter the 'folder/filename prefix' of ";
+PRINT "the set of files"
+PRINT "containing data about the user-defined ";
+PRINT "set of game rules and"
+PRINT "matching set of combination-dependent-";
+PRINT "playing-strategy tables"
+PRINT "to be loaded into program memory."
+INPUT D$
+OPEN D$ + "a.dat" FOR RANDOM AS #1 LEN = LEN(sd)
+GET #1, , sd
+card(0) = sd.c0
+card(1) = sd.c1
+card(2) = sd.c2
+card(3) = sd.c3
+card(4) = sd.c4
+card(5) = sd.c5
+card(6) = sd.c6
+card(7) = sd.c7
+card(8) = sd.c8
+card(9) = sd.c9
+card(10) = sd.cT
+card(11) = sd.cJ
+card(12) = sd.cQ
+card(13) = sd.cK
+jojo% = sd.jojo
+jojopo = sd.jojopo
+joanca% = sd.joanca
+joancash% = sd.joancash
+joancapo = sd.joancapo
+jowi% = sd.jowi
+d28p% = sd.d28p
+bshw% = sd.bshw
+dhf% = sd.dhf
+j = sd.j
+dwt% = sd.dwt
+dbc% = sd.dbc
+nchw% = sd.nchw
+ls% = sd.ls
+splt% = sd.splt
+most% = sd.nsh
+rsa% = sd.rsa
+das% = sd.das
+dh% = sd.dh
+ld% = sd.ld
+bigslick = sd.bigslick
+dsa% = sd.dsa
+bssh% = sd.bssh
+deck% = sd.deck
+shf = sd.shf
+immed% = sd.immed
+pbd% = sd.pbd
+b27po% = sd.b27po
+ms999 = sd.ms999
+ss999 = sd.ss999
+sp999 = sd.sp999
+jp999 = sd.jp999
+mc27po(4) = sd.po6c27
+mc27po(5) = sd.po7c27
+mc27po(6) = sd.po8c27
+mc27po(7) = sd.po9c27
+ms89T = sd.ms89T
+ss89T = sd.ss89T
+sp89T = sd.sp89T
+dd% = sd.dd
+dd(3) = sd.dd3
+dd(4) = sd.dd4
+dd(5) = sd.dd5
+dd(6) = sd.dd6
+dd(7) = sd.dd7
+dd(8) = sd.dd8
+q$ = sd.description
+CLOSE #1
+IF jowi% = 2 THEN
+    jowi% = 1
+    jo27% = 1
+END IF
+IF jowi% = 0 AND joanca% = 1 THEN
+    jowi% = 1
+    jo27% = -1
+END IF
+IF card(0) = 0 THEN
+    jowi% = 1
+    jo27% = -1
+END IF
+PRINT " "
+PRINT "the user-defined set of game rules ";
+PRINT "is described as follows:"
+PRINT q$
+PRINT "if this is acceptable, then type y and press enter,";
+PRINT "else press enter "
+INPUT ans$
+IF ans$ <> "y" THEN GOTO 69
+PRINT " "
+PRINT "enter the 'folder/filename prefix' of the files"
+PRINT "to be used to store application output."
+INPUT files$
+PRINT " "
+PRINT "press 1 and enter to manually input one of";
+PRINT "eighty-one-supported strategies"
+PRINT "for the use of the hit option for each of a ";
+PRINT "set of possible dealer's hand"
+PRINT "totals and enable the BIGS921 application to ";
+PRINT "insert these strategies into"
+PRINT "the total dependent basic strategy saved to ";
+PRINT "file by the BIGS921 application."
+PRINT " "
+PRINT "press 2 and enter to manually input one of ";
+PRINT "eighty-one-supported strategies"
+PRINT "for the use of the hit option and enable the ";
+PRINT "BIGS921 application to insert"
+PRINT "this strategy into the total dependent basic ";
+PRINT "strategy saved to file by"
+PRINT "the BIGS921 application as the strategy for ";
+PRINT "the play of all player hands."
+PRINT " "
+PRINT "else press enter ";: INPUT skip%
+PRINT " "
+OPEN files$ + "i.txt" FOR OUTPUT AS #1
+PRINT #1, "enter the 'folder/filename prefix' of ";
+PRINT #1, "the set of files"
+PRINT #1, "containing data about the user-defined ";
+PRINT #1, "set of game rules and"
+PRINT #1, "matching set of combination-dependent-";
+PRINT #1, "playing-strategy tables"
+PRINT #1, "to be loaded into program memory."
+PRINT #1, D$
+PRINT #1, " "
+PRINT #1, "the user-defined set of game rules ";
+PRINT #1, "is described as follows:"
+PRINT #1, q$
+PRINT #1, "if this is acceptable, then type y and press enter, ";
+PRINT #1, "else press enter "
+PRINT #1, ans$
+PRINT #1, " "
+PRINT #1, "enter the 'folder/filename prefix' of the files"
+PRINT #1, "to be used to store application output."
+PRINT #1, files$
+PRINT #1, " "
+PRINT #1, "press 1 and enter to manually input one of ";
+PRINT #1, "eighty-one-supported strategies"
+PRINT #1, "for the use of the hit option for each of a ";
+PRINT #1, "set of possible dealer's hand"
+PRINT #1, "totals and enable the BIGS921 application to ";
+PRINT #1, "insert these strategies into"
+PRINT #1, "the total dependent basic strategy saved to ";
+PRINT #1, "file by the BIGS921 application."
+PRINT #1, " "
+PRINT #1, "press 2 and enter to manually input one of ";
+PRINT #1, "eighty-one-supported strategies"
+PRINT #1, "for the use of the hit option and enable the ";
+PRINT #1, "BIGS921 application to insert"
+PRINT #1, "this strategy into the total dependent basic ";
+PRINT #1, "strategy saved to file by"
+PRINT #1, "the BIGS921 application as the strategy for ";
+PRINT #1, "the play of all player hands."
+PRINT #1, " "
+PRINT #1, "else press enter "
+PRINT #1, skip%
+PRINT #1, " "
+CLOSE #1
+FOR x = 0 TO 13
+    card(14) = card(14) + card(x)
+NEXT x
+OPEN D$ + "b.dat" FOR RANDOM AS #1 LEN = LEN(num)
+w = 0
+FOR x = 0 TO 104
+    FOR y = 0 TO 104
+        w = w + 1
+        GET #1, w, num
+        far(x, y) = num.far
+        sar(x, y) = num.sar
+        br(x, y) = num.r
+        hit(x, y) = num.hit
+    NEXT y
+NEXT x
+CLOSE #1
+OPEN D$ + "t.dat" FOR RANDOM AS #1 LEN = LEN(database)
+w = 0
+FOR x = 0 TO 6
+    FOR y = 0 TO 104
+        FOR z = 0 TO 84
+            w = w + 1
+            GET #1, w, database
+            aq(x * 15 + 0, y, z) = database.dat0
+            aq(x * 15 + 1, y, z) = database.dat1
+            aq(x * 15 + 2, y, z) = database.dat2
+            aq(x * 15 + 3, y, z) = database.dat3
+            aq(x * 15 + 4, y, z) = database.dat4
+            aq(x * 15 + 5, y, z) = database.dat5
+            aq(x * 15 + 6, y, z) = database.dat6
+            aq(x * 15 + 7, y, z) = database.dat7
+            aq(x * 15 + 8, y, z) = database.dat8
+            aq(x * 15 + 9, y, z) = database.dat9
+            aq(x * 15 + 10, y, z) = database.dat10
+            aq(x * 15 + 11, y, z) = database.dat11
+            aq(x * 15 + 12, y, z) = database.dat12
+            aq(x * 15 + 13, y, z) = database.dat13
+            aq(x * 15 + 14, y, z) = database.dat14
+        NEXT z
+    NEXT y
+NEXT x
+CLOSE #1
+OPEN D$ + "p.dat" FOR RANDOM AS #1 LEN = LEN(database)
+w = 0
+FOR x = 0 TO 6
+    FOR y = 0 TO 104
+        w = w + 1
+        GET #1, w, database
+        prob(x * 15 + 0, y) = database.dat0
+        prob(x * 15 + 1, y) = database.dat1
+        prob(x * 15 + 2, y) = database.dat2
+        prob(x * 15 + 3, y) = database.dat3
+        prob(x * 15 + 4, y) = database.dat4
+        prob(x * 15 + 5, y) = database.dat5
+        prob(x * 15 + 6, y) = database.dat6
+        prob(x * 15 + 7, y) = database.dat7
+        prob(x * 15 + 8, y) = database.dat8
+        prob(x * 15 + 9, y) = database.dat9
+        prob(x * 15 + 10, y) = database.dat10
+        prob(x * 15 + 11, y) = database.dat11
+        prob(x * 15 + 12, y) = database.dat12
+        prob(x * 15 + 13, y) = database.dat13
+        prob(x * 15 + 14, y) = database.dat14
+    NEXT y
+NEXT x
+CLOSE #1
+z = 0
+FOR x = 15 TO 27
+    FOR y = 19 TO 27
+        IF x > y THEN y = x
+        z = z + 1
+        g(z) = x
+        h(z) = y
+    NEXT y
+NEXT x
+g(82) = 82
+g(83) = 83
+h(82) = 82
+h(83) = 83
+h(84) = 84
+g(84) = 84
+90 REM translate combination dependent hand
+REM code into basic strategy hand code
+FOR dc1 = 0 TO 13
+    IF card(0) = 0 AND dc1 = 0 THEN dc1 = 1
+    FOR dc2 = dc1 TO 13
+        dn% = dc1 / 2 * (27 - dc1) + dc2
+        IF dn% <> 26 THEN
+            IF (dc1 - 1) * (dc2 - 1) = 0 THEN
+                bshc(dn%) = 26 + (dc1 + dc2)
+            END IF
+            IF (dc1 - 1) * (dc2 - 1) <> 0 THEN
+                bshc(dn%) = dc1 + dc2
+            END IF
+        END IF
+    NEXT dc2
+NEXT dc1
+95 REM figure player's hard and soft stand
+REM at totals for each dealer hand
+FOR dc1 = jowi% TO 13
+    FOR dc2 = dc1 TO 13
+        dn% = dc1 / 2 * (27 - dc1) + dc2
+        FOR pc1 = 2 TO 13
+            IF pc1 = 1 THEN pc1 = 2
+            IF deck% = 1 AND pc1 = 0 THEN
+                IF dc1 = 0 AND dc2 = 0 THEN
+                    pc1 = 1
+                END IF
+            END IF
+            FOR pc2 = pc1 TO 13
+                IF deck% = 1 AND pc2 = 0 THEN
+                    IF dc1 = 0 AND pc1 = 0 THEN
+                        pc2 = 1
+                    END IF
+                END IF
+                pn% = pc1 / 2 * (27 - pc1) + pc2
+                q# = -2
+                FOR op = 1 TO 81
+                    IF aq(pn%, dn%, op) > q# THEN
+                        q# = aq(pn%, dn%, op)
+                        hr(pn%, dn%) = op
+                    END IF
+                NEXT op
+                IF (pc1 <> pc2 OR splt% = 0) THEN
+                    FOR op = 1 TO 81
+                        IF pc1 + pc2 < g(hr(pn%, dn%)) THEN
+                            q = prob(pn%, dn%)
+                            hprob(bshc(dn%), op) = hprob(bshc(dn%), op) + q
+                            q = aq(pn%, dn%, op) * prob(pn%, dn%)
+                            htotal(bshc(dn%), op) = htotal(bshc(dn%), op) + q
+                        END IF
+                    NEXT op
+                END IF
+        NEXT pc2: NEXT pc1
+        FOR pc1 = jowi% TO 13
+            IF deck% = 1 AND pc1 = 0 THEN
+                IF dc1 = 0 AND dc2 = 0 THEN
+                    pc1 = 1
+                END IF
+            END IF
+            FOR pc2 = pc1 TO 13
+                IF deck% = 1 AND pc2 = 0 THEN
+                    IF dc1 = 0 AND pc1 = 0 THEN
+                        pc2 = 1
+                    END IF
+                END IF
+                pn% = pc1 / 2 * (27 - pc1) + pc2
+                q# = -2
+                FOR op = 1 TO 81
+                    IF aq(pn%, dn%, op) > q# THEN
+                        q# = aq(pn%, dn%, op)
+                        hr(pn%, dn%) = op
+                    END IF
+                NEXT op
+                IF (pc1 <> pc2 OR splt% = 0) THEN
+                    FOR op = 1 TO 81
+                        IF pc1 + pc2 + 13 < h(hr(pn%, dn%)) THEN
+                            IF pc1 = 1 OR pc2 = 1 THEN
+                                q = prob(pn%, dn%)
+                                sprob(bshc(dn%), op) = sprob(bshc(dn%), op) + q
+                                q = aq(pn%, dn%, op) * prob(pn%, dn%)
+                                stotal(bshc(dn%), op) = stotal(bshc(dn%), op) + q
+                            END IF
+                            IF pc1 <> 1 AND pc2 <> 1 THEN
+                                q = prob(pn%, dn%) * card(1) / card(14)
+                                sprob(bshc(dn%), op) = sprob(bshc(dn%), op) + q
+                                q = aq(pn%, dn%, op) * q
+                                stotal(bshc(dn%), op) = stotal(bshc(dn%), op) + q
+                            END IF
+                        END IF
+                    NEXT op
+                END IF
+            NEXT pc2
+        NEXT pc1
+        best# = -3: sf(bshc(dn%)) = h(1)
+        FOR op = 1 TO 81
+            IF stotal(bshc(dn%), op) / sprob(bshc(dn%), op) > best# THEN
+                best# = stotal(bshc(dn%), op) / sprob(bshc(dn%), op)
+                sf(bshc(dn%)) = h(op)
+            END IF
+        NEXT op
+        best# = -3
+        FOR op = 1 TO 81
+            IF htotal(bshc(dn%), op) / hprob(bshc(dn%), op) > best# THEN
+                best# = htotal(bshc(dn%), op) / hprob(bshc(dn%), op)
+                hf(bshc(dn%)) = g(op)
+            END IF
+        NEXT op
+NEXT dc2: NEXT dc1
+FOR dc1 = 0 TO 13
+    IF card(0) = 0 AND dc1 = 0 THEN dc1 = 1
+    FOR dc2 = dc1 TO 13
+        dn% = dc1 / 2 * (27 - dc1) + dc2
+        z = 0
+        FOR x = 15 TO 27
+            FOR y = 19 TO 27
+                IF x > y THEN y = x
+                z = z + 1
+                IF hf(bshc(dn%)) = g(z) THEN
+                    IF sf(bshc(dn%)) = h(z) THEN
+                        rc(bshc(dn%)) = z
+                    END IF
+                END IF
+            NEXT y
+        NEXT x
+    NEXT dc2
+NEXT dc1
+IF skip% = 1 THEN
+    dh$ = "00  0203040506070809101112131415161718192021222"
+    dh$ = dh$ + "3242526A0AAA2A3A4A5A6A7A8A9ATAJAQ"
+    FOR x = 0 TO 39
+        IF card(0) = 0 OR jowi% = 1 THEN
+            IF x = 0 THEN x = 4
+            IF x = 27 THEN x = 28
+        END IF
+        IF x = 1 THEN x = 2
+        PRINT "input the hard score the player stands at ";
+        PRINT "against a dealer ";
+        PRINT MID$(dh$, x * 2 + 1, 2)
+        INPUT hf(x)
+        PRINT " "
+        PRINT "input the soft score the player stands at ";
+        PRINT "against a dealer ";
+        PRINT MID$(dh$, x * 2 + 1, 2)
+        INPUT sf(x)
+        PRINT " "
+        OPEN files$ + "i.txt" FOR APPEND AS #1
+        PRINT #1, "input the hard score the player stands at ";
+        PRINT #1, "against a dealer ";
+        PRINT #1, MID$(dh$, x * 2 + 1, 2)
+        PRINT #1, hf(x)
+        PRINT #1, " "
+        PRINT #1, "input the soft score the player stands at ";
+        PRINT #1, "against a dealer ";
+        PRINT #1, MID$(dh$, x * 2 + 1, 2)
+        PRINT #1, sf(x)
+        PRINT #1, " "
+        CLOSE #1
+        z = 0
+        FOR h = 15 TO 27
+            FOR s = 19 TO 27
+                IF h > s THEN s = h
+                z = z + 1
+                IF h = hf(x) THEN
+                    IF s = sf(x) THEN
+                        rc(x) = z
+                    END IF
+                END IF
+    NEXT s: NEXT h: NEXT x
+    PRINT " "
+    PRINT "Press 1 and enter to include pairs in the ";
+    PRINT "set of hands that are"
+    PRINT "subject to the user-defined target numerical sums for the"
+    PRINT "the player's hard and soft hands"
+    INPUT override%
+    OPEN files$ + "i.txt" FOR APPEND AS #1
+    PRINT #1, " "
+    PRINT #1, "Press 1 and enter to include pairs ";
+    PRINT #1, "in the set of hands that are"
+    PRINT #1, "subject to the user-defined target numerical sums ";
+    PRINT #1, "for the player's"
+    PRINT #1, "hard and soft hands"
+    PRINT #1, override%
+    CLOSE #1
+END IF
+IF skip% = 2 THEN
+    PRINT "input the hard score the player stands at "
+    INPUT a%
+    PRINT " "
+    PRINT "input the soft score the player stands at "
+    INPUT b%
+    PRINT " "
+    OPEN files$ + "i.txt" FOR APPEND AS #1
+    PRINT #1, "input the hard score the player stands at "
+    PRINT #1, a%
+    PRINT #1, " "
+    PRINT #1, "input the soft score the player stands at "
+    PRINT #1, b%
+    PRINT #1, " "
+    CLOSE #1
+    FOR x = 0 TO 39
+        IF card(0) = 0 OR jowi% = 1 THEN
+            IF x = 0 THEN x = 4
+            IF x = 27 THEN x = 28
+        END IF
+        IF x = 1 THEN x = 2
+        hf(x) = a%: sf(x) = b%
+        z = 0
+        FOR h = 15 TO 27
+            FOR s = 19 TO 27
+                IF h > s THEN s = h
+                z = z + 1
+                IF h = hf(x) THEN
+                    IF s = sf(x) THEN
+                        rc(x) = z
+                    END IF
+                END IF
+    NEXT s: NEXT h: NEXT x
+    override% = 1
+END IF
+t$ = "open " + files$ + "i.txt to see a list of program parameters"
+OPEN files$ + "i.txt" FOR APPEND AS #1
+PRINT #1, " "
+PRINT #1, "a brief description of the program output reads as follows:"
+PRINT #1, t$
+PRINT #1, ""
+PRINT #1, ""
+PRINT #1, "START: "; DATE$; " "; TIME$
+CLOSE #1
+100 REM hp(26, 13) stores dealer hard versus player pair
+FOR x = 0 TO 26
+    FOR y = 0 TO 13
+        ERASE i: ERASE psum: z = 0
+        FOR pc1 = jowi% TO 13
+            FOR pc2 = pc1 TO 13
+                FOR dc1 = jowi% TO 13
+                    IF deck% = 1 AND dc1 = 0 THEN
+                        IF pc1 = 0 AND pc2 = 0 THEN
+                            dc1 = 1
+                        END IF
+                    END IF
+                    FOR dc2 = dc1 TO 13
+                        IF deck% = 1 AND dc2 = 0 THEN
+                            IF pc1 = 0 AND dc1 = 0 THEN
+                                dc2 = 1
+                            END IF
+                        END IF
+                        IF y = pc1 AND pc1 = pc2 THEN
+                            IF (dc1 - 1) * (dc2 - 1) <> 0 THEN
+                                IF x = (dc1 + dc2) THEN
+                                    pn% = pc1 / 2 * (27 - pc1) + pc2
+                                    dn% = dc1 / 2 * (27 - dc1) + dc2
+                                    z = z + 1
+                                    FOR k = 1 TO 84
+                                        psum(k, z) = aq(pn%, dn%, k) * prob(pn%, dn%)
+                                    NEXT k
+                                END IF
+                            END IF
+                        END IF
+        NEXT dc2: NEXT dc1: NEXT pc2: NEXT pc1
+        FOR k = 1 TO z
+            FOR l = 1 TO 84
+                psum(l, 0) = psum(l, 0) + psum(l, k)
+            NEXT l
+        NEXT k
+        w = 0
+        q# = -1
+        FOR l = 1 TO 84
+            IF psum(l, 0) > q# THEN
+                q# = psum(l, 0): w = l: i(85) = l
+                IF l < 82 THEN
+                    arc(x, y) = l
+                    IF g(i(85)) > 2 * y THEN
+                        IF g(rc(x)) > 2 * y THEN
+                            i(85) = rc(x)
+                            arc(x, y) = rc(x)
+                        END IF
+                    END IF
+                END IF
+            END IF
+        NEXT l
+        w1 = 0
+        q# = -1
+        FOR l = 1 TO 84
+            IF psum(l, 0) > q# AND l <> w THEN
+                q# = psum(l, 0): w1 = l
+                IF w1 < 82 THEN
+                    IF g(w1) > 2 * y THEN
+                        IF g(rc(x)) > 2 * y THEN
+                            w1 = rc(x)
+                        END IF
+                    END IF
+                END IF
+            END IF
+        NEXT l
+        IF override% = 1 THEN
+            w1 = rc(x)
+            arc(x, y) = rc(x)
+            IF w < 82 THEN
+                i(85) = rc(x)
+            END IF
+        END IF
+        IF w = 82 THEN i(85) = 82
+        IF w = 83 THEN i(85) = 83
+        IF w = 84 THEN i(85) = 84
+        REM  1 is code for S  - Stand
+        REM  2 is code for H  - Hit
+        REM  3 is code for Ds - Double else Stand.
+        REM  4 is code for Dh - Double else Hit.
+        REM  5 is code for D  - Double.
+        REM  6 is code for PS - sPlit else Stand.
+        REM  7 is code for PH - sPlit else Hit.
+        REM  8 is code for PD - sPlit else Double down.
+        REM  9 is code for Rs - Surrender else Stand.
+        REM 10 is code for R  - Surrender else Hit.
+        REM 11 is code for Rp - Surrender else Split.
+        REM 12 is code for Dp - Double Down else Split
+        IF g(i(85)) < 82 THEN
+            IF g(i(85)) <= 2 * y THEN hp(x, y) = 1: hp1(x, y) = 1
+            IF g(i(85)) > 2 * y THEN hp(x, y) = 2: hp1(x, y) = 2
+        END IF
+        IF g(i(85)) = 84 THEN
+            IF g(w1) <= 2 * y THEN hp1(x, y) = 3
+            IF g(w1) > 2 * y THEN hp1(x, y) = 4
+            IF g(w1) = 82 THEN hp1(x, y) = 12
+            IF g(arc(x, y)) <= 2 * y THEN hp(x, y) = 3
+            IF g(arc(x, y)) > 2 * y THEN hp(x, y) = 4
+            IF das% = 1 THEN hp(x, y) = 5
+        END IF
+        IF g(i(85)) = 83 THEN
+            IF g(w1) <= 2 * y THEN hp1(x, y) = 9
+            IF g(w1) > 2 * y THEN hp1(x, y) = 10
+            IF g(w1) = 82 THEN hp1(x, y) = 11
+            IF g(arc(x, y)) <= 2 * y THEN hp(x, y) = 9
+            IF g(arc(x, y)) > 2 * y THEN hp(x, y) = 10
+        END IF
+        IF g(i(85)) = 82 THEN
+            IF g(w1) <= 2 * y THEN hp(x, y) = 6: hp1(x, y) = 6
+            IF g(w1) > 2 * y THEN hp(x, y) = 7: hp1(x, y) = 7
+            IF g(w1) = 84 THEN hp(x, y) = 8: hp1(x, y) = 8
+            IF y = 1 AND dsa% <> 1 THEN hp(x, y) = 6: hp1(x, y) = 6
+        END IF
+NEXT y: NEXT x
+200 REM sp(12, 13) stores dealer soft versus player pair
+FOR x = 0 TO 12
+    FOR y = 0 TO 13
+        ERASE i: ERASE psum: z = 0
+        FOR pc1 = jowi% TO 13
+            FOR pc2 = pc1 TO 13
+                FOR dc1 = jowi% TO 13
+                    IF deck% = 1 AND dc1 = 0 THEN
+                        IF pc1 = 0 AND pc2 = 0 THEN
+                            dc1 = 1
+                        END IF
+                    END IF
+                    FOR dc2 = dc1 TO 13
+                        IF deck% = 1 AND dc2 = 0 THEN
+                            IF pc1 = 0 AND dc1 = 0 THEN
+                                dc2 = 1
+                            END IF
+                        END IF
+                        IF (dc1 - 1) * (dc2 - 1) = 0 AND dc2 < 13 THEN
+                            IF y = pc1 AND pc1 = pc2 THEN
+                                IF x = dc1 + dc2 - 1 THEN
+                                    pn% = pc1 / 2 * (27 - pc1) + pc2
+                                    dn% = dc1 / 2 * (27 - dc1) + dc2
+                                    z = z + 1
+                                    FOR k = 1 TO 84
+                                        psum(k, z) = aq(pn%, dn%, k) * prob(pn%, dn%)
+                                    NEXT k
+                                END IF
+                            END IF
+                        END IF
+        NEXT dc2: NEXT dc1: NEXT pc2: NEXT pc1
+        FOR k = 1 TO z
+            FOR l = 1 TO 84
+                psum(l, 0) = psum(l, 0) + psum(l, k)
+            NEXT l
+        NEXT k
+        w = 0
+        q# = -1
+        FOR l = 1 TO 84
+            IF psum(l, 0) > q# THEN
+                q# = psum(l, 0): w = l: i(85) = l
+                IF l < 82 THEN
+                    arc(x + 27, y) = l
+                    IF g(i(85)) > 2 * y THEN
+                        IF g(rc(x + 27)) > 2 * y THEN
+                            i(85) = rc(x + 27)
+                            arc(x + 27, y) = rc(x + 27)
+                        END IF
+                    END IF
+                END IF
+            END IF
+        NEXT l
+        w1 = 0
+        q# = -1
+        FOR l = 1 TO 84
+            IF psum(l, 0) > q# AND l <> w THEN
+                q# = psum(l, 0): w1 = l
+                IF w1 < 82 THEN
+                    IF g(w1) > 2 * y THEN
+                        IF g(rc(x + 27)) > 2 * y THEN
+                            w1 = rc(x + 27)
+                        END IF
+                    END IF
+                END IF
+            END IF
+        NEXT l
+        IF override% = 1 THEN
+            w1 = rc(x + 27)
+            arc(x + 27, y) = rc(x + 27)
+            IF w < 82 THEN
+                i(85) = rc(x + 27)
+            END IF
+        END IF
+        IF w = 82 THEN i(85) = 82
+        IF w = 83 THEN i(85) = 83
+        IF w = 84 THEN i(85) = 84
+        IF g(i(85)) < 82 THEN
+            IF g(i(85)) <= 2 * y THEN sp(x, y) = 1: sp1(x, y) = 1
+            IF g(i(85)) > 2 * y THEN sp(x, y) = 2: sp1(x, y) = 2
+        END IF
+        IF g(i(85)) = 84 THEN
+            IF g(w1) <= 2 * y THEN sp1(x, y) = 3
+            IF g(w1) > 2 * y THEN sp1(x, y) = 4
+            IF g(w1) = 82 THEN sp1(x, y) = 12
+            IF g(arc(x + 27, y)) <= 2 * y THEN sp(x, y) = 3
+            IF g(arc(x + 27, y)) > 2 * y THEN sp(x, y) = 4
+            IF das% = 1 THEN sp(x, y) = 5
+        END IF
+        IF g(i(85)) = 83 THEN
+            IF g(w1) <= 2 * y THEN sp1(x, y) = 9
+            IF g(w1) > 2 * y THEN sp1(x, y) = 10
+            IF g(w1) = 82 THEN sp1(x, y) = 11
+            IF g(arc(x + 27, y)) <= 2 * y THEN sp(x, y) = 9
+            IF g(arc(x + 27, y)) > 2 * y THEN sp(x, y) = 10
+        END IF
+        IF g(i(85)) = 82 THEN
+            IF g(w1) <= 2 * y THEN sp(x, y) = 6: sp1(x, y) = 6
+            IF g(w1) > 2 * y THEN sp(x, y) = 7: sp1(x, y) = 7
+            IF g(w1) = 84 THEN sp(x, y) = 8: sp1(x, y) = 8
+            IF y = 1 AND dsa% <> 1 THEN sp(x, y) = 6: sp1(x, y) = 6
+        END IF
+NEXT y: NEXT x
+300 REM hh(26, 23) stores dealer hard versus player hard
+FOR x = 0 TO 26
+    FOR y = 0 TO 23
+        ERASE i: ERASE psum: z = 0
+        FOR pc1 = jowi% TO 13
+            FOR pc2 = pc1 TO 13
+                FOR dc1 = jowi% TO 13
+                    IF deck% = 1 AND dc1 = 0 THEN
+                        IF pc1 = 0 AND pc2 = 0 THEN
+                            dc1 = 1
+                        END IF
+                    END IF
+                    FOR dc2 = dc1 TO 13
+                        IF deck% = 1 AND dc2 = 0 THEN
+                            IF pc1 = 0 AND dc1 = 0 THEN
+                                dc2 = 1
+                            END IF
+                        END IF
+                        IF (dc1 - 1) * (dc2 - 1) <> 0 THEN
+                            IF (pc1 - 1) * (pc2 - 1) <> 0 AND pc1 <> pc2 THEN
+                                IF y = pc1 + pc2 - 2 THEN
+                                    IF x = dc1 + dc2 THEN
+                                        pn% = pc1 / 2 * (27 - pc1) + pc2
+                                        dn% = dc1 / 2 * (27 - dc1) + dc2
+                                        z = z + 1
+                                        psum(0, z) = aq(pn%, dn%, hr(pn%, dn%)) * prob(pn%, dn%)
+                                        psum(2, z) = aq(pn%, dn%, 83) * prob(pn%, dn%)
+                                        psum(3, z) = aq(pn%, dn%, 84) * prob(pn%, dn%)
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+        NEXT dc2: NEXT dc1: NEXT pc2: NEXT pc1
+        FOR k = 1 TO z
+            psum(0, 0) = psum(0, 0) + psum(0, k)
+            psum(2, 0) = psum(2, 0) + psum(2, k)
+            psum(3, 0) = psum(3, 0) + psum(3, k)
+        NEXT k
+        w = 0: q# = psum(0, 0)
+        FOR l = 0 TO 3
+            IF l = 1 THEN l = 2
+            IF psum(l, 0) > q# THEN
+                q# = psum(l, 0)
+                w = l
+            END IF
+        NEXT l
+        IF w = 0 THEN i(85) = rc(x)
+        IF w = 2 THEN i(85) = 83
+        IF w = 3 THEN i(85) = 84
+        IF g(i(85)) < 82 THEN
+            IF g(i(85)) <= y + 2 THEN hh(x, y) = 1: hh1(x, y) = 1
+            IF g(i(85)) > y + 2 THEN hh(x, y) = 2: hh1(x, y) = 2
+        END IF
+        IF g(i(85)) = 84 THEN
+            IF g(rc(x)) <= y + 2 THEN hh(x, y) = 3: hh1(x, y) = 3
+            IF g(rc(x)) > y + 2 THEN hh(x, y) = 4: hh1(x, y) = 4
+            IF das% = 1 THEN hh(x, y) = 5
+        END IF
+        IF g(i(85)) = 83 THEN
+            IF g(rc(x)) <= y + 2 THEN hh(x, y) = 9: hh1(x, y) = 9
+            IF g(rc(x)) > y + 2 THEN hh(x, y) = 10: hh1(x, y) = 10
+        END IF
+NEXT y: NEXT x
+400 REM sh(12, 23) stores dealer soft versus player hard
+FOR x = 0 TO 12
+    FOR y = 0 TO 23
+        ERASE i: ERASE psum: z = 0
+        FOR pc1 = jowi% TO 13
+            FOR pc2 = pc1 TO 13
+                FOR dc1 = jowi% TO 13
+                    IF deck% = 1 AND dc1 = 0 THEN
+                        IF pc1 = 0 AND pc2 = 0 THEN
+                            dc1 = 1
+                        END IF
+                    END IF
+                    FOR dc2 = dc1 TO 13
+                        IF deck% = 1 AND dc2 = 0 THEN
+                            IF pc1 = 0 AND dc1 = 0 THEN
+                                dc2 = 1
+                            END IF
+                        END IF
+                        IF (pc1 - 1) * (pc2 - 1) <> 0 AND pc1 <> pc2 THEN
+                            IF (dc1 - 1) * (dc2 - 1) = 0 AND dc2 < 13 THEN
+                                IF y = pc1 + pc2 - 2 THEN
+                                    IF x = dc1 + dc2 - 1 THEN
+                                        pn% = pc1 / 2 * (27 - pc1) + pc2
+                                        dn% = dc1 / 2 * (27 - dc1) + dc2
+                                        z = z + 1
+                                        psum(0, z) = aq(pn%, dn%, hr(pn%, dn%)) * prob(pn%, dn%)
+                                        psum(2, z) = aq(pn%, dn%, 83) * prob(pn%, dn%)
+                                        psum(3, z) = aq(pn%, dn%, 84) * prob(pn%, dn%)
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+        NEXT dc2: NEXT dc1: NEXT pc2: NEXT pc1
+        FOR k = 1 TO z
+            psum(0, 0) = psum(0, 0) + psum(0, k)
+            psum(2, 0) = psum(2, 0) + psum(2, k)
+            psum(3, 0) = psum(3, 0) + psum(3, k)
+        NEXT k
+        w = 0
+        q# = psum(0, 0)
+        FOR l = 0 TO 3
+            IF l = 1 THEN l = 2
+            IF psum(l, 0) > q# THEN
+                q# = psum(l, 0)
+                w = l
+            END IF
+        NEXT l
+        IF w = 0 THEN i(85) = rc(27 + x)
+        IF w = 2 THEN i(85) = 83
+        IF w = 3 THEN i(85) = 84
+        IF g(i(85)) < 82 THEN
+            IF g(i(85)) <= y + 2 THEN sh(x, y) = 1: sh1(x, y) = 1
+            IF g(i(85)) > y + 2 THEN sh(x, y) = 2: sh1(x, y) = 2
+        END IF
+        IF g(i(85)) = 84 THEN
+            IF g(rc(x + 27)) <= y + 2 THEN sh(x, y) = 3: sh1(x, y) = 3
+            IF g(rc(x + 27)) > y + 2 THEN sh(x, y) = 4: sh1(x, y) = 4
+            IF das% = 1 THEN sh(x, y) = 5
+        END IF
+        IF g(i(85)) = 83 THEN
+            IF g(rc(x + 27)) <= y + 2 THEN sh(x, y) = 9: sh1(x, y) = 9
+            IF g(rc(x + 27)) > y + 2 THEN sh(x, y) = 10: sh1(x, y) = 10
+        END IF
+NEXT y: NEXT x
+500 REM hs(26, 12) stores dealer hard versus player soft
+FOR x = 0 TO 26
+    FOR y = 0 TO 12
+        ERASE i: ERASE psum: z = 0
+        FOR pc1 = jowi% TO 13
+            FOR pc2 = pc1 TO 13
+                FOR dc1 = jowi% TO 13
+                    IF deck% = 1 AND dc1 = 0 THEN
+                        IF pc1 = 0 AND pc2 = 0 THEN
+                            dc1 = 1
+                        END IF
+                    END IF
+                    FOR dc2 = dc1 TO 13
+                        IF deck% = 1 AND dc2 = 0 THEN
+                            IF pc1 = 0 AND dc1 = 0 THEN
+                                dc2 = 1
+                            END IF
+                        END IF
+                        IF (pc1 - 1) * (pc2 - 1) = 0 AND pc1 <> pc2 THEN
+                            IF (dc1 - 1) * (dc2 - 1) <> 0 THEN
+                                IF y = pc1 + pc2 - 1 THEN
+                                    IF x = dc1 + dc2 THEN
+                                        pn% = pc1 / 2 * (27 - pc1) + pc2
+                                        dn% = dc1 / 2 * (27 - dc1) + dc2
+                                        z = z + 1
+                                        psum(0, z) = aq(pn%, dn%, hr(pn%, dn%)) * prob(pn%, dn%)
+                                        psum(2, z) = aq(pn%, dn%, 83) * prob(pn%, dn%)
+                                        psum(3, z) = aq(pn%, dn%, 84) * prob(pn%, dn%)
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+        NEXT dc2: NEXT dc1: NEXT pc2: NEXT pc1
+        FOR k = 1 TO z
+            psum(0, 0) = psum(0, 0) + psum(0, k)
+            psum(2, 0) = psum(2, 0) + psum(2, k)
+            psum(3, 0) = psum(3, 0) + psum(3, k)
+        NEXT k
+        w = 0: q# = psum(0, 0)
+        FOR l = 0 TO 3
+            IF l = 1 THEN l = 2
+            IF psum(l, 0) > q# THEN
+                q# = psum(l, 0)
+                w = l
+            END IF
+        NEXT l
+        IF w = 0 THEN i(85) = rc(x)
+        IF w = 2 THEN i(85) = 83
+        IF w = 3 THEN i(85) = 84
+        IF h(i(85)) < 82 THEN
+            IF h(i(85)) <= y + 14 THEN hs(x, y) = 1: hs1(x, y) = 1
+            IF h(i(85)) > y + 14 THEN hs(x, y) = 2: hs1(x, y) = 2
+        END IF
+        IF h(i(85)) = 84 THEN
+            IF h(rc(x)) <= y + 14 THEN hs(x, y) = 3: hs1(x, y) = 3
+            IF h(rc(x)) > y + 14 THEN hs(x, y) = 4: hs1(x, y) = 4
+            IF das% = 1 THEN hs(x, y) = 5
+        END IF
+        IF h(i(85)) = 83 THEN
+            IF h(rc(x)) <= y + 14 THEN hs(x, y) = 9: hs1(x, y) = 9
+            IF h(rc(x)) > y + 14 THEN hs(x, y) = 10: hs1(x, y) = 10
+        END IF
+NEXT y: NEXT x
+600 REM ss(12, 12) stores dealer soft versus player soft
+FOR x = 0 TO 12
+    FOR y = 0 TO 12
+        ERASE i: ERASE psum: z = 0
+        FOR pc1 = jowi% TO 13
+            FOR pc2 = pc1 TO 13
+                FOR dc1 = jowi% TO 13
+                    IF deck% = 1 AND dc1 = 0 THEN
+                        IF pc1 = 0 AND pc2 = 0 THEN
+                            dc1 = 1
+                        END IF
+                    END IF
+                    FOR dc2 = dc1 TO 13
+                        IF deck% = 1 AND dc2 = 0 THEN
+                            IF pc1 = 0 AND dc1 = 0 THEN
+                                dc2 = 1
+                            END IF
+                        END IF
+                        IF (pc1 - 1) * (pc2 - 1) = 0 AND pc1 <> pc2 THEN
+                            IF (dc1 - 1) * (dc2 - 1) = 0 THEN
+                                IF y = pc1 + pc2 - 1 THEN
+                                    IF x = dc1 + dc2 - 1 THEN
+                                        pn% = pc1 / 2 * (27 - pc1) + pc2
+                                        dn% = dc1 / 2 * (27 - dc1) + dc2
+                                        z = z + 1
+                                        psum(0, z) = aq(pn%, dn%, hr(pn%, dn%)) * prob(pn%, dn%)
+                                        psum(2, z) = aq(pn%, dn%, 83) * prob(pn%, dn%)
+                                        psum(3, z) = aq(pn%, dn%, 84) * prob(pn%, dn%)
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+        NEXT dc2: NEXT dc1: NEXT pc2: NEXT pc1
+        FOR k = 1 TO z
+            psum(0, 0) = psum(0, 0) + psum(0, k)
+            psum(2, 0) = psum(2, 0) + psum(2, k)
+            psum(3, 0) = psum(3, 0) + psum(3, k)
+        NEXT k
+        w = 0
+        q# = psum(0, 0)
+        FOR l = 0 TO 3
+            IF l = 1 THEN l = 2
+            IF psum(l, 0) > q# THEN
+                q# = psum(l, 0)
+                w = l
+            END IF
+        NEXT l
+        IF w = 0 THEN i(85) = rc(27 + x)
+        IF w = 2 THEN i(85) = 83
+        IF w = 3 THEN i(85) = 84
+        IF h(i(85)) < 82 THEN
+            IF h(i(85)) <= y + 14 THEN ss(x, y) = 1: ss1(x, y) = 1
+            IF h(i(85)) > y + 14 THEN ss(x, y) = 2: ss1(x, y) = 2
+        END IF
+        IF h(i(85)) = 84 THEN
+            IF h(rc(x + 27)) <= y + 14 THEN ss(x, y) = 3: ss1(x, y) = 3
+            IF h(rc(x + 27)) > y + 14 THEN ss(x, y) = 4: ss1(x, y) = 4
+            IF das% = 1 THEN ss(x, y) = 5
+        END IF
+        IF h(i(85)) = 83 THEN
+            IF h(rc(x + 27)) <= y + 14 THEN ss(x, y) = 9: ss1(x, y) = 9
+            IF h(rc(x + 27)) > y + 14 THEN ss(x, y) = 9: ss1(x, y) = 10
+        END IF
+NEXT y: NEXT x
+700 REM m(38, 49) stores code for the total dependent basic strategy
+FOR x = 0 TO 39
+    FOR y = 0 TO 50
+        IF x > 1 AND x < 27 THEN
+            IF y < 24 THEN
+                m(x - 1, y) = hh1(x, y)
+            END IF
+        END IF
+        IF x = 0 AND y < 24 THEN m(x, y) = hh1(x, y)
+        IF x > 1 AND x < 27 THEN
+            IF y > 23 AND y < 35 THEN m(x - 1, y) = hs1(x, 36 - y)
+            IF y = 36 THEN m(x - 1, y - 1) = hs1(x, 36 - y)
+        END IF
+        IF x = 0 THEN
+            IF y > 23 AND y < 35 THEN m(x, y) = hs1(x, 36 - y)
+            IF y = 36 THEN m(x, y - 1) = hs1(x, 36 - y)
+        END IF
+        IF x > 1 AND x < 27 THEN
+            IF y > 36 THEN
+                m(x - 1, y - 1) = hp1(x, y - 37)
+            END IF
+        END IF
+        IF x = 0 AND y > 36 THEN m(x, y - 1) = hp1(x, y - 37)
+        IF x > 26 THEN
+            IF y < 24 THEN
+                m(x - 1, y) = sh1(39 - x, y)
+            END IF
+        END IF
+        IF x > 26 THEN
+            IF y > 23 AND y < 35 THEN m(x - 1, y) = ss1(39 - x, 36 - y)
+            IF y = 36 THEN m(x - 1, y - 1) = ss1(39 - x, 36 - y)
+        END IF
+        IF x > 26 THEN
+            IF y > 36 THEN
+                m(x - 1, y - 1) = sp1(39 - x, y - 37)
+            END IF
+        END IF
+NEXT y: NEXT x
+ERASE br: ERASE far: ERASE sar
+FOR pc1 = 0 TO 13
+    FOR pc2 = pc1 TO 13
+        pn% = pc1 / 2 * (27 - pc1) + pc2
+        FOR dc1 = 0 TO 13
+            IF deck% = 1 AND dc1 = 0 THEN
+                IF pc1 = 0 AND pc2 = 0 THEN
+                    dc1 = 1
+                END IF
+            END IF
+            FOR dc2 = dc1 TO 13
+                IF deck% = 1 AND dc2 = 0 THEN
+                    IF pc1 = 0 AND dc1 = 0 THEN
+                        dc2 = 1
+                    END IF
+                END IF
+                dn% = dc1 / 2 * (27 - dc1) + dc2
+                IF jowi% = 1 AND pc1 * dc1 = 0 THEN
+                    IF joanca% = 1 THEN
+                        br(pn%, dn%) = 1
+                        far(pn%, dn%) = 1
+                        sar(pn%, dn%) = 1
+                    END IF
+                    IF joanca% <> 1 THEN
+                        IF jojo% = 1 THEN
+                            IF pn% = 0 OR dn% = 0 THEN
+                                br(pn%, dn%) = 1
+                                far(pn%, dn%) = 1
+                                sar(pn%, dn%) = 1
+                            END IF
+                            IF pn% <> 0 AND dn% <> 0 THEN
+                                IF pc1 = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                                IF pc1 <> 0 THEN
+                                    IF ls% = 1 THEN
+                                        br(pn%, dn%) = 83
+                                        far(pn%, dn%) = 81
+                                        sar(pn%, dn%) = 81
+                                    END IF
+                                    IF ls% <> 1 THEN
+                                        br(pn%, dn%) = 81
+                                        far(pn%, dn%) = 81
+                                        sar(pn%, dn%) = 81
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+                        IF jojo% <> 1 THEN
+                            IF pc1 = 0 THEN
+                                br(pn%, dn%) = 1
+                                far(pn%, dn%) = 1
+                                sar(pn%, dn%) = 1
+                            END IF
+                            IF pc1 <> 0 THEN
+                                IF ls% = 1 THEN
+                                    br(pn%, dn%) = 83
+                                    far(pn%, dn%) = 81
+                                    sar(pn%, dn%) = 81
+                                END IF
+                                IF ls% <> 1 THEN
+                                    br(pn%, dn%) = 81
+                                    far(pn%, dn%) = 81
+                                    sar(pn%, dn%) = 81
+                                END IF
+                            END IF
+                        END IF
+                    END IF
+                END IF
+                IF jowi% <> 1 OR pc1 * dc1 <> 0 THEN
+                    IF (pc1 - 1) * (pc2 - 1) <> 0 AND pc1 <> pc2 THEN
+                        IF (dc1 - 1) * (dc2 - 1) <> 0 THEN
+                            pe% = (pc1 + pc2) - 2
+                            de% = (dc1 + dc2)
+                            IF joanca% = 1 THEN
+                                IF pc1 = 0 OR dc1 = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                            END IF
+                            IF joanca% <> 1 OR pc1 * dc1 <> 0 THEN
+                                IF hh(de%, pe%) = 1 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                                IF hh(de%, pe%) = 2 THEN
+                                    br(pn%, dn%) = rc(de%)
+                                    far(pn%, dn%) = rc(de%)
+                                    sar(pn%, dn%) = rc(de%)
+                                END IF
+                                IF hh(de%, pe%) = 3 THEN
+                                    br(pn%, dn%) = 84
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                                IF hh(de%, pe%) = 4 THEN
+                                    br(pn%, dn%) = 84
+                                    far(pn%, dn%) = rc(de%)
+                                    sar(pn%, dn%) = rc(de%)
+                                END IF
+                                IF hh(de%, pe%) = 5 THEN
+                                    br(pn%, dn%) = 84
+                                    far(pn%, dn%) = 84
+                                    sar(pn%, dn%) = 84
+                                END IF
+                                IF hh(de%, pe%) = 6 THEN
+                                    br(pn%, dn%) = 82
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                                IF hh(de%, pe%) = 7 THEN
+                                    br(pn%, dn%) = 82
+                                    far(pn%, dn%) = rc(de%)
+                                    sar(pn%, dn%) = rc(de%)
+                                END IF
+                                IF hh(de%, pe%) = 8 THEN
+                                    br(pn%, dn%) = 82
+                                    far(pn%, dn%) = 84
+                                    sar(pn%, dn%) = 84
+                                END IF
+                                IF hh(de%, pe%) = 9 THEN
+                                    br(pn%, dn%) = 83
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                                IF hh(de%, pe%) = 10 THEN
+                                    br(pn%, dn%) = 83
+                                    far(pn%, dn%) = rc(de%)
+                                    sar(pn%, dn%) = rc(de%)
+                                END IF
+                            END IF
+                        END IF
+                        IF (dc1 - 1) * (dc2 - 1) = 0 THEN
+                            pe% = (pc1 + pc2) - 2
+                            de% = dc1 + dc2 - 1
+                            IF de% = 13 THEN
+                                br(pn%, dn%) = 1
+                                far(pn%, dn%) = 1
+                                sar(pn%, dn%) = 1
+                            END IF
+                            IF joanca% = 1 THEN
+                                IF pc1 = 0 OR dc1 = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                            END IF
+                            IF joanca% <> 1 OR pc1 * dc1 <> 0 THEN
+                                IF de% < 13 THEN
+                                    IF sh(de%, pe%) = 1 THEN
+                                        br(pn%, dn%) = 1
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF sh(de%, pe%) = 2 THEN
+                                        br(pn%, dn%) = rc(de% + 27)
+                                        far(pn%, dn%) = rc(de% + 27)
+                                        sar(pn%, dn%) = rc(de% + 27)
+                                    END IF
+                                    IF sh(de%, pe%) = 3 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF sh(de%, pe%) = 4 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = rc(de% + 27)
+                                        sar(pn%, dn%) = rc(de% + 27)
+                                    END IF
+                                    IF sh(de%, pe%) = 5 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = 84
+                                        sar(pn%, dn%) = 84
+                                    END IF
+                                    IF sh(de%, pe%) = 6 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF sh(de%, pe%) = 7 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = rc(de% + 27)
+                                        sar(pn%, dn%) = rc(de% + 27)
+                                    END IF
+                                    IF sh(de%, pe%) = 8 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = 84
+                                        sar(pn%, dn%) = 84
+                                    END IF
+                                    IF sh(de%, pe%) = 9 THEN
+                                        br(pn%, dn%) = 83
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF sh(de%, pe%) = 10 THEN
+                                        br(pn%, dn%) = 83
+                                        far(pn%, dn%) = rc(de% + 27)
+                                        sar(pn%, dn%) = rc(de% + 27)
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+                    END IF
+                    IF (pc1 - 1) * (pc2 - 1) = 0 AND pc1 <> pc2 THEN
+                        IF (dc1 - 1) * (dc2 - 1) <> 0 THEN
+                            pe% = (pc1 + pc2) - 1
+                            de% = (dc1 + dc2)
+                            IF pe% = 13 THEN
+                                br(pn%, dn%) = 1
+                                far(pn%, dn%) = 1
+                                sar(pn%, dn%) = 1
+                            END IF
+                            IF joanca% = 1 THEN
+                                IF pc1 = 0 OR dc1 = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                            END IF
+                            IF joanca% <> 1 OR pc1 * dc1 <> 0 THEN
+                                IF pe% < 13 THEN
+                                    IF hs(de%, pe%) = 1 THEN
+                                        br(pn%, dn%) = 1
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF hs(de%, pe%) = 2 THEN
+                                        br(pn%, dn%) = rc(de%)
+                                        far(pn%, dn%) = rc(de%)
+                                        sar(pn%, dn%) = rc(de%)
+                                    END IF
+                                    IF hs(de%, pe%) = 3 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF hs(de%, pe%) = 4 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = rc(de%)
+                                        sar(pn%, dn%) = rc(de%)
+                                    END IF
+                                    IF hs(de%, pe%) = 5 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = 84
+                                        sar(pn%, dn%) = 84
+                                    END IF
+                                    IF hs(de%, pe%) = 6 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF hs(de%, pe%) = 7 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = rc(de%)
+                                        sar(pn%, dn%) = rc(de%)
+                                    END IF
+                                    IF hs(de%, pe%) = 8 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = 84
+                                        sar(pn%, dn%) = 84
+                                    END IF
+                                    IF hs(de%, pe%) = 9 THEN
+                                        br(pn%, dn%) = 83
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF hs(de%, pe%) = 10 THEN
+                                        br(pn%, dn%) = 83
+                                        far(pn%, dn%) = rc(de%)
+                                        sar(pn%, dn%) = rc(de%)
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+                        IF (dc1 - 1) * (dc2 - 1) = 0 THEN
+                            pe% = (pc1 + pc2) - 1
+                            de% = dc1 + dc2 - 1
+                            IF pe% = 13 THEN
+                                br(pn%, dn%) = 1
+                                far(pn%, dn%) = 1
+                                sar(pn%, dn%) = 1
+                            END IF
+                            IF joanca% = 1 THEN
+                                IF pc1 = 0 OR dc1 = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                            END IF
+                            IF joanca% <> 1 OR pc1 * dc1 <> 0 THEN
+                                IF pe% < 13 THEN
+                                    IF de% = 13 THEN
+                                        br(pn%, dn%) = 1
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF de% < 13 THEN
+                                        IF ss(de%, pe%) = 1 THEN
+                                            br(pn%, dn%) = 1
+                                            far(pn%, dn%) = 1
+                                            sar(pn%, dn%) = 1
+                                        END IF
+                                        IF ss(de%, pe%) = 2 THEN
+                                            br(pn%, dn%) = rc(de% + 27)
+                                            far(pn%, dn%) = rc(de% + 27)
+                                            sar(pn%, dn%) = rc(de% + 27)
+                                        END IF
+                                        IF ss(de%, pe%) = 3 THEN
+                                            br(pn%, dn%) = 84
+                                            far(pn%, dn%) = 1
+                                            sar(pn%, dn%) = 1
+                                        END IF
+                                        IF ss(de%, pe%) = 4 THEN
+                                            br(pn%, dn%) = 84
+                                            far(pn%, dn%) = rc(de% + 27)
+                                            sar(pn%, dn%) = rc(de% + 27)
+                                        END IF
+                                        IF ss(de%, pe%) = 5 THEN
+                                            br(pn%, dn%) = 84
+                                            far(pn%, dn%) = 84
+                                            sar(pn%, dn%) = 84
+                                        END IF
+                                        IF ss(de%, pe%) = 6 THEN
+                                            br(pn%, dn%) = 82
+                                            far(pn%, dn%) = 1
+                                            sar(pn%, dn%) = 1
+                                        END IF
+                                        IF ss(de%, pe%) = 7 THEN
+                                            br(pn%, dn%) = 82
+                                            far(pn%, dn%) = rc(de% + 27)
+                                            sar(pn%, dn%) = rc(de% + 27)
+                                        END IF
+                                        IF ss(de%, pe%) = 8 THEN
+                                            br(pn%, dn%) = 82
+                                            far(pn%, dn%) = 84
+                                            sar(pn%, dn%) = 84
+                                        END IF
+                                        IF ss(de%, pe%) = 9 THEN
+                                            br(pn%, dn%) = 83
+                                            far(pn%, dn%) = 1
+                                            sar(pn%, dn%) = 1
+                                        END IF
+                                        IF ss(de%, pe%) = 10 THEN
+                                            br(pn%, dn%) = 83
+                                            far(pn%, dn%) = rc(de% + 27)
+                                            sar(pn%, dn%) = rc(de% + 27)
+                                        END IF
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+                    END IF
+                    IF pc1 = pc2 THEN
+                        IF (dc1 - 1) * (dc2 - 1) <> 0 THEN
+                            pe% = pc1
+                            de% = (dc1 + dc2)
+                            IF jojo% = 1 THEN
+                                IF pn% = 0 OR dn% = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                            END IF
+                            IF joanca% = 1 THEN
+                                IF pc1 = 0 OR dc1 = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                            END IF
+                            IF joanca% <> 1 OR pc1 * dc1 <> 0 THEN
+                                IF jojo% <> 1 OR pn% * dn% <> 0 THEN
+                                    IF hp(de%, pe%) = 1 THEN
+                                        br(pn%, dn%) = 1
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF hp(de%, pe%) = 2 THEN
+                                        br(pn%, dn%) = arc(de%, pe%)
+                                        far(pn%, dn%) = arc(de%, pe%)
+                                        sar(pn%, dn%) = arc(de%, pe%)
+                                    END IF
+                                    IF hp(de%, pe%) = 3 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF hp(de%, pe%) = 4 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = arc(de%, pe%)
+                                        sar(pn%, dn%) = arc(de%, pe%)
+                                    END IF
+                                    IF hp(de%, pe%) = 5 THEN
+                                        br(pn%, dn%) = 84
+                                        far(pn%, dn%) = 84
+                                        sar(pn%, dn%) = 84
+                                    END IF
+                                    IF hp(de%, pe%) = 6 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF hp(de%, pe%) = 7 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = arc(de%, pe%)
+                                        sar(pn%, dn%) = arc(de%, pe%)
+                                    END IF
+                                    IF hp(de%, pe%) = 8 THEN
+                                        br(pn%, dn%) = 82
+                                        far(pn%, dn%) = 84
+                                        sar(pn%, dn%) = 84
+                                    END IF
+                                    IF hp(de%, pe%) = 9 THEN
+                                        br(pn%, dn%) = 83
+                                        far(pn%, dn%) = 1
+                                        sar(pn%, dn%) = 1
+                                    END IF
+                                    IF hp(de%, pe%) = 10 THEN
+                                        br(pn%, dn%) = 83
+                                        far(pn%, dn%) = arc(de%, pe%)
+                                        sar(pn%, dn%) = arc(de%, pe%)
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+                        IF (dc1 - 1) * (dc2 - 1) = 0 THEN
+                            pe% = pc1
+                            de% = dc1 + dc2 - 1
+                            IF de% = 13 THEN
+                                br(pn%, dn%) = 1
+                                far(pn%, dn%) = 1
+                                sar(pn%, dn%) = 1
+                            END IF
+                            IF jojo% = 1 THEN
+                                IF pn% = 0 OR dn% = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                            END IF
+                            IF joanca% = 1 THEN
+                                IF pc1 = 0 OR dc1 = 0 THEN
+                                    br(pn%, dn%) = 1
+                                    far(pn%, dn%) = 1
+                                    sar(pn%, dn%) = 1
+                                END IF
+                            END IF
+                            IF joanca% <> 1 OR pc1 * dc1 <> 0 THEN
+                                IF jojo% <> 1 OR pn% * dn% <> 0 THEN
+                                    IF de% < 13 THEN
+                                        IF sp(de%, pe%) = 1 THEN
+                                            br(pn%, dn%) = 1
+                                            far(pn%, dn%) = 1
+                                            sar(pn%, dn%) = 1
+                                        END IF
+                                        IF sp(de%, pe%) = 2 THEN
+                                            br(pn%, dn%) = arc(de% + 27, pe%)
+                                            far(pn%, dn%) = arc(de% + 27, pe%)
+                                            sar(pn%, dn%) = arc(de% + 27, pe%)
+                                        END IF
+                                        IF sp(de%, pe%) = 3 THEN
+                                            br(pn%, dn%) = 84
+                                            far(pn%, dn%) = 1
+                                            sar(pn%, dn%) = 1
+                                        END IF
+                                        IF sp(de%, pe%) = 4 THEN
+                                            br(pn%, dn%) = 84
+                                            far(pn%, dn%) = arc(de% + 27, pe%)
+                                            sar(pn%, dn%) = arc(de% + 27, pe%)
+                                        END IF
+                                        IF sp(de%, pe%) = 5 THEN
+                                            br(pn%, dn%) = 84
+                                            far(pn%, dn%) = 84
+                                            sar(pn%, dn%) = 84
+                                        END IF
+                                        IF sp(de%, pe%) = 6 THEN
+                                            br(pn%, dn%) = 82
+                                            far(pn%, dn%) = 1
+                                            sar(pn%, dn%) = 1
+                                        END IF
+                                        IF sp(de%, pe%) = 7 THEN
+                                            br(pn%, dn%) = 82
+                                            far(pn%, dn%) = arc(de% + 27, pe%)
+                                            sar(pn%, dn%) = arc(de% + 27, pe%)
+                                        END IF
+                                        IF sp(de%, pe%) = 8 THEN
+                                            br(pn%, dn%) = 82
+                                            far(pn%, dn%) = 84
+                                            sar(pn%, dn%) = 84
+                                        END IF
+                                        IF sp(de%, pe%) = 9 THEN
+                                            br(pn%, dn%) = 83
+                                            far(pn%, dn%) = 1
+                                            sar(pn%, dn%) = 1
+                                        END IF
+                                        IF sp(de%, pe%) = 10 THEN
+                                            br(pn%, dn%) = 83
+                                            far(pn%, dn%) = arc(de% + 27, pe%)
+                                            sar(pn%, dn%) = arc(de% + 27, pe%)
+                                        END IF
+                                    END IF
+                                END IF
+                            END IF
+                        END IF
+                    END IF
+                END IF
+NEXT dc2: NEXT dc1: NEXT pc2: NEXT pc1
+v$ = files$ + "a.dat"
+OPEN v$ FOR RANDOM AS #1 LEN = LEN(sd)
+sd.c0 = card(0)
+sd.c1 = card(1)
+sd.c2 = card(2)
+sd.c3 = card(3)
+sd.c4 = card(4)
+sd.c5 = card(5)
+sd.c6 = card(6)
+sd.c7 = card(7)
+sd.c8 = card(8)
+sd.c9 = card(9)
+sd.cT = card(10)
+sd.cJ = card(11)
+sd.cQ = card(12)
+sd.cK = card(13)
+sd.jojo = jojo%
+sd.jojopo = jojopo
+sd.joanca = joanca%
+sd.joancash = joancash%
+sd.joancapo = joancapo
+sd.jowi = jowi% + jo27%
+sd.d28p = d28p% + d28w%
+sd.bshw = bshw%
+sd.dhf = dhf%
+sd.j = j
+sd.dwt = dwt%
+sd.dbc = dbc%
+sd.nchw = nchw%
+sd.ls = ls%
+sd.splt = splt%
+sd.nsh = most%
+sd.rsa = rsa%
+sd.das = das%
+sd.dh = dh%
+sd.ld = ld%
+sd.bigslick = bigslick
+sd.dsa = dsa%
+sd.bssh = bssh%
+sd.deck = deck%
+sd.shf = shf
+sd.immed = immed%
+sd.pbd = pbd%
+sd.b27po = b27po%
+sd.po6c27 = mc27po(4)
+sd.po7c27 = mc27po(5)
+sd.po8c27 = mc27po(6)
+sd.po9c27 = mc27po(7)
+sd.ms89T = ms89T
+sd.ss89T = ss89T
+sd.sp89T = sp89T
+sd.ms999 = ms999
+sd.ss999 = ss999
+sd.sp999 = sp999
+sd.jp999 = jp999
+sd.dd = dd%
+sd.dd3 = dd(3)
+sd.dd4 = dd(4)
+sd.dd5 = dd(5)
+sd.dd6 = dd(6)
+sd.dd7 = dd(7)
+sd.dd8 = dd(8)
+IF LEN(q$) > 80 THEN
+    sd.description = MID$(q$, 1, 80)
+END IF
+IF LEN(q$) < 81 THEN
+    sd.description = q$
+END IF
+PUT #1, , sd
+CLOSE #1
+v$ = files$ + "b.dat"
+w = 0
+OPEN v$ FOR RANDOM AS #1 LEN = LEN(num)
+FOR x = 0 TO 104
+    FOR y = 0 TO 104
+        w = w + 1
+        num.far = far(x, y)
+        num.sar = sar(x, y)
+        num.r = br(x, y)
+        num.hit = hit(x, y)
+        PUT #1, w, num
+    NEXT y
+NEXT x
+CLOSE #1
+IF card(0) = 0 THEN j% = 1
+IF card(0) <> 0 THEN j% = 0
+FOR k = j% TO 13
+    FOR l = k TO 13
+        pn% = k / 2 * (27 - k) + l
+        FOR m = j% TO 13
+            IF deck% = 1 AND m = 0 THEN
+                IF k = 0 AND l = 0 THEN
+                    m = 1
+                END IF
+            END IF
+            FOR e = m TO 13
+                IF deck% = 1 AND e = 0 THEN
+                    IF k = 0 AND m = 0 THEN
+                        e = 1
+                    END IF
+                END IF
+                dn% = m / 2 * (27 - m) + e
+                IF br(pn%, dn%) < 82 THEN
+                    IF (k - 1) * (l - 1) <> 0 THEN
+                        IF g(br(pn%, dn%)) > k + l THEN
+                            pop(2) = pop(2) + prob(pn%, dn%)
+                        END IF
+                        IF g(br(pn%, dn%)) < k + l + 1 THEN
+                            pop(1) = pop(1) + prob(pn%, dn%)
+                        END IF
+                    END IF
+                    IF (k - 1) * (l - 1) = 0 THEN
+                        IF h(br(pn%, dn%)) > k + l + 13 THEN
+                            pop(2) = pop(2) + prob(pn%, dn%)
+                        END IF
+                        IF h(br(pn%, dn%)) < k + l + 14 THEN
+                            pop(1) = pop(1) + prob(pn%, dn%)
+                        END IF
+                    END IF
+                END IF
+                IF br(pn%, dn%) = 84 THEN pop(3) = pop(3) + prob(pn%, dn%)
+                IF br(pn%, dn%) = 82 THEN pop(4) = pop(4) + prob(pn%, dn%)
+                IF br(pn%, dn%) = 83 THEN pop(5) = pop(5) + prob(pn%, dn%)
+NEXT e: NEXT m: NEXT l: NEXT k
+IF card(0) = 0 OR jowi% = 1 OR joanca% = 1 THEN
+    tv1% = 3
+    tv2% = 38
+    tv3% = 34
+    tv4% = 37
+    tv5% = 49
+END IF
+IF card(0) <> 0 AND jowi% <> 1 AND joanca% <> 1 THEN
+    tv1% = 0
+    tv2% = 39
+    tv3% = 35
+    tv4% = 36
+    tv5% = 49
+END IF
+IF jojo% = 1 THEN tv4% = 37
+v$ = files$ + "c.txt"
+OPEN v$ FOR OUTPUT AS #1
+321 PRINT #1, "                                       ";
+PRINT #1, "       total-dependent-basic-strategy table"
+PRINT #1, " "
+dh$ = "0002030405060708091011121314151617181920212223242526"
+dt$ = "      D E A L E R ' S   H A R D   T O T A L S       "
+dt$ = dt$ + "S O F T   T O T A L S     "
+dh$ = dh$ + "26252423222120191817161514"
+ph$ = "020304050607080910111213141516171819202122232425"
+pl$ = "      P L A Y E R ' S   H A R D   T O T A L S   "
+pr$ = "       P L A Y E R ' S   H A R D   T O T A L S  "
+ph$ = ph$ + "262524232221201918171614"
+pl$ = pl$ + "S O F T   T O T A L S   "
+pr$ = pr$ + " S O F T   T O T A L S  "
+ph$ = ph$ + "00AA2233445566778899TTJJQQKK"
+pl$ = pl$ + "          P A I R S         "
+pr$ = pr$ + "           P A I R S        "
+go$ = "S H DsD   PSPHPDRsR RpDp"
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN PRINT #1, "        ";
+    IF x > tv1% THEN
+        PRINT #1, MID$(dt$, x * 2 - 1, 2);
+        PRINT #1, " ";
+    END IF
+    IF x = 26 THEN PRINT #1, "      ";
+NEXT x
+PRINT #1, " "
+PRINT #1, " "
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN PRINT #1, "        ";
+    IF x > tv1% THEN
+        PRINT #1, MID$(dh$, x * 2 - 1, 2);
+        PRINT #1, " ";
+    END IF
+    IF x = 26 THEN PRINT #1, "      ";
+NEXT x
+PRINT #1, " "
+PRINT #1, "       "
+FOR y = tv1% TO 23 STEP 1
+    FOR x = tv1% TO tv2% + 1 STEP 1
+        IF x = tv1% THEN
+            PRINT #1, MID$(pl$, y * 2 + 1, 2); " ";
+            PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+        END IF
+        IF x > tv1% AND x < tv2% + 1 THEN
+            PRINT #1, MID$(go$, (m(x - 1, y) - 1) * 2 + 1, 2); " ";
+            IF x = 26 THEN PRINT #1, " "; MID$(ph$, y * 2 + 1, 2); "   ";
+        END IF
+        IF x = tv2% + 1 THEN
+            PRINT #1, " "; MID$(ph$, y * 2 + 1, 2); " ";
+            PRINT #1, MID$(pr$, y * 2 + 1, 2);
+        END IF
+NEXT x: PRINT #1, " ": NEXT y
+PRINT #1, " "
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN PRINT #1, "        ";
+    IF x > tv1% THEN
+        PRINT #1, MID$(dh$, x * 2 - 1, 2);
+        PRINT #1, " ";
+    END IF
+    IF x = 26 THEN PRINT #1, "      ";
+NEXT x
+PRINT #1, " "
+PRINT #1, "       "
+FOR y = 24 TO tv3% STEP 1
+    FOR x = tv1% TO tv2% + 1 STEP 1
+        IF x = tv1% THEN
+            PRINT #1, MID$(pl$, y * 2 + 1, 2); " ";
+            PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+        END IF
+        IF x > tv1% AND x < tv2% + 1 THEN
+            PRINT #1, MID$(go$, (m(x - 1, y) - 1) * 2 + 1, 2); " ";
+            IF x = 26 THEN PRINT #1, " "; MID$(ph$, y * 2 + 1, 2); "   ";
+        END IF
+        IF x = tv2% + 1 THEN
+            PRINT #1, " "; MID$(ph$, y * 2 + 1, 2); " ";
+            PRINT #1, MID$(pr$, y * 2 + 1, 2);
+        END IF
+NEXT x: PRINT #1, " ": NEXT y
+PRINT #1, " "
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN PRINT #1, "        ";
+    IF x > tv1% THEN
+        PRINT #1, MID$(dh$, x * 2 - 1, 2);
+        PRINT #1, " ";
+    END IF
+    IF x = 26 THEN PRINT #1, "      ";
+NEXT x
+PRINT #1, " "
+PRINT #1, " "
+FOR y = tv4% TO tv5% STEP 1
+    FOR x = tv1% TO tv2% + 1 STEP 1
+        IF x = tv1% THEN
+            PRINT #1, MID$(pl$, y * 2 + 1, 2); " ";
+            PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+        END IF
+        IF x > tv1% AND x < tv2% + 1 THEN
+            PRINT #1, MID$(go$, (m(x - 1, y) - 1) * 2 + 1, 2); " ";
+            IF x = 26 THEN PRINT #1, " "; MID$(ph$, y * 2 + 1, 2); "   ";
+        END IF
+        IF x = tv2% + 1 THEN
+            PRINT #1, " "; MID$(ph$, y * 2 + 1, 2); " ";
+            PRINT #1, MID$(pr$, y * 2 + 1, 2);
+        END IF
+    NEXT x
+    PRINT #1, " "
+NEXT y
+PRINT #1, " "
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN PRINT #1, "        ";
+    IF x > tv1% THEN
+        PRINT #1, MID$(dh$, x * 2 - 1, 2);
+        PRINT #1, " ";
+    END IF
+    IF x = 26 THEN PRINT #1, "      ";
+NEXT x
+PRINT #1, " "
+PRINT #1, " "
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN PRINT #1, "        ";
+    IF x > tv1% THEN
+        PRINT #1, MID$(dt$, x * 2 - 1, 2);
+        PRINT #1, " ";
+    END IF
+    IF x = 26 THEN PRINT #1, "      ";
+NEXT x
+PRINT #1, " "
+PRINT #1, " "
+PRINT #1, q$
+PRINT #1, ""
+PRINT #1, " "
+PRINT #1, "To use the basic-strategy table, ";
+PRINT #1, "find the cell located at the intersection ";
+PRINT #1, "of the row with the label"
+PRINT #1, "corresponding to the player's hand total ";
+PRINT #1, "and the column with the label corresponding ";
+PRINT #1, "to the dealer's hand total."
+PRINT #1, "Use the option indicated by the letters(s) ";
+PRINT #1, "contained within said cell. If the letter(s) ";
+PRINT #1, "indicate a first option"
+PRINT #1, "else a second option, then proceed as follows. ";
+PRINT #1, "If the rules allow the player to use the first ";
+PRINT #1, "option, then use"
+PRINT #1, "the first option, else use the second option."
+PRINT #1, ""
+PRINT #1, "KEY: S  = Stand"
+PRINT #1, "     H  = Hit"
+PRINT #1, "     Ds = Double Down else Stand"
+PRINT #1, "     D  = Double Down else Hit"
+PRINT #1, "     Dp = Double Down else Split"
+PRINT #1, "     PS = Split else Stand"
+PRINT #1, "     PH = Split else Hit"
+PRINT #1, "     PD = Split else Double Down"
+PRINT #1, "     Rs = Surrender else Stand"
+PRINT #1, "     R  = Surrender else Hit"
+PRINT #1, "     Rp = Surrender else Split"
+PRINT #1, " "
+PRINT #1, "After the initial deal, the best option is: "
+PRINT #1, " "
+PRINT #1, "Stand       ";
+PRINT #1, USING "###.###"; pop(1) * 100;
+PRINT #1, " % of the time."
+PRINT #1, "Hit         ";
+PRINT #1, USING "###.###"; pop(2) * 100;
+PRINT #1, " % of the time."
+PRINT #1, "Double Down ";
+PRINT #1, USING "###.###"; pop(3) * 100;
+PRINT #1, " % of the time."
+PRINT #1, "Split       ";
+PRINT #1, USING "###.###"; pop(4) * 100;
+PRINT #1, " % of the time."
+PRINT #1, "Surrender   ";
+PRINT #1, USING "###.###"; pop(5) * 100;
+PRINT #1, " % of the time."
+CLOSE #1
+v$ = files$ + "h.html"
+OPEN v$ FOR OUTPUT AS #1
+PRINT #1, "<h4>Basic Strategy</h4>"
+PRINT #1, " "
+PRINT #1, "<p>Basic strategy is the strategy for ";
+PRINT #1, "the play of the player's hand that"
+PRINT #1, "loses the least amount of money to the ";
+PRINT #1, "house in the long term with"
+PRINT #1, "strictly average luck. A ";
+PRINT #1, "total-dependent-basic strategy is the"
+PRINT #1, "basic strategy given a set of hand ";
+PRINT #1, "totals consisting of"
+PRINT #1, "the player's hand total and the dealer's ";
+PRINT #1, "hand total."
+PRINT #1, "A total-dependent-basic-strategy table ";
+PRINT #1, "displays the"
+PRINT #1, "total-dependent-basic strategy for each ";
+PRINT #1, "set of hand totals"
+PRINT #1, "that is possible.</p>"
+PRINT #1, ""
+PRINT #1, "<p>To use the total-dependent-basic-strategy ";
+PRINT #1, "table, find the"
+PRINT #1, "cell located at the intersection of the row ";
+PRINT #1, "with the label"
+PRINT #1, "corresponding to the player's hand total and ";
+PRINT #1, "the column with"
+PRINT #1, "the label corresponding to the dealer's hand ";
+PRINT #1, "total. Use the"
+PRINT #1, "playing option indicated by the letters(s) ";
+PRINT #1, "contained within"
+PRINT #1, "said cell. If the letter(s) indicate a first ";
+PRINT #1, "option else"
+PRINT #1, "a second option, then proceed as follows. If ";
+PRINT #1, "the game rules"
+PRINT #1, "allow the player to use the first option, then ";
+PRINT #1, "use the first"
+PRINT #1, "option, else use the second option.</p>"
+PRINT #1, ""
+PRINT #1, "<style>"
+PRINT #1, "#T"
+PRINT #1, "{"
+PRINT #1, "background-color:white;"
+PRINT #1, "border:0px solid white;"
+PRINT #1, "font-size:13px;"
+PRINT #1, "}"
+PRINT #1, "#S"
+PRINT #1, "{"
+PRINT #1, "background-color:red;"
+PRINT #1, "}"
+PRINT #1, "#H"
+PRINT #1, "{"
+PRINT #1, "background-color:chartreuse;"
+PRINT #1, "}"
+PRINT #1, "#D"
+PRINT #1, "{"
+PRINT #1, "background-color:cyan;"
+PRINT #1, "}"
+PRINT #1, "#Ds"
+PRINT #1, "{"
+PRINT #1, "background-color:violet;"
+PRINT #1, "}"
+PRINT #1, "#PS"
+PRINT #1, "{"
+PRINT #1, "background-color:pink;"
+PRINT #1, "}"
+PRINT #1, "#PH"
+PRINT #1, "{"
+PRINT #1, "background-color:limegreen;"
+PRINT #1, "}"
+PRINT #1, "#PD"
+PRINT #1, "{"
+PRINT #1, "background-color:dodgerblue;"
+PRINT #1, "}"
+PRINT #1, "#R"
+PRINT #1, "{"
+PRINT #1, "background-color:yellow;"
+PRINT #1, "}"
+PRINT #1, "#Rs"
+PRINT #1, "{"
+PRINT #1, "background-color:orange;"
+PRINT #1, "}"
+PRINT #1, "#Rp"
+PRINT #1, "{"
+PRINT #1, "background-color:yellow;"
+PRINT #1, "}"
+PRINT #1, "#Dp"
+PRINT #1, "{"
+PRINT #1, "background-color:cyan;"
+PRINT #1, "}"
+PRINT #1, "#C"
+PRINT #1, "{"
+PRINT #1, "text-align:center;"
+PRINT #1, "}"
+PRINT #1, "</style>"
+PRINT #1, "<b>"
+PRINT #1, " "
+PRINT #1, "<table id= T>"
+PRINT #1, "<caption>Total-Dependent-Basic-Strategy Table</caption>"
+PRINT #1, "  <thead>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <th>";
+PRINT #1, "Player</th>"
+IF tv1% = 0 THEN
+    PRINT #1, "      <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "26";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Hard</u></th>"
+    PRINT #1, "      <th>";
+    PRINT #1, "Player</th>"
+    PRINT #1, "  <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "13";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Soft</u></th>"
+END IF
+IF tv1% = 3 THEN
+    PRINT #1, "      <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "23";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Hard</u></th>"
+    PRINT #1, "      <th>";
+    PRINT #1, "Player</th>"
+    PRINT #1, "  <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "12";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Soft</u></th>"
+    PRINT #1, "      <th></th>"
+END IF
+PRINT #1, "    </tr>"
+PRINT #1, "  </thead>"
+PRINT #1, "  <tbody>"
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN
+        PRINT #1, "    <tr>"
+        PRINT #1, "    <td id= C>";
+        PRINT #1, "<b><u>Hard</u></b></td>"
+    END IF
+    IF x > tv1% THEN
+        PRINT #1, "    <td>";
+        PRINT #1, MID$(dh$, x * 2 - 1, 2);
+        PRINT #1, " ";
+        PRINT #1, "</td>"
+        IF x = 26 THEN
+            PRINT #1, "    <td id= C>";
+            PRINT #1, "<b><u>Hard</u></b></td>"
+        END IF
+    END IF
+NEXT x
+PRINT #1, "    </tr> "
+PRINT #1, "    <tr>"
+FOR y = tv1% TO 23 STEP 1
+    PRINT #1, "    <tr>"
+    FOR x = tv1% TO tv2% + 1 STEP 1
+        IF x = tv1% THEN
+            PRINT #1, "    <td id= C>";
+            PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+            PRINT #1, "</td>"
+        END IF
+        IF x > tv1% AND x < tv2% + 1 THEN
+            IF m(x - 1, y) = 1 THEN
+                PRINT #1, "      <td id= S>";
+            END IF
+            IF m(x - 1, y) = 2 THEN
+                PRINT #1, "      <td id= H>";
+            END IF
+            IF m(x - 1, y) = 3 THEN
+                PRINT #1, "      <td id= Ds>";
+            END IF
+            IF m(x - 1, y) = 4 THEN
+                PRINT #1, "      <td id= D>";
+            END IF
+            IF m(x - 1, y) = 6 THEN
+                PRINT #1, "      <td id= PS>";
+            END IF
+            IF m(x - 1, y) = 7 THEN
+                PRINT #1, "      <td id= PH>";
+            END IF
+            IF m(x - 1, y) = 8 THEN
+                PRINT #1, "      <td id= PD>";
+            END IF
+            IF m(x - 1, y) = 9 THEN
+                PRINT #1, "      <td id= Rs>";
+            END IF
+            IF m(x - 1, y) = 10 THEN
+                PRINT #1, "      <td id= R>";
+            END IF
+            IF m(x - 1, y) = 11 THEN
+                PRINT #1, "      <td id= Rp>";
+            END IF
+            IF m(x - 1, y) = 12 THEN
+                PRINT #1, "      <td id= Dp>";
+            END IF
+            PRINT #1, MID$(go$, (m(x - 1, y) - 1) * 2 + 1, 2); " ";
+            PRINT #1, "</td>"
+            IF x = 26 THEN
+                PRINT #1, "    <td id= C>";
+                PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+                PRINT #1, "</td>"
+            END IF
+        END IF
+    NEXT x:
+    PRINT #1, "    </tr> "
+NEXT y
+PRINT #1, "  <thead>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <th>";
+PRINT #1, "Player</th>"
+IF tv1% = 0 THEN
+    PRINT #1, "      <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "26";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Hard</u></th>"
+    PRINT #1, "      <th>";
+    PRINT #1, "Player</th>"
+    PRINT #1, "  <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "13";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Soft</u></th>"
+END IF
+IF tv1% = 3 THEN
+    PRINT #1, "      <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "23";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Hard</u></th>"
+    PRINT #1, "      <th>";
+    PRINT #1, "Player</th>"
+    PRINT #1, "  <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "12";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Soft</u></th>"
+    PRINT #1, "      <th></th>"
+END IF
+PRINT #1, "    </tr>"
+PRINT #1, "  </thead>"
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN
+        PRINT #1, "    <tr>"
+        PRINT #1, "    <td id= C>";
+        PRINT #1, "<b><u>Soft</u></b></td>"
+    END IF
+    IF x > tv1% THEN
+        PRINT #1, "    <td>";
+        PRINT #1, MID$(dh$, x * 2 - 1, 2);
+        PRINT #1, " ";
+        PRINT #1, "</td>"
+        IF x = 26 THEN
+            PRINT #1, "    <td id= C>";
+            PRINT #1, "<b><u>Soft</u></b>";
+            PRINT #1, "</td>"
+        END IF
+    END IF
+NEXT x
+FOR y = 24 TO tv3% STEP 1
+    PRINT #1, "    <tr>"
+    FOR x = tv1% TO tv2% + 1 STEP 1
+        IF x = tv1% THEN
+            PRINT #1, "    <td id= C>";
+            PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+            PRINT #1, "</td>"
+        END IF
+        IF x > tv1% AND x < tv2% + 1 THEN
+            IF m(x - 1, y) = 1 THEN
+                PRINT #1, "      <td id= S>";
+            END IF
+            IF m(x - 1, y) = 2 THEN
+                PRINT #1, "      <td id= H>";
+            END IF
+            IF m(x - 1, y) = 3 THEN
+                PRINT #1, "      <td id= Ds>";
+            END IF
+            IF m(x - 1, y) = 4 THEN
+                PRINT #1, "      <td id= D>";
+            END IF
+            IF m(x - 1, y) = 6 THEN
+                PRINT #1, "      <td id= PS>";
+            END IF
+            IF m(x - 1, y) = 7 THEN
+                PRINT #1, "      <td id= PH>";
+            END IF
+            IF m(x - 1, y) = 8 THEN
+                PRINT #1, "      <td id= PD>";
+            END IF
+            IF m(x - 1, y) = 9 THEN
+                PRINT #1, "      <td id= Rs>";
+            END IF
+            IF m(x - 1, y) = 10 THEN
+                PRINT #1, "      <td id= R>";
+            END IF
+            IF m(x - 1, y) = 11 THEN
+                PRINT #1, "      <td id= Rp>";
+            END IF
+            IF m(x - 1, y) = 12 THEN
+                PRINT #1, "      <td id= Dp>";
+            END IF
+            PRINT #1, MID$(go$, (m(x - 1, y) - 1) * 2 + 1, 2); " ";
+            PRINT #1, "</td>"
+            IF x = 26 THEN
+                PRINT #1, "    <td id= C>";
+                PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+                PRINT #1, "</td>"
+            END IF
+        END IF
+    NEXT x:
+    PRINT #1, "    </tr> "
+NEXT y
+PRINT #1, "  <thead>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <th>";
+PRINT #1, "Player</th>"
+IF tv1% = 0 THEN
+    PRINT #1, "      <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "26";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Hard</u></th>"
+    PRINT #1, "      <th>";
+    PRINT #1, "Player</th>"
+    PRINT #1, "  <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "13";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Soft</u></th>"
+END IF
+IF tv1% = 3 THEN
+    PRINT #1, "      <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "23";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Hard</u></th>"
+    PRINT #1, "      <th>";
+    PRINT #1, "Player</th>"
+    PRINT #1, "  <th colspan=";
+    PRINT #1, CHR$(34);
+    PRINT #1, "12";
+    PRINT #1, CHR$(34);
+    PRINT #1, ">";
+    PRINT #1, "<u>Dealer Soft</u></th>"
+    PRINT #1, "      <th></th>"
+END IF
+PRINT #1, "    </tr>"
+PRINT #1, "  </thead>"
+FOR x = tv1% TO tv2% STEP 1
+    IF x = tv1% THEN
+        PRINT #1, "    <tr>"
+        PRINT #1, "    <td id= C>";
+        PRINT #1, "<b><u>Pair</u></b></td>"
+    END IF
+    IF x > tv1% THEN
+        PRINT #1, "      <td>";
+        PRINT #1, MID$(dh$, x * 2 - 1, 2);
+        PRINT #1, " ";
+        PRINT #1, "</td>"
+        IF x = 26 THEN
+            PRINT #1, "      <td id= C>";
+            PRINT #1, "<b><u>Pair</u></b>";
+            PRINT #1, "</td>"
+        END IF
+    END IF
+NEXT x
+FOR y = tv4% TO tv5% STEP 1
+    PRINT #1, "    <tr>"
+    FOR x = tv1% TO tv2% + 1 STEP 1
+        IF x = tv1% THEN
+            PRINT #1, "    <td id= C>";
+            PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+            PRINT #1, "</td>"
+        END IF
+        IF x > tv1% AND x < tv2% + 1 THEN
+            IF m(x - 1, y) = 1 THEN
+                PRINT #1, "      <td id= S>";
+            END IF
+            IF m(x - 1, y) = 2 THEN
+                PRINT #1, "      <td id= H>";
+            END IF
+            IF m(x - 1, y) = 3 THEN
+                PRINT #1, "      <td id= Ds>";
+            END IF
+            IF m(x - 1, y) = 4 THEN
+                PRINT #1, "      <td id= D>";
+            END IF
+            IF m(x - 1, y) = 6 THEN
+                PRINT #1, "      <td id= PS>";
+            END IF
+            IF m(x - 1, y) = 7 THEN
+                PRINT #1, "      <td id= PH>";
+            END IF
+            IF m(x - 1, y) = 8 THEN
+                PRINT #1, "      <td id= PD>";
+            END IF
+            IF m(x - 1, y) = 9 THEN
+                PRINT #1, "      <td id= Rs>";
+            END IF
+            IF m(x - 1, y) = 10 THEN
+                PRINT #1, "      <td id= R>";
+            END IF
+            IF m(x - 1, y) = 11 THEN
+                PRINT #1, "      <td id= Rp>";
+            END IF
+            IF m(x - 1, y) = 12 THEN
+                PRINT #1, "      <td id= Dp>";
+            END IF
+            PRINT #1, MID$(go$, (m(x - 1, y) - 1) * 2 + 1, 2); " ";
+            PRINT #1, "</td>"
+            IF x = 26 THEN
+                PRINT #1, "    <td id= C>";
+                PRINT #1, MID$(ph$, y * 2 + 1, 2); "   ";
+                PRINT #1, "</td>"
+            END IF
+        END IF
+    NEXT x
+    PRINT #1, "    </tr> "
+NEXT y
+PRINT #1, "  </tbody>"
+PRINT #1, "</table>"
+PRINT #1, "</b>"
+PRINT #1, "<br>"
+PRINT #1, "<b>"
+PRINT #1, "<table id= T>"
+PRINT #1, "  <thead>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <th colspan=";
+PRINT #1, CHR$(34);
+PRINT #1, "2";
+PRINT #1, CHR$(34);
+PRINT #1, "<b><u>Key</u></b></th>"
+PRINT #1, "    </tr>"
+PRINT #1, "  </thead>"
+PRINT #1, "  <tbody>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= S>";
+PRINT #1, "S";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Stand";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= H>";
+PRINT #1, "H";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Hit";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= Ds>";
+PRINT #1, "Ds";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Double Down else Stand";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= D>";
+PRINT #1, "D";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Double Down else Hit";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= Dp>";
+PRINT #1, "Dp";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Double Down else Split";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= PS>";
+PRINT #1, "PS";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Split else Stand";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= PH>";
+PRINT #1, "PH";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Split else Hit";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= PD>";
+PRINT #1, "PD";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Split else Double Down";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= Rs>";
+PRINT #1, "Rs";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Surrender else Stand";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= R>";
+PRINT #1, "R";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Surrender else Hit";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td id= Rp>";
+PRINT #1, "Rp";
+PRINT #1, "</td>"
+PRINT #1, "    <td>";
+PRINT #1, "= Surrender else Split";
+PRINT #1, "</td>"
+PRINT #1, "    </tr>"
+PRINT #1, "  </tbody>"
+PRINT #1, "</table>"
+PRINT #1, "</b>"
+PRINT #1, "<br>"
+PRINT #1, "<b>"
+PRINT #1, "<table id= T>"
+PRINT #1, "  <tbody>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td>";
+PRINT #1, "<b>After the initial deal,</b>"
+PRINT #1, "      </td>"
+PRINT #1, "      <td>";
+PRINT #1, ""
+PRINT #1, "      </td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td>";
+PRINT #1, "<b><u>the best option is</u></b>"
+PRINT #1, "      </td>"
+PRINT #1, "      <td>";
+PRINT #1, ""
+PRINT #1, "      </td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td>";
+PRINT #1, "Stand"
+PRINT #1, "      </td>"
+PRINT #1, "      <td>";
+PRINT #1, USING "###.###"; pop(1) * 100;
+PRINT #1, " % of the time"
+PRINT #1, "      </td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "    <td>";
+PRINT #1, "Hit"
+PRINT #1, "      </td>"
+PRINT #1, "      <td>";
+PRINT #1, USING "###.###"; pop(2) * 100;
+PRINT #1, " % of the time"
+PRINT #1, "      </td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td>";
+PRINT #1, "Double Down"
+PRINT #1, "      </td>"
+PRINT #1, "      <td>";
+PRINT #1, USING "###.###"; pop(3) * 100;
+PRINT #1, " % of the time"
+PRINT #1, "      </td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td>";
+PRINT #1, "Split"
+PRINT #1, "      </td>"
+PRINT #1, "      <td>";
+PRINT #1, USING "###.###"; pop(4) * 100;
+PRINT #1, " % of the time"
+PRINT #1, "      </td>"
+PRINT #1, "    </tr>"
+PRINT #1, "    <tr>"
+PRINT #1, "      <td>";
+PRINT #1, "Surrender"
+PRINT #1, "      </td>"
+PRINT #1, "      <td>";
+PRINT #1, USING "###.###"; pop(5) * 100;
+PRINT #1, " % of the time"
+PRINT #1, "      </td>"
+PRINT #1, "    </tr>"
+PRINT #1, "  </tbody>"
+PRINT #1, "</table>"
+PRINT #1, "</b>"
+CLOSE #1
+z = 0
+FOR x = 15 TO 27
+    FOR y = 4 TO 12
+        IF x > y + 15 THEN y = x - 15
+        z = z + 1
+        g(z) = x
+        h(z) = y
+    NEXT y
+NEXT x
+g(82) = 1000
+g(83) = 1000
+h(82) = 1000
+h(83) = 1000
+h(84) = 1000
+g(84) = 1000
+v$ = files$ + "d.txt"
+IF card(0) = 0 THEN I% = 1: j% = 13: k% = 14
+IF card(0) <> 0 THEN I% = 0: j% = 15: k% = 0
+OPEN v$ FOR OUTPUT AS #1
+PRINT #1, "the set of combination-dependent-playing-strategy tables"
+PRINT #1, t$
+PRINT #1, " "
+
+b$ = "000A02030405060708090T0J0Q0KAAA2A3A4A5A6A7A8A9ATAJAQAK22"
+b$ = b$ + "232425262728292T2J2Q2K333435363738393T3J3Q3K4445464"
+b$ = b$ + "748494T4J4Q4K55565758595T5J5Q5K666768696T6J6Q6K7778"
+b$ = b$ + "797T7J7Q7K88898T8J8Q8K999T9J9Q9KTTTJTQTKJJJQJKQQQKKK"
+FOR v = 0 TO 6
+    CLS
+    PRINT #1, "The combination-dependent-playing-strategy table found"
+    PRINT #1, "for the player's initial hands. It displays the best"
+    PRINT #1, "strategies for the play of the player's hands"
+    PRINT #1, "in response to dealer hands ";
+    PRINT #1, MID$(b$, (v * j% + k% + 1) * 2 - 1, 2);
+    PRINT #1, " to ";
+    PRINT #1, MID$(b$, (v * j% + k% + j%) * 2 - 1, 2)
+    PRINT #1, " "
+    FOR x = 0 TO j%
+        IF x > 0 THEN
+            PRINT #1, MID$(b$, (v * j% + k% + x) * 2 - 1, 2);
+        END IF
+        PRINT #1, "     ";
+    NEXT x
+    PRINT #1, " "
+    PRINT #1, "       "
+    FOR w = I% TO 13
+        FOR x = w TO 13
+            pn% = w / 2 * (27 - w) + x
+            FOR y = 0 TO j%
+                IF y = 0 THEN PRINT #1, MID$(b$, pn% * 2 + 1, 2); "  ";
+                IF y <> 0 THEN
+                    IF (w - 1) * (x - 1) <> 0 THEN
+                        IF w + x <= h(br(pn%, v * j% + y - 1 + k%)) THEN
+                            IF w + x >= g(br(pn%, v * j% + y - 1 + k%)) THEN
+                                PRINT #1, "Stand  ";
+                            END IF
+                            IF w + x < g(br(pn%, v * j% + y - 1 + k%)) THEN
+                                PRINT #1, MID$(o$, br(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                PRINT #1, "  ";
+                            END IF
+                        END IF
+                        IF w + x > h(br(pn%, v * j% + y - 1 + k%)) THEN
+                            IF w + x >= g(br(pn%, v * j% + y - 1 + k%)) THEN
+                                PRINT #1, "Stand  ";
+                            END IF
+                            IF w + x < g(br(pn%, v * j% + y - 1 + k%)) THEN
+                                PRINT #1, MID$(n$, br(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                PRINT #1, "  ";
+                            END IF
+                        END IF
+                    END IF
+                    IF (w - 1) * (x - 1) = 0 THEN
+                        IF w + x <= h(br(pn%, v * j% + y - 1 + k%)) + 1 THEN
+                            IF w + x >= h(br(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                PRINT #1, "Stand  ";
+                            END IF
+                            IF w + x < h(br(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                PRINT #1, MID$(o$, br(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                PRINT #1, "  ";
+                            END IF
+                        END IF
+                        IF w + x > h(br(pn%, v * j% + y - 1 + k%)) + 1 THEN
+                            IF w + x >= h(br(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                PRINT #1, "Stand  ";
+                            END IF
+                            IF w + x < h(br(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                PRINT #1, MID$(n$, br(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                PRINT #1, "  ";
+                            END IF
+                        END IF
+                    END IF
+                END IF
+    NEXT y: PRINT #1, "  "; MID$(b$, pn% * 2 + 1, 2): NEXT x: NEXT w
+    PRINT #1, " "
+    FOR x = 0 TO j%
+        IF x > 0 THEN
+            PRINT #1, MID$(b$, (v * j% + k% + x) * 2 - 1, 2);
+        END IF
+        PRINT #1, "     ";
+    NEXT x
+    PRINT #1, " ": PRINT #1, " ": PRINT #1, " ": PRINT #1, " "
+    CLS
+NEXT v
+PRINT #1, " ": PRINT #1, " ": PRINT #1, " ": PRINT #1, " "
+PRINT #1, " "
+IF splt% = 1 THEN
+    FOR v = 0 TO 6
+        CLS
+        PRINT #1, "The combination-dependent-playing-strategy table found for"
+        PRINT #1, "the player's post-split hands wherein: The value of pc1"
+        PRINT #1, "is equal to or greater than the value of pc2. It displays"
+        PRINT #1, "the best strategies for the play of the player's hands"
+        PRINT #1, "in response to dealer hands ";
+        PRINT #1, MID$(b$, (v * j% + k% + 1) * 2 - 1, 2);
+        PRINT #1, " to ";
+        PRINT #1, MID$(b$, (v * j% + k% + j%) * 2 - 1, 2)
+        PRINT #1, " "
+        b1$ = "00A02030405060708090T0J0Q0K0AA2A3A4A5A6A7A8A9ATAJAQAKA22"
+        b1$ = b1$ + "32425262728292T2J2Q2K233435363738393T3J3Q3K34454647"
+        b1$ = b1$ + "48494T4J4Q4K45565758595T5J5Q5K566768696T6J6Q6K67787"
+        b1$ = b1$ + "97T7J7Q7K78898T8J8Q8K899T9J9Q9K9TTJTQTKTJJQJKJQQKQKK"
+        FOR x = 0 TO j%
+            IF x > 0 THEN
+                PRINT #1, MID$(b$, (v * j% + k% + x) * 2 - 1, 2);
+            END IF
+            PRINT #1, "     ";
+        NEXT x
+        PRINT #1, " "
+        PRINT #1, "       "
+        FOR w = I% TO 13
+            FOR x = w TO 13
+                pn% = w / 2 * (27 - w) + x
+                FOR y = 0 TO j%
+                    IF y = 0 THEN PRINT #1, MID$(b1$, pn% * 2 + 1, 2); "  ";
+                    IF y <> 0 THEN
+                        IF (w - 1) * (x - 1) <> 0 THEN
+                            IF w + x <= h(far(pn%, v * j% + y - 1 + k%)) THEN
+                                IF w + x >= g(far(pn%, v * j% + y - 1 + k%)) THEN
+                                    PRINT #1, "Stand";
+                                END IF
+                                IF w + x < g(far(pn%, v * j% + y - 1 + k%)) THEN
+                                    PRINT #1, MID$(o$, far(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                END IF
+                            END IF
+                            IF w + x > h(far(pn%, v * j% + y - 1 + k%)) THEN
+                                IF w + x >= g(far(pn%, v * j% + y - 1 + k%)) THEN
+                                    PRINT #1, "Stand";
+                                END IF
+                                IF w + x < g(far(pn%, v * j% + y - 1 + k%)) THEN
+                                    PRINT #1, MID$(n$, far(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                END IF
+                            END IF
+                        END IF
+                        IF (w - 1) * (x - 1) = 0 THEN
+                            IF w + x <= h(far(pn%, v * j% + y - 1 + k%)) + 1 THEN
+                                IF w + x >= h(far(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                    PRINT #1, "Stand";
+                                END IF
+                                IF w + x < h(far(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                    PRINT #1, MID$(o$, far(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                END IF
+                            END IF
+                            IF w + x > h(far(pn%, v * j% + y - 1 + k%)) + 1 THEN
+                                IF w + x >= h(far(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                    PRINT #1, "Stand";
+                                END IF
+                                IF w + x < h(far(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                    PRINT #1, MID$(n$, far(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                END IF
+                            END IF
+                        END IF
+                        IF far(pn%, v * j% + y - 1 + k%) <> br(pn%, v * j% + y - 1 + k%) THEN
+                            PRINT #1, "* ";
+                        END IF
+                        IF far(pn%, v * j% + y - 1 + k%) = br(pn%, v * j% + y - 1 + k%) THEN
+                            PRINT #1, "  ";
+                        END IF
+                    END IF
+        NEXT y: PRINT #1, "  "; MID$(b1$, pn% * 2 + 1, 2): NEXT x: NEXT w
+        PRINT #1, " "
+        FOR x = 0 TO j%
+            IF x > 0 THEN
+                PRINT #1, MID$(b$, (v * j% + k% + x) * 2 - 1, 2);
+            END IF
+            PRINT #1, "     ";
+        NEXT x
+        PRINT #1, " ": PRINT #1, " ": PRINT #1, " ": PRINT #1, " "
+        CLS
+    NEXT v
+    PRINT #1, " ": PRINT #1, " ": PRINT #1, " ": PRINT #1, " "
+    PRINT #1, " "
+    FOR v = 0 TO 6
+        CLS
+        PRINT #1, "The combination-dependent-playing-strategy table found for"
+        PRINT #1, "the player's post-split hands wherein: The value of pc1"
+        PRINT #1, "is less than or equal to the value of pc2. It displays"
+        PRINT #1, "the best strategies for the play of the player's hands"
+        PRINT #1, "in response to dealer hands ";
+        PRINT #1, MID$(b$, (v * j% + k% + 1) * 2 - 1, 2);
+        PRINT #1, " to ";
+        PRINT #1, MID$(b$, (v * j% + k% + j%) * 2 - 1, 2)
+        PRINT #1, " "
+        FOR x = 0 TO j%
+            IF x > 0 THEN
+                PRINT #1, MID$(b$, (v * j% + k% + x) * 2 - 1, 2);
+            END IF
+            PRINT #1, "     ";
+        NEXT x
+        PRINT #1, " "
+        PRINT #1, "       "
+        FOR w = I% TO 13
+            FOR x = w TO 13
+                pn% = w / 2 * (27 - w) + x
+                FOR y = 0 TO j%
+                    IF y = 0 THEN PRINT #1, MID$(b$, pn% * 2 + 1, 2); "  ";
+                    IF y <> 0 THEN
+                        IF (w - 1) * (x - 1) <> 0 THEN
+                            IF w + x <= h(sar(pn%, v * j% + y - 1 + k%)) THEN
+                                IF w + x >= g(sar(pn%, v * j% + y - 1 + k%)) THEN
+                                    PRINT #1, "Stand";
+                                END IF
+                                IF w + x < g(sar(pn%, v * j% + y - 1 + k%)) THEN
+                                    PRINT #1, MID$(o$, sar(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                END IF
+                            END IF
+                            IF w + x > h(sar(pn%, v * j% + y - 1 + k%)) THEN
+                                IF w + x >= g(sar(pn%, v * j% + y - 1 + k%)) THEN
+                                    PRINT #1, "Stand";
+                                END IF
+                                IF w + x < g(sar(pn%, v * j% + y - 1 + k%)) THEN
+                                    PRINT #1, MID$(n$, sar(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                END IF
+                            END IF
+                        END IF
+                        IF (w - 1) * (x - 1) = 0 THEN
+                            IF w + x <= h(sar(pn%, v * j% + y - 1 + k%)) + 1 THEN
+                                IF w + x >= h(sar(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                    PRINT #1, "Stand";
+                                END IF
+                                IF w + x < h(sar(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                    PRINT #1, MID$(o$, sar(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                END IF
+                            END IF
+                            IF w + x > h(sar(pn%, v * j% + y - 1 + k%)) + 1 THEN
+                                IF w + x >= h(sar(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                    PRINT #1, "Stand";
+                                END IF
+                                IF w + x < h(sar(pn%, v * j% + y - 1 + k%)) + 2 THEN
+                                    PRINT #1, MID$(n$, sar(pn%, v * j% + y - 1 + k%) * 5 + 1, 5);
+                                END IF
+                            END IF
+                        END IF
+                        IF sar(pn%, v * j% + y - 1 + k%) <> br(pn%, v * j% + y - 1 + k%) THEN
+                            PRINT #1, "* ";
+                        END IF
+                        IF sar(pn%, v * j% + y - 1 + k%) = br(pn%, v * j% + y - 1 + k%) THEN
+                            PRINT #1, "  ";
+                        END IF
+                    END IF
+        NEXT y: PRINT #1, "  "; MID$(b$, pn% * 2 + 1, 2): NEXT x: NEXT w
+        PRINT #1, " "
+        FOR x = 0 TO j%
+            IF x > 0 THEN
+                PRINT #1, MID$(b$, (v * j% + k% + x) * 2 - 1, 2);
+            END IF
+            PRINT #1, "     ";
+        NEXT x
+        PRINT #1, " ": PRINT #1, " ": PRINT #1, " ": PRINT #1, " "
+        CLS
+    NEXT v
+    PRINT #1, " ": PRINT #1, " ": PRINT #1, " ": PRINT #1, " "
+    PRINT #1, " "
+END IF
+CLOSE #1: END

@@ -1,4 +1,4 @@
-# Finnish-27
+# Finnish-27 Repository
 SourceCode
 In this repository, I disclose the source code for a set of software applications. I wrote the set of software applications in a basic programming language known as QB64. In this README.md file, I do the following. Describe the hardware and software required to use the set of software applications. Recommend a procedure for aquiring and using the QB64 complier to assemble the source code into object code.
 

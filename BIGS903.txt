@@ -1,0 +1,2169 @@
+'I. INDICIA REPRESENTATIVE OF A RANK CORRESPONDS TO NUMERICAL VALUE
+'ASSIGNED TO EACH CARD
+
+'The game of the present invention utilizes cards or electronic
+'representations thereof. The dealer could deal the game of the
+'present invention from a single deck, or from multiple decks.
+'Additionally, each deck may have a conventional constitution of
+'fifty-two cards, a supplemented constitution of more than fifty-
+'two cards, or a modified constitution of fewer than fifty-two
+'cards.
+
+'All embodiments of the game of the present invention are subject
+'to a user-defined set of game rules. Each user-defined set of game
+'rules does specify providing at least one deck of cards, so that
+'each card in said at least one deck of cards bears indicia
+'representative of a rank selected from a group of ranks consisting
+'of ace, two, three, four, five, six, seven, eight, nine, ten,
+'jack, queen, king, and joker, so that any card that bears indicia
+'representative of a rank selected from a group of ranks consisting
+'of ace, two, three, four, five, six, seven, eight, nine, ten,
+'jack, queen, and king also bears indicia representative of a suit
+'selected from a group of suits consisting of spades, hearts,
+'clubs, and diamonds, and so that each deck of the at least one
+'deck of cards consists of the same complement of cards and thereby
+'has the same deck composition.
+
+'Each user-defined set of game rules does specify assigning a value
+'to each card in said at least one deck of cards in accordance with
+'the following set of conditional steps.
+
+'If any card bears indicia representative of a rank of ace, then
+'assign a numerical value selected from a group consisting of one
+'point and fourteen points to said any card in accordance with the
+'following set of rules. If any hand includes at least one ace, and
+'if one ace can be assigned a value of fourteen points without
+'causing the hand total of said any hand to exceed twenty-seven
+'points, then select fourteen points as the value assigned to one
+'ace in said any hand, and select one point as the value assigned
+'to each of any additional aces in said any hand. If any hand
+'includes at least one ace, and if one ace can not be assigned a
+'value of fourteen points without causing the hand total of said
+'any hand to exceed twenty-seven points, then select one point as
+'the value assigned to each ace in said any hand.
+
+'If any card bears indicia representative of a rank selected from a
+'group of ranks consisting of two, three, four, five, six, seven,
+'eight, nine and ten, then assign to said any card a numerical
+'value of a face value number of points to said any card. If any
+'card bears indicia representative of a rank of jack, then assign a
+'numerical value of eleven points to said any card. If any card
+'bears indicia representative of a rank of queen, then assign a
+'numerical value of twelve points to said any card. If any card
+'bears indicia representative of a rank of king, then assign a
+'numerical value of thirteen points to said any card.
+
+'If any card bears indicia representative of a rank of joker, then
+'assign to said any card a numerical value selected from a group of
+'numerical values consisting of a numerical value of zero points,
+'and a numerical value of any number of points required to make a
+'hand total of twenty-seven points.
+
+'II. USER-DEFINED SUBSET OF GAME RULES
+
+'Go ahead and start the BIGS903 software application. After the
+'BIGS903 software application dimensions arrays, the BIGS903
+'software application displays some introductory remarks. Go ahead
+'and read those. After displaying some introductory remarks, the
+'BIGS903 software application begins a series of prompts for user
+'input. Amongst other things, the prompts for user input enable the
+'user to enter a user-defined subset of game rules. The subset of
+'game rules specifies the composition of each deck, and the number
+'of decks in the stack. If each deck includes at least one joker,
+'then the subset of game rules also includes a rule specifying the
+'point value assigned to the at least one joker.
+
+'III. USER-DEFINABLE DECK COMPOSITION
+
+'The BIGS903 software application begins the series of prompts by
+'prompting the user to press 'y' and enter for a standard deck
+'composition. If the user does press 'y' and enter, then the user-
+'defined deck composition will be the standard deck composition.
+'The standard deck composition is a supplemented complement of
+'fifty-four cards consisting of thirteen ranks of each of four
+'French suits plus two jokers.
+
+'If the user presses some other combination of keys and the 'enter'
+'key or simply presses the 'enter' key in response to the above-
+'described prompt, then the BIGS903 software application provides a
+'series of prompts for user input as a software means for enabling
+'the user to input the number of cards assigned each of the
+'supported numerical values. The complement of cards becomes the
+'user-defined deck composition.
+
+'The BIGS903 software application begins the series of prompts for
+'user input with a prompt for the user to input the number of cards
+'assigned a value of zero points.
+
+'After the user inputs the number of cards assigned a value of zero
+'points, the BIGS903 software application continues the series of
+'prompts for user input with a prompt for the user to input the
+'number of cards assigned a value selected from a group consisting
+'of one point and fourteen points.
+
+'After the user inputs the number of cards assigned a value
+'selected from a group consisting of one point and fourteen points,
+'the BIGS903 software application continues with a series of
+'prompts for the user to input the number of cards assigned each
+'individual numerical value selected respectively from a group of
+'numerical values consisting of two points, three points, four
+'points, five points, six points, seven points, eight points, nine
+'points, ten points, eleven points, twelve points, and thirteen
+'points.
+
+'If the user inputs zero as the number of cards assigned a value of
+'zero points, then after the user inputs the number of cards
+'assigned a value of thirteen points, the BIGS903 software
+'application prompts the user to input the number of cards assigned
+'a value of any number of points required to bring a hand total to
+'twenty-seven points.
+
+'If the user inputs a non-zero number as the number of cards
+'assigned a value of zero points, then after the user inputs the
+'number of cards assigned a value of thirteen points, the BIGS903
+'software application does not prompt the user to input the number
+'of cards assigned a value of any number of points required to
+'bring a hand total to twenty-seven points.
+
+'Accordingly, the BIGS903 software application supports fifteen
+'numerical values. However, the user can only include a maximum of
+'fourteen of the fifteen supported numerical values in a user-
+'defined deck composition. Any one of the two numerical values
+'selected from a group consisting of zero points, and any number of
+'points required to make a hand total of twenty-seven points, can
+'be assigned to one or more Jokers. The remaining thirteen
+'numerical values correspond to the thirteen non-Joker ranks.
+
+'IV. USER-DEFINABLE NUMBER OF DECKS
+
+'After the user responds to the above-described prompts, the
+'BIGS903 software application prompts the user to input the number
+'of decks. The user can input any number of decks. However, if the
+'user intends to use a game simulator selected from a group
+'consisting of the BIGS908 software application and the BIGS988
+'software application to simulate a game, the I suggest the user
+'limit the total number of cards in the virtual stack to no more
+'than four-hundred-eighty-six cards. The BIGS908 software
+'application, and the BIGS988 software application are a game
+'simulators compatible with the data output by the BIGS903 software
+'application. Both game simulators are preset to accommodate a
+'virtual stack consisting of up to four-hundred and sixty-eight
+'cards.
+
+'V. HOW TO ENABLE GAME SIMULATORS TO ACCOMMODATE A LARGER STACK
+
+'If it is necessary that the virtual stack consist of more than
+'four-hundred sixty-eight cards, then read the comments added by
+'the applicant to the source code of each game simulator to find an
+'explanation of how to modify the source code so as to enable the
+'game simulator to accommodate a larger virtual stack.
+
+'VI. SAVING A FILE CONTAINING DATA ABOUT THE GAME RULES
+
+'After the user responds to the series of above-described prompts,
+'the BIGS903 software application prompts the user to enter the
+'folder/file name prefix to be used to store application output.
+'Here the BIGS903 software application is prompting the user to
+'enter one of three parts of a file name. The three parts are a
+'file name prefix, a file name suffix, and a file name extension.
+
+'The file name prefix is a user-definable name. The file name
+'prefix is common to each file of a set of files saved as
+'application output.
+
+'The file name suffix consists of a single letter. The BIGS903
+'software application adds a file name suffix to the file name
+'prefix of each file of the set of files saved as application
+'output. Each file name suffix is unique to each file of the set of
+'files saved as application output. Accordingly, the combination of
+'the file name prefix and the file name suffix enables users and
+'other applications in the BIGS collection to identify the specific
+'contents of each file of the set of files.
+
+'The file name extension consists of a period followed by a set of
+'three characters. The file name extension indicates the type of
+'file. The two types of file that are saved by the BIGS903 software
+'application are text and data. If the type of file is a text file,
+'then .txt is the file name extension. If the type of file is a
+'data file, then .dat is the file name extension.
+
+'There is a need for an intelligent way of naming files for later
+'reference. I suggest making a folder named 903docs to hold the
+'various files the BIGS903 software application will save. I
+'suggest putting the folder named 903docs within the same folder
+'containing the BIGS903 software application. Doing so makes saving
+'a set of databases built by the BIGS903 software application
+'easier than it might otherwise be.
+
+'I suggest that the user make the file name prefix some combination
+'of characters that will remind the user later of the user-
+'definable subset of rules used to build the database of player-
+'finish probabilities saved to a set of files by the BIGS903
+'software application.
+
+'VII. EXAMPLES OF SUGGESTED FILE NAMING PROTOCOL
+
+'These paragraphs provide the user with some examples to follow. If
+'the user-defined number of decks in the virtual stack is three, if
+'the user-defined composition of each deck is the standard deck
+'composition, and if each joker has a value of zero points, then I
+'suggest using 'J3d' as the file name prefix. If the user follows
+'my suggestions, then the user will enter B903docs/J3d when
+'prompted to enter the folder/file name prefix to be used to store
+'application output.
+
+'If the user-defined number of decks of cards is six, if the user-
+'defined composition of each deck in the virtual stack is the
+'standard deck composition, and if each joker has a value of any
+'number of points required to make a hand total of twenty-seven
+'points, then I suggest using 'wc6d' as the file name prefix. If
+'the user follows my suggestions, then the user will enter
+'B903docs/wc6d when prompted to enter the folder/file name prefix
+'to be used to store application output.
+
+'If the number of decks in the virtual stack is two, and if the
+'composition of each deck is thirteen ranks of four French suits
+'and no jokers, then I suggest using '2d' as the file name prefix.
+'If the user follows my suggestions, then the user will enter
+'B903docs/2d when prompted to enter the folder/file name prefix to
+'be used to store application output.
+
+'VIII. SAVING A FILE CONTAINING DATA ABOUT THE GAME RULES
+
+'After the user enters a 'folder/file name prefix', the BIGS903
+'software application automatically inputs the remainder of the
+'game rules that are required to make the BIGS903 software
+'application function properly. The BIGS903 software application
+'uses an eighty-character-long string to store a brief description
+'of the database parameters. The BIGS903 software application
+'attaches the contents of this string to a file containing data
+'about the game rules. The BIGS903 software application saves data
+'about the game rules in a data file named with an 'a' character as
+'the file name suffix. For example, if the user previously entered
+'J5d as the file name prefix, then the name of the file will be
+''J5da.dat'.
+
+'The BIGS907 software application enables users to load this file
+'into program memory as a means of communicating to the BIGS907
+'software application data about the user-defined subset of game
+'rules used by the BIGS903 software application to build the
+'databases of player-finish probabilities. The subset of game rules
+'specifies the composition of each deck, and the number of decks in
+'the stack. If each deck includes at least one joker, then the
+'subset of game rules also includes a rule specifying the point
+'value assigned to the at least one joker. The BIGS907 software
+'application will also display the brief description of the
+'databases of player-finish probabilities to enable the user to
+'verify that the BIGS907 software application has loaded the
+'correct set of files.
+
+'IX. SAVING A TEXT FILE CONTAINING A MEANINGFUL SELECTION OF THE
+'TEXT THAT APPEARED IN THE BIGS903 SOFTWARE APPLICATION WINDOW
+'WHILE THE USER INPUT THE USER-DEFINED SET OF GAME RULES.
+
+'After saving data about the set of game rules to file, the BIGS903
+'software application saves a meaningful selection of the text to a
+'text file named with an 'i' character as the file name suffix. The
+'meaningful selection of text consists of the text of the prompts
+'for user input and the user responses that appeared in the
+'application window while the BIGS903 software application
+'performed its' functions. The user can open this file and view
+'its' contents. The contents are intended to serve as a record
+'giving the user a summary of the user responses to prompts for
+'user input made by the BIGS903 software application.
+
+'X. PLAYER-FINISH PROBABILITIES
+
+'A player-finish probability is the probability that the player's
+'complete hand will have a particular hand total given a strategy
+'for the player's use of the hit option that has at least a chance
+'of being optimal, and given all combinations of card ranks that
+'are possible for a set of hands consisting of the player's
+'complete hand and the dealer's initial hand. A subset of player-
+'finish-probabilities consists of a player-finish probability for
+'each of a set of hand totals that are possible for the player's
+'complete hand. A set of player-finish probabilities consists of a
+'subset of player-finish probabilities for each of a set of
+'possible strategies for the player's use of the hit option that
+'have at least a chance of being optimal. A database of player
+'finish probabilities consists of the set of player-finish
+'probabilities for each of the combinations of card ranks that
+'could be the combination of card ranks assigned to the cards
+'removed from the stack and dealt face up to form the first two
+'cards of the player's hand and the two cards of the dealer's
+'initial hand.
+'
+'After the BIGS903 software application saves the text file
+'containing a meaningful selection of the text that appeared in the
+'application window while the user input the user-definable subset
+'of game rules, the BIGS903 software application builds a set of
+'databases of player-finish probabilities. The set of databases of
+'player-finish probabilities consists three databases. The first
+'database is built for the set of hands consisting of the player's
+'initial hand and the dealer's initial hand. The second database is
+'built for the set of hands consisting of the player's post-split-
+'initial hand and the dealer's initial hand wherein: The value of
+'variable pc1 is greater than or equal to the value of variable
+'pc2. The third database is built for the set of hands consisting
+'of the player's post-split-initial hand and the dealer's initial
+'hand wherein: The value of variable pc2 is greater than or equal
+'to the value of variable pc1.
+
+'XI. FUNCTIONS OF THE NESTED-FOR-NEXT LOOP OF THE MAIN ROUTINE
+
+'The user-defined set of game rules assigns a combination of card
+'ranks to the cards in the set of hands consisting of the player's
+'initial hand and the dealer's initial hand. Thousands of
+'combinations of card ranks are possible. For each unique
+'combination of card ranks, the BIGS903 software application
+'calculates a set of player-finish probabilities.
+
+'The values given to variables named pc1 and pc2 correspond to the
+'ranks of the first two cards of a player's hand. The values given
+'to variables named dc1 and dc2 correspond to the ranks of the
+'first two cards of a dealer's hand. A value of zero corresponds to
+'the rank of joker. A value of one corresponds to a rank of ace.
+'Values two through ten correspond to the ranks of two through ten
+'respectively. A value of eleven corresponds to the rank of jack. A
+'value of twelve corresponds to the rank of queen. A value of
+'thirteen corresponds to the rank of king.
+
+'The BIGS903 software application performs a main routine. The main
+'routine uses variables k, l, m, and e in a nested-for-next loop to
+'step through each of the eleven-thousand-twenty-five unique
+'combinations of card ranks that are possible for the combination
+'of cards in the set of hands consisting of the player's initial
+'hand and the dealer's initial hand.
+
+'The main routine uses variables k and l to step through each of
+'the one-hundred-five unique combinations of card ranks that are
+'possible for the two cards in the player's initial hand. If the
+'player's initial hand is a initial hand, then the values of pc1
+'and pc2 correspond respectively to the values of variables k and
+'l.
+
+'If the player's hand is the player's initial hand, and if the
+'value of pc1 is not equal to the value of pc2, then the order of
+'the cards in the hand produces duplicate combinations of card
+'ranks. For example, the combination of card ranks assigned to an
+'ace and a jack, is the same as the combination of card ranks
+'assigned to a jack and an ace. The duplicate combinations of card
+'ranks produce duplicate sets of player-finish probabilities.
+'Storing the sets of player-finish probabilities one time requires
+'less memory than does storing the sets of player-finish
+'probabilities two times. Calculating the sets of player-finish
+'probabilities one time is twice as fast as calculating the sets of
+'player-finish probabilities two times. For that reason, the main
+'routine eliminates every combination of card ranks wherein: The
+'value of variable pc1 is greater than the value of variable pc2.
+'After eliminating these combinations of card ranks, there remains
+'one-hundred-five unique combinations of card ranks that are
+'possible for the two cards in the player's initial hand.
+
+'If the player's hand is the player's initial hand, and if the
+'value of pc1 is equal to the value of pc2, then the main routine
+'steps through each of the card ranks that are possible for the
+'second card of the player's post-split-initial hand. Variable pc1
+'provides a memory element wherein: The BIGS903 software
+'application stores the card rank assigned to the first card of the
+'player's post-split-initial hand, and wherein: The BIGS903
+'software application stores the card rank assigned to the other
+'card of the original pair. Variable pc2 provides a memory element
+'wherein: The BIGS903 software application stores the card rank
+'assigned to the second card of the player's post-split-initial
+'hand.
+
+'If the player's hand is the player's post-split-initial hand, and
+'if the value of variable pc1 is not equal to the value of variable
+'pc2, then the order of the cards in the hand produces duplicate
+'combinations of card ranks. For example, the combination of card
+'ranks assigned to an ace and a jack, is the same as the
+'combination of card ranks assigned to a jack and an ace. However,
+'the card rank assigned to the first card of the player's post-
+'split-initial hand is also the card rank assigned to the other
+'card of the original pair. For that reason, the duplicate
+'combinations of card ranks produce different sets of player-finish
+'probabilities. For that reason, the main routine steps through
+'every combination of card ranks that is possible for the player's
+'post-split-initial hand.
+
+'The BIGS903 software application sorts every combination of card
+'ranks that is possible for the player's post-split-initial hand
+'into at least one of two groups. The first group consists of one-
+'hundred-five unique combinations of card ranks wherein: The value
+'of pc1 is equal to or greater than the value of pc2. The second
+'group consists of one-hundred-five unique combinations of card
+'ranks wherein: The value of pc1 is less than or equal to the value
+'of pc2.
+
+'The main routine uses variables m and e to step through each of
+'the one-hundred-five unique combinations of card ranks that are
+'possible for the two cards in the dealer's initial hand. The
+'values of dc1 and dc2 correspond respectively to the values of
+'variables m and e.
+
+'If the value of variable dc1 is not equal to the value of variable
+'dc2, then the order of the cards in the dealer's initial hand
+'produces duplicate combinations of card ranks. For example, the
+'combination of card ranks assigned to a two and a queen, is the
+'same as the combination of card ranks assigned to a queen and a
+'two. The duplicate combinations of card ranks produce duplicate
+'sets of player-finish probabilities. Storing the sets of player-
+'finish probabilities one time requires less memory than does
+'storing the sets of player-finish probabilities two times.
+'Calculating the sets of player-finish probabilities one time is
+'twice as fast as calculating the sets of player-finish
+'probabilities two times. For that reason, the main routine
+'eliminates every combination of card ranks wherein: The value of
+'variable dc1 is greater than the value of variable dc2. After
+'eliminating these combinations of card ranks, there remains one-
+'hundred-five unique combinations of card ranks that are possible
+'for the two cards in the dealer's initial hand.
+
+'The product of one-hundred-five unique combinations of card ranks
+'multiplied by one-hundred-five unique combinations of card ranks
+'is eleven-thousand-twenty-five unique combinations of card ranks.
+'For that reason, eleven-thousand-twenty-five unique combinations
+'of card ranks are possible for the combination of cards in the set
+'of hands consisting of the player's initial hand and the dealer's
+'initial hand. Eleven-thousand-twenty-five unique combinations of
+'card ranks are possible for the combinations of cards in the set
+'of hands consisting of the dealer's initial hand and the player's
+'post-split-initial hand wherein: The value of pc1 is equal to or
+'greater than the value of pc2. Eleven-thousand-twenty-five unique
+'combinations of card ranks are possible for the combinations of
+'cards in the set of hands consisting of the dealer's initial hand
+'and the player's post-split-initial hand wherein: The value of pc1
+'is less than or equal to the value of pc2.
+
+'XII. FUNCTION OF VARIABLES pn% AND dn%
+
+'Variable pn% provides a memory element wherein: The BIGS903
+'software application stores an integer. The integer identifies the
+'combination of card ranks assigned to the cards in the player's
+'initial hand.
+
+'The BIGS903 software application uses an equation to calculate the
+'value of pn%. If the value of pc1 is less than or equal to the
+'value of pc2, then the equation is pn% = pc1 / 2 * (27 - pc1) +
+'pc2. If the value of pc1 is equal to or greater than the value of
+'pc2, then the equation is pn% = pc2 / 2 * (27 ? pc2) + pc1.
+
+'Variable dn% provides a memory element wherein: The BIGS903
+'software application stores an integer. The integer identifies the
+'combination of card ranks assigned to the two cards in the
+'dealer's initial hand.
+
+'The BIGS903 software application uses an equation to calculate the
+'value of dn%. The equation is dn% = dc1 / 2 * (27 - dc1) + dc2.
+
+'If the value of pc1 is less than or equal to the value of pc2,
+'then the one-hundred-five values that are possible for pn%
+'correspond to the following values for pc1 and pc2. If the value
+'of pc2 is equal to or greater than the value of pc1, then the one-
+'hundred-five values that are possible for pn% correspond to the
+'following values for pc2 and pc1. The one-hundred-five values that
+'are possible for dn% correspond to the following values for dc1
+'and dc2.
+
+'0 = 0 and 0     35 = 2 and 10   70 = 6 and 7
+'1 = 0 and 1     36 = 2 and 11   71 = 6 and 8
+'2 = 0 and 2     37 = 2 and 12   72 = 6 and 9
+'3 = 0 and 3     38 = 2 and 13   73 = 6 and 10
+'4 = 0 and 4     39 = 3 and 3    74 = 6 and 11
+'5 = 0 and 5     40 = 3 and 4    75 = 6 and 12
+'6 = 0 and 6     41 = 3 and 5    76 = 6 and 13
+'7 = 0 and 7     42 = 3 and 6    77 = 7 and 7
+'8 = 0 and 8     43 = 3 and 7    78 = 7 and 8
+'9 = 0 and 9     44 = 3 and 8    79 = 7 and 9
+'10 = 0 and 10   45 = 3 and 9    80 = 7 and 10
+'11 = 0 and 11   46 = 3 and 10   81 = 7 and 11
+'12 = 0 and 12   47 = 3 and 11   82 = 7 and 12
+'13 = 0 and 13   48 = 3 and 12   83 = 7 and 13
+'14 = 1 and 1    49 = 3 and 13   84 = 8 and 8
+'15 = 1 and 2    50 = 4 and 4    85 = 8 and 9
+'16 = 1 and 3    51 = 4 and 5    86 = 8 and 10
+'17 = 1 and 4    52 = 4 and 6    87 = 8 and 11
+'18 = 1 and 5    53 = 4 and 7    88 = 8 and 12
+'19 = 1 and 6    54 = 4 and 8    89 = 8 and 13
+'20 = 1 and 7    55 = 4 and 9    90 = 9 and 9
+'21 = 1 and 8    56 = 4 and 10   91 = 9 and 10
+'22 = 1 and 9    57 = 4 and 11   92 = 9 and 11
+'23 = 1 and 10   58 = 4 and 12   93 = 9 and 12
+'24 = 1 and 11   59 = 4 and 13   94 = 9 and 13
+'25 = 1 and 12   60 = 5 and 5    95 = 10 and 10
+'26 = 1 and 13   61 = 5 and 6    96 = 10 and 11
+'27 = 2 and 2    62 = 5 and 7    97 = 10 and 12
+'28 = 2 and 3    63 = 5 and 8    98 = 10 and 13
+'29 = 2 and 4    64 = 5 and 9    99 = 11 and 11
+'30 = 2 and 5    65 = 5 and 10   100 = 11 and 12
+'31 = 2 and 6    66 = 5 and 11   101 = 11 and 13
+'32 = 2 and 7    67 = 5 and 12   102 = 12 and 12
+'33 = 2 and 8    68 = 5 and 13   103 = 12 and 13
+'34 = 2 and 9    69 = 6 and 6    104 = 13 and 13
+
+
+'XIII. FUNCTION OF VARIABLE deck% AND ARRAYS card(28) AND mc(48)
+
+'Array dimension card(28) provides memory elements wherein the
+'BIGS903 software application stores the number of cards of each
+'rank in the user-definable deck composition. Variable deck%
+'provides a memory element wherein: The BIGS903 software
+'application stores the user-definable number of decks in the
+'virtual stack. Array dimension mc(48) provides memory elements
+'wherein: The BIGS903 software application stores the current
+'number of cards of each rank that are remaining in the virtual
+'stack.
+
+'XIV. FUNCTIONS OF THE MAIN ROUTINE
+
+'For each of the eleven-thousand-twenty-five combinations of card
+'ranks that the rules might assign to the combination of playing
+'cards in the set of hands consisting of the player's initial hand
+'and the dealer's initial hand, the main routine does all of the
+'following. The main routine sets the current number of playing
+'cards of each rank that are remaining in the virtual stack equal
+'to the product of the number of cards of each rank in the user-
+'definable  deck composition multiplied by the user-definable
+'number of decks in the virtual stack.
+
+'If the main routine is finding the set of player-finish
+'probabilities given the combination of card ranks assigned to the
+'cards in the set of hands consisting of the player's initial hand
+'and the dealer's initial hand, then the main routine
+'mathematically removes from the virtual stack each of the cards in
+'the set of hands consisting of the player's initial hand and the
+'dealer's initial hand. The main routine does so by subtracting one
+'from the value of each of the corresponding memory elements in
+'array dimension mc(48).
+
+'If the main routine is finding the set of player-finish
+'probabilities given the combination of card ranks assigned to the
+'cards in the set of hands consisting of the player's post-split-
+'initial hand and the dealer's initial hand, then the main routine
+'mathematically removes from the virtual stack each of the cards in
+'the set of hands consisting of the player's post-split-initial
+'hand and the dealer's initial hand.  The main routine
+'mathematically removes from the virtual stack the other card of
+'the original pair. The main routine does so by subtracting one
+'from the corresponding memory elements in array dimension mc(48).
+
+'XV. HARD AND SOFT
+
+'There are two basic types of hands. If a hand includes at least
+'one ace and the dealer can count one ace as fourteen points
+'without causing the sum of the point values assigned to the cards
+'in the hand to exceed twenty-seven points, then the hand is a
+'"soft" hand. Otherwise, the hand is a "hard" hand. If the sum of
+'the point values assigned to the cards in a hard hand does exceed
+'twenty-seven points, then the holder of the hand does bust.
+'However, if the sum of the point values assigned to the cards in a
+'soft hand does exceed twenty-seven points, then the holder of the
+'hand does not bust. Instead, the value of the ace counted as
+'fourteen points changes to one point, and the soft hand becomes a
+'hard hand.
+
+'A hand total is equal to the sum of the point values assigned to
+'the cards in a hand. There are two basic types of hand totals. A
+'soft total is the hand total of a soft hand. For example, ?soft
+'twenty-five? is the soft total of a soft hand consisting of an ace
+'of diamonds and a jack of diamonds. A hard total is the hand total
+'of a hard hand. For example, ?hard twenty-three? is the hard total
+'of a hard hand consisting of an ace of spades, a nine of diamonds,
+'and a king of clubs.
+
+'XVI. EIGHTY-ONE-SUPPORTED STRATEGIES FOR THE USE OF THE HIT OPTION
+
+'A strategy for the player's use of the hit option specifies a set
+'of target-numerical sums consisting of a target-numerical sum for
+'the play of the player's soft hands and a target-numerical sum for
+'the play of the player's hard hands. To use any given strategy for
+'the player's use of the hit option to make decisions on how to
+'play the player's hand, the player does the following. If the
+'player's hand total is less than the target-numerical sum
+'specified for the type of hand the player has, then the player
+'hits. If the player's hand total is at least equal to the target-
+'numerical sum specified for the type of hand the player has, then
+'the player stands.
+
+'The BIGS collection of software applications supports eighty-one
+'strategies for the player's use of the hit option. Each of the
+'eighty-one-supported strategies for the player's use of the hit
+'option does specify one of eighty-one sets of target-numerical
+'sums. The eight-one sets of target-numerical sums consists of the
+'following hard total/soft total combinations.
+
+'15/A5, 15/A6, 15/A7, 15/A8, 15/A9, 15/AT, 15/AJ, 15/AQ, 15/AK,
+'16/A5, 16/A6, 16/A7, 16/A8, 16/A9, 16/AT, 16/AJ, 16/AQ, 16/AK,
+'17/A5, 17/A6, 17/A7, 17/A8, 17/A9, 17/AT, 17/AJ, 17/AQ, 17/AK,
+'18/A5, 18/A6, 18/A7, 18/A8, 18/A9, 18/AT, 18/AJ, 18/AQ, 18/AK,
+'19/A5, 19/A6, 19/A7, 19/A8, 19/A9, 19/AT, 19/AJ, 19/AQ, 19/AK,
+'20/A6, 20/A7, 20/A8, 20/A9, 20/AT, 20/AJ, 20/AQ, 20/AK, 21/A7,
+'21/A8, 21/A9, 21/AT, 21/AJ, 21/AQ, 21/AK, 22/A8, 22/A9, 22/AT,
+'22/AJ, 22/AQ, 22/AK, 23/A9, 23/AT, 23/AJ, 23/AQ, 23/AK, 24/AT,
+'24/AJ, 24/AQ, 24/AK, 25/AJ, 25/AQ, 25/AK, 26/AQ, 26/AK and 27/AK.
+
+'XVII. METHOD FOR VARYING THE NUMBER OF STRATEGIES FOR THE USE OF
+'THE HIT OPTION THAT ARE EVALUATED
+
+'Although, the BIGS903 software application supports eighty-one
+'strategies for the player's use of the hit option, the number of
+'strategies evaluated varies in accordance with the player's
+'initial-hand total as follows.
+
+'If the player's initial-hand total is greater than a hand total
+'selected from a group consisting of hard twelve and soft twenty-
+'six, then the hand total precludes the need to evaluate a
+'plurality of target-numerical sums for the play of the player's
+'soft hands. In that event, the BIGS903 software application only
+'evaluates those of the eighty-one-supported strategies for the
+'player's use of the hit option that specify a combination of one
+'of thirteen-possible-target-numerical sums for the play of the
+'player's hard hands and the lowest-supported-target-numerical sum
+'for the play of the player's soft hands. Doing so reduces the
+'number strategies for the player's use of the hit option evaluated
+'to those strategies specifying a set of thirteen target-numerical
+'sums. The set of thirteen target-numerical sums consists of the
+'following hard total/soft total combinations. 15/A5, 16/A5, 17/A5,
+'18/A5, 19/A5, 20/A6, 21/A7, 22/A8, 23/A9, 24/AT, 25/AJ, 26/AQ, and
+'27/AK.
+
+'The BIGS903 software application only uses any of the other sixty-
+'eight strategies for the player's use of the hit option when it is
+'possible for the player to form a soft hand with a soft total that
+'is less than the target-numerical sum for the player's soft hands
+'specified by that particular strategy.
+
+'If the player's initial-hand total is equal to a hand total
+'selected from a group consisting of hard twelve and soft twenty-
+'six, then it is possible for the player to form a soft hand with a
+'soft total of soft twenty-seven. In that event, the BIGS903
+'software application also evaluates the twelve of the other sixty-
+'eight strategies for the player's use of the hit option that
+'specify a target-numerical sum of soft twenty-seven for the play
+'of the player's soft hands. Each of the twelve strategies for the
+'player's use of the hit option does specify one of a set of twelve
+'combinations of target-numerical sums for the player's use of the
+'hit option consisting of the following set of hard total/soft
+'total combinations: 15/AK, 16/AK, 17/AK, 18/AK, 19/AK, 20/AK,
+'21/AK, 22/AK, 23/AK, 24/AK, 25/AK, and 26/AK.
+
+'If the player's initial-hand total is a hand total selected from a
+'group consisting of hard eleven and soft twenty-five, then it is
+'possible for the player to form a soft hand with a soft total of
+'soft twenty-six. In that event, the BIGS903 software application
+'also evaluates the eleven of the other sixty-eight strategies for
+'the player's use of the hit option that specify a target-numerical
+'sum of soft twenty-six for the play of the player's soft hands.
+'Each of the eleven strategies for the player's use of the hit
+'option does specify one of a set of eleven combinations of target-
+'numerical sums for the player's use of the hit option consisting
+'of the following set of hard total/soft total combinations: 15/AQ,
+'16/AQ, 17/AQ, 18/AQ, 19/AQ, 20/AQ, 21/AQ, 22/AQ, 23/AQ, 24/AQ, and
+'25/AQ.
+
+'If the player's initial-hand total is a hand total selected from a
+'group consisting of hard ten and soft twenty-four, then it is
+'possible for the player to form a soft hand with a soft total of
+'soft twenty-five. In that event, the BIGS903 software application
+'also evaluates the ten of the other sixty-eight strategies for the
+'player's use of the hit option that specify a target-numerical sum
+'of soft twenty-five for the play of the player's soft hands. Each
+'of the ten strategies for the player's use of the hit option does
+'specify one of a set of ten combinations of target-numerical sums
+'for the player's use of the hit option consisting of the following
+'set of hard total/soft total combinations: 15/AJ, 16/AJ, 17/AJ,
+'18/AJ, 19/AJ, 20/AJ, 21/AJ, 22/AJ, 23/AJ, and 24/AJ.
+
+'If the player's initial-hand total is a hand total selected from a
+'group consisting of hard nine and soft twenty-three, then it is
+'possible for the player to form a soft hand with a soft total of
+'soft twenty-four. In that event, the BIGS903 software application
+'also evaluates the nine of the other sixty-eight strategies for
+'the player's use of the hit option that specify a target-numerical
+'sum of soft twenty-four for the play of the player's soft hands.
+'Each of the nine strategies for the player's use of the hit option
+'does specify one of a set of nine combinations of target-numerical
+'sums for the player's use of the hit option consisting of the
+'following set of hard total/soft total combinations: 15/AT, 16/AT,
+'17/AT, 18/AT, 19/AT, 20/AT, 21/AT, 22/AT, and 23/AT.
+
+'If the player's initial-hand total is a hand total selected from a
+'group consisting of hard eight and soft twenty-two, then it is
+'possible for the player to form a soft hand with a soft total of
+'soft twenty-three. In that event, the BIGS903 software application
+'also evaluates the eight of the other sixty-eight strategies for
+'the player's use of the hit option that specify a target-numerical
+'sum of soft twenty-three for the play of the player's soft hands.
+'Each of the eight strategies for the player's use of the hit
+'option does specify one of a set of eight combinations of target-
+'numerical sums for the player's use of the hit option consisting
+'of the following set of hard total/soft total combinations: 15/A9,
+'16/A9, 17/A9, 18/A9, 19/A9, 20/A9, 21/A9, and 22/A9.
+
+'If the player's initial-hand total is a hand total selected from a
+'group consisting of hard seven and soft twenty-one, then it is
+'possible for the player to form a soft hand with a soft total of
+'soft twenty-two. In that event, the BIGS903 software application
+'also evaluates the seven of the other sixty-eight strategies for
+'the player's use of the hit option that specify a target-numerical
+'sum of soft twenty-two for the play of the player's soft hands.
+'Each of the seven strategies for the player's use of the hit
+'option does specify one of a set of seven combinations of target-
+'numerical sums for the player's use of the hit option consisting,
+'of the following set of hard total/soft total combinations: 15/A8,
+'16/A8, 17/A8, 18/A8, 19/A8, 20/A8, and 21/A8.
+
+'If the player's initial-hand total is a hand total selected from a
+'group consisting of hard six and soft twenty, then it is possible
+'for the player to form a soft hand with a soft total of soft
+'twenty-one. In that event, the BIGS903 software application also
+'evaluates the six of the other sixty-eight strategies for the
+'player's use of the hit option that specify a target-numerical sum
+'of soft twenty-one for the play of the player's soft hands. Each
+'of the six strategies for the player's use of the hit option does
+'specify one of a set of six combinations of target-numerical sums
+'for the player's use of the hit option consisting of the following
+'set of hard total/soft total combinations: 15/A7, 16/A7, 17/A7,
+'18/A7, 19/A7, and 20/A7.
+
+'If the player's initial hand total is less than a hand total
+'selected from a group consisting of hard five and soft nineteen,
+'then it is possible for the player to form a soft hand with a soft
+'total of soft twenty. In that event, the BIGS903 software
+'application also evaluates the five of the other sixty-eight
+'strategies for the player's use of the hit option that specify a
+'target-numerical sum of soft twenty for the play of the player's
+'soft hands. Each of the five strategies for the player's use of
+'the hit option does specify one of a set of five combinations of
+'target-numerical sums for the player's use of the hit option
+'consisting of the following set of hard total/soft total
+'combinations: 15/A6, 16/A6, 17/A6, 18/A6, and 19/A6.
+
+'The sum of thirteen strategies plus twelve strategies plus eleven
+'strategies plus ten strategies plus nine strategies plus eight
+'strategies plus seven strategies plus six strategies plus five
+'strategies is eighty-one supported strategies for the player's use
+'of the hit option. Each of those eighty-one-supported strategies
+'for the player's use of the hit option does specify one of a set
+'of eighty-one-different sets of target-numerical sums. The BIGS903
+'software application uses those eighty-one-possible strategies for
+'the player's use of the hit option to calculate the set of player-
+'finish probabilities for each of the combinations of card ranks
+'that the rules might assign to the combination of cards removed
+'from the stack and dealt face up to form the set of hands
+'consisting of the player's initial hand and the dealer's initial
+'hand. The BIGS903 software application does so more efficiently by
+'varying the number of strategies used in accordance with the
+'player's initial-hand total. The BIGS907, BIGS910, BIGS914 and
+'BIGS987 software applications vary the number of strategies that
+'are evaluated in the same manner.
+
+'XVIII. FUNCTION OF VARIABLES g AND h IN THE MAIN ROUTINE
+
+'The main routine uses variables g and h in nested-for-next loops
+'to step through each of eighty-one-supported strategies for the
+'player's use of the hit option.
+
+'Variable g provides a memory element wherein: The BIGS903 software
+'application stores a value for the target-numerical sum specified
+'for the play of the player's hard hands. Variable h provides a
+'memory element wherein: The BIGS903 software application stores a
+'value for the target-numerical sum specified for the play of the
+'player's soft hands. Variable I% provides a memory element wherein
+'the BIGS903 software application stores the value of a number
+'assigned by the main routine to the strategy for the player's use
+'of the hit option.
+
+'Numbers assigned by the main routine to each strategy for the
+'player's use of the hit option and the corresponding set of target
+'numerical sums are as follows.
+
+' 01 = 15/A5         28 = 18/A5          55 = 21/A8
+' 02 = 15/A6         29 = 18/A6          56 = 21/A9
+' 03 = 15/A7         30 = 18/A7          57 = 21/AT
+' 04 = 15/A8         31 = 18/A8          58 = 21/AJ
+' 05 = 15/A9         32 = 18/A9          59 = 21/AQ
+' 06 = 15/AT         33 = 18/AT          60 = 21/AK
+' 07 = 15/AJ         34 = 18/AJ          61 = 22/A8
+' 08 = 15/AQ         35 = 18/AQ          62 = 22/A9
+' 09 = 15/AK         36 = 18/AK          63 = 22/AT
+' 10 = 16/A5         37 = 19/A5          64 = 22/AJ
+' 11 = 16/A6         38 = 19/A6          65 = 22/AQ
+' 12 = 16/A7         39 = 19/A7          66 = 22/AK
+' 13 = 16/A8         40 = 19/A8          67 = 23/A9
+' 14 = 16/A9         41 = 19/A9          68 = 23/AT
+' 15 = 16/AT         42 = 19/AT          69 = 23/AJ
+' 16 = 16/AJ         43 = 19/AJ          70 = 23/AQ
+' 17 = 16/AQ         44 = 19/AQ          71 = 23/AK
+' 18 = 16/AK         45 = 19/AK          72 = 24/AT
+' 19 = 17/A5         46 = 20/A6          73 = 24/AJ
+' 20 = 17/A6         47 = 20/A7          74 = 24/AQ
+' 21 = 17/A7         48 = 20/A8          75 = 24/AK
+' 22 = 17/A8         49 = 20/A9          76 = 25/AJ
+' 23 = 17/A9         50 = 20/AT          77 = 25/AQ
+' 24 = 17/AT         51 = 20/AJ          78 = 25/AK
+' 25 = 17/AJ         52 = 20/AQ          79 = 26/AQ
+' 26 = 17/AQ         53 = 20/AK          80 = 26/AK
+' 27 = 17/AK         54 = 21/A7          81 = 27/AK
+
+'XIX. FUNCTIONS OF SUBROUTINE 777
+
+'The main routine sends values stored in the above-described
+'variables and array dimensions to subroutine 777. Each time the
+'main routine calls subroutine 777, the subroutine calculates the
+'subset of player-finish probabilities given one of the eleven-
+'thousand-twenty-five unique combinations of point values that are
+'possible for the set of hands consisting of the player's initial
+'hand and the dealer's initial hand, and given one of the eighty-
+'one supported strategies for the player's use of the hit option.
+'The main routine does so given the subset of rules defined by the
+'user in response to prompts for user input made by the BIGS903
+'software application. The following is a description of the
+'functions of the various variables and arrays found in the 777
+'subroutine.
+
+'XX. FUNCTIONS OF VARIABLES pc1, pc2, dc1, dc2, s, t, u, v, w, o,
+'r, AND jo27%
+
+'The player's current hand does consist of the two cards in the
+'player's initial hand and any combination of cards that the player
+'might draw while the dealer forms the player's complete hand.
+'Subroutine 777 relies upon the structure created by nested-for-
+'next loops to step through a set consisting of most of the
+'possible combinations of cards that the player might draw to the
+'player's current hand while the dealer forms the player's complete
+'hand.
+
+'The values given to variables named pc1 and pc2 correspond to the
+'ranks of the first two cards of a player's hand. The values given
+'to variables named dc1 and dc2 correspond to the ranks of the
+'first two cards of a dealer's hand. The values given to variables
+'s, t, u, v, w, o, and r correspond to the values assigned to the
+'third, fourth, fifth, sixth, seventh, eighth, and ninth cards that
+'the player might draw to the player's current hand. A value of
+'zero corresponds to the rank of joker. A value of one corresponds
+'to a rank of ace. Values two through ten correspond to the ranks
+'of two through ten respectively. A value of eleven corresponds to
+'the rank of jack. A value of twelve corresponds to the rank of
+'queen. A value of thirteen corresponds to the rank of king.
+
+'Variable jo27% provides a memory element wherein the BIGS903
+'software application stores data about whether the user-defined
+'subset of game rules includes a rule. The rule specifies that any
+'hand that includes at least one joker has a value of twenty-seven
+'points. If the user-defined subset of rules does include the rule,
+'then any hand that includes at least one joker has a value of
+'twenty-seven points. If the user-defined subset of game rules does
+'not include the rule, then each joker has a value of zero points.
+
+'XXI. FUNCTIONS OF DIMENSIONED ARRAYS dadd(23), dp(23), dmult(23)
+'AND djoke(23)
+
+'Array dimension dadd(23) provides memory elements wherein: The
+'BIGS903 software application stores data about the numerical-sum
+'value of the cards in the player's current hand. Array dimension
+'dp(23) provides memory elements wherein: The BIGS903 software
+'application stores data about the probability of the player
+'drawing the combination of card ranks in the player's current
+'hand. Array dimension dmult(23) provides memory elements wherein:
+'The BIGS903 software application stores data about whether the
+'player's current hand includes an ace. Array dimension djoke(23)
+'provides memory elements wherein: The BIGS903 software application
+'stores data about whether the player's current hand
+'includes a joker.
+
+'XXII. ESTABLISHING THE SET OF POINT VALUES THAT ARE POSSIBLE FOR
+'THE PLAYER'S COMPLETE HAND
+
+'To establish the set of hand totals that are possible for the
+'player?s complete hand, the applicant assumed the following and
+'did write various of the BIGS collection of software applications
+'accordingly. If the player?s-hand total is less than fifteen
+'points then under all circumstances the player will hit. If the
+'player?s hand total is greater than twenty-six points, then under
+'all circumstances the player will stand. Thirteen points is the
+'highest card value that the player can draw to a hard total of
+'hard twenty-six. Twenty-six points plus thirteen points equals
+'thirty-nine points.  Accordingly, the set of hand totals that are
+'possible for the player?s complete hand consists of all point
+'values from fifteen points to thirty-nine points.
+
+'XXIII. THE BIGS903 SOFTWARE APPLICATION STORES THE PROBABILITIES
+'OF CERTAIN COMBINATIONS OF CARDS WITH A NUMERICAL SUM VALUE OF
+'TWENTY-SEVEN POINTS SEPARATELY
+
+'The probabilities of 8-9-10 hands, 9-9-9 hands and six, seven,
+'eight, and nine card hands that total twenty-seven points are
+'stored separately by the BIGS903 software application from the
+'probability of other hands totaling twenty-seven points. The
+'BIGS903 software application also stores the probability of the
+'player drawing a hand consisting of nine cards with a numerical
+'sum total of less than twenty-eight points separately. If the
+'user-defined set of game rules include a rule specifying that any
+'hand that includes at least one joker has a value of twenty-seven
+'points, then the BIGS903 software application also stores the
+'probability of the player drawing a hand that includes at least
+'one joker separately. Doing so makes it possible for the BIGS907
+'software application to calculate the expected value of the game
+'wager should the user-defined set of house rules make bonus
+'payouts on any of the above-described card combinations available
+'to players.
+
+'XXIV. FUNCTIONS OF DIMENSIONED ARRAY f(81, 32)
+
+'The two dimension of array f(81, 32) provide memory elements
+'wherein: The BIGS903 software application stores the set of player
+'finish probabilities calculated for a single one of the eleven-
+'thousand-twenty-five combinations of card ranks that are possible
+'for the combination of cards in the set of hands consisting of the
+'player's initial hand and dealer's initial hand. Memory-elements
+'one through eighty-one of the first dimension of array f(81, 32)
+'sort data about the player-finish probabilities according to the
+'eighty-one-supported strategies for the player's use of the hit
+'option. Memory-elements zero through thirty-two of the second
+'dimension of array f(81, 32) sort player-finish probabilities
+'according to the probability of the occurrence of each of thirty-
+'three-supported-player finishes.
+
+'XXV. FUNCTION OF DIMENSIONED ARRAYS pbr(104, 104, 81, 32),
+'pfar(104, 104, 81, 32) AND psar(104, 104, 81, 32)
+
+'The four dimensions of array pbr(104, 104, 81, 32) provide memory
+'elements wherein: the BIGS903 software application stores the
+'database of player-finish probabilities calculated for the eleven-
+'thousand-twenty-five unique combinations of card ranks that are
+'possible for the set of hands consisting of the player's initial
+'hand and the dealer's initial hand. The four dimensions of array
+'pfar(104, 104, 81, 32) provide memory elements wherein: The
+'BIGS903 software application stores the database of player-finish
+'probabilities calculated for the eleven-thousand-twenty-five
+'unique combinations of card ranks that are possible for the set of
+'hands consisting of the player's post-split-initial hand and the
+'dealer's initial hand wherein: The value of variable pc1 is
+'greater than or equal to the value of variable pc2. The four
+'dimensions of array psar(104, 104, 81, 32) provide memory elements
+'wherein: The BIGS903 software application stores the database of
+'player-finish probabilities calculated for the eleven-thousand-
+'twenty-five unique combinations of card ranks that are possible
+'for the set of hands consisting of the player's post-split-initial
+'hand and the dealer's initial hand wherein: The value of variable
+'pc1 is less than or equal to the value of variable pc2.
+
+'The BIGS903 software application uses memory-elements zero through
+'one-hundred-four of the first dimension of array pbr(104, 104, 81,
+'32) to sort player-finish probabilities according to the one-
+'hundred-five unique combinations of card ranks that are possible
+'for the two cards in the player's initial hand. The BIGS903
+'software application uses memory-elements zero through one-
+'hundred-four of the first dimension of array pfar(104, 104, 81,
+'32) to sort player-finish probabilities according to the one-
+'hundred-five unique combinations of card ranks that are possible
+'for the two cards in the player's post-split-initial hand wherein:
+'The value of variable pc1 is equal to or greater than the value of
+'variable pc2. The BIGS903 software application uses memory-
+'elements zero through one-hundred-four of the first dimension of
+'array psar(104, 104, 81, 32) to sort player-finish probabilities
+'according to the one-hundred-five unique combinations of card
+'ranks that are possible for the two cards in the player's post-
+'split-initial hand wherein: The value of variable pc1 is less than
+'or equal to the value of variable pc2. The BIGS903 software
+'application uses memory-elements zero through one-hundred-four of
+'the second dimension of each of the three-above-described arrays
+'to sort player-finish probabilities according to the one-hundred-
+'five unique combinations of card ranks that are possible for the
+'two cards in the dealer's initial hand. The BIGS903 software
+'application uses memory-elements one through eighty-one of the
+'third dimension of each of the three-above-described arrays to
+'sort player-finish probabilities according to the eighty-one-
+'supported strategies for the player's use of the hit option. The
+'BIGS903 software application uses memory-elements zero through
+'thirty-two of the fourth dimension of each of the three-above-
+'described arrays to sort player-finish probabilities according to
+'the probability of the occurrence of each of thirty-three-
+'supported-player finishes.
+
+'XXVI. BIGS903 SOFTWARE APPLICATION OUTPUT
+
+'When the BIGS903 software application finishes finding the set of
+'player finish probabilities for one combination of card ranks,
+'then the BIGS903 software application displays that combination of
+'card ranks in a message printed on the application window. The
+'BIGS903 software application uses numbers to represent ranks. The
+'number zero represents the rank of joker. The number one
+'represents the rank of ace. The numbers two through ten represent
+'ranks two through ten respectively. The number eleven represents
+'the rank of jack. The number twelve represents the rank of queen.
+'The number thirteen represents the rank of king.
+
+'After the BIGS903 software application finishes calculating the
+'set of player-finish probabilities for all combinations of card
+'ranks, the BIGS903 software application saves three more data
+'files. The data file named with a 'q' character as the file name
+'suffix contains the database of player-finish probabilities
+'calculated for the eleven-thousand-twenty-five unique combinations
+'of card ranks that are possible for the set of hands consisting of
+'the player's initial hand and the dealer's initial hand. The data
+'file named with a 'r' character as the file name suffix contains
+'the database of player-finish probabilities calculated for the
+'eleven-thousand-twenty-five unique combinations of card ranks that
+'are possible for the set of hands consisting of the player's post-
+'split-initial hand and the dealer's initial hand wherein: The
+'value of variable pc1 is greater than or equal to the value of
+'variable pc2. The data file named with a 's' character as the file
+'name suffix contains the database of player-finish probabilities
+'calculated for the eleven-thousand-twenty-five unique combinations
+'of card ranks that are possible for the set of hands consisting of
+'the player's post-split-initial hand and the dealer's initial hand
+'wherein: The value of variable pc1 is less than or equal to the
+'value of variable pc2. These data files are each just over 117
+'Megabytes in size.
+
+'The good news is. The BIGS907 software application enable users to
+'load into program memory the set of databases of player-finish
+'probabilities and the user-defined subset of game rules saved to a
+'set of data files by the BIGS903 software application. The BIGS907
+'software application enables users to load into program memory a
+'corresponding set of databases of dealer-finish probabilities
+'saved to a set of data files by the BIGS906 software application.
+'The BIGS907 software application enable users to complete the
+'user-defined set of game rules by adding any of nearly limitless
+'number, diversity, and variety of combinations of rules to the
+'user-defined subset of game rules. Afterward, the BIGS907 software
+'application uses the three databases of player-finish
+'probabilities, the three databases of dealer-finish probabilities,
+'and the user-defined set of game rules, to find the set of
+'combination-dependent-playing-strategy tables and to calculate the
+'expected value of the game wager for an optional embodiment of the
+'double-exposure game of the present invention that is subject to
+'the user-defined set of game rules.
+
+'The good news is. The BIGS987 software application enable users to
+'load into program memory the set of databases of player-finish
+'probabilities and the user-defined subset of game rules saved to a
+'set of data files by the BIGS903 software application. The BIGS987
+'software application enables users to load into program memory a
+'corresponding set of databases of dealer-finish probabilities
+'saved to a set of data files by the BIGS906 software application.
+'The BIGS987 software application enables users to complete the
+'user-defined set of game rules by adding any of nearly limitless
+'number, diversity, and variety of combinations of rules to the
+'user-defined subset of game rules. Afterward, the BIGS987 software
+'application uses the three databases of player-finish
+'probabilities, the three databases of dealer-finish probabilities,
+'and the user-defined set of game rules, to find the set of
+'combination-dependent-playing-strategy tables and to calculate the
+'expected value of the game wager for an optional embodiment of the
+'single-exposure game of the present invention that is subject to
+'the user-defined set of game rules.
+
+_TITLE "BIGS903 software application"
+TYPE bsrules
+    c0 AS INTEGER
+    c1 AS INTEGER
+    c2 AS INTEGER
+    c3 AS INTEGER
+    c4 AS INTEGER
+    c5 AS INTEGER
+    c6 AS INTEGER
+    c7 AS INTEGER
+    c8 AS INTEGER
+    c9 AS INTEGER
+    cT AS INTEGER
+    cJ AS INTEGER
+    cQ AS INTEGER
+    cK AS INTEGER
+    jojo AS INTEGER
+    jojopo AS SINGLE
+    joanca AS INTEGER
+    joancash AS INTEGER
+    joancapo AS SINGLE
+    jowi AS INTEGER
+    d28p AS INTEGER
+    bshw AS INTEGER
+    dhf AS INTEGER
+    j AS INTEGER
+    dwt AS INTEGER
+    dbc AS INTEGER
+    hole AS INTEGER
+    nchw AS INTEGER
+    ls AS INTEGER
+    early AS INTEGER
+    splt AS INTEGER
+    nsh AS INTEGER
+    rsa AS INTEGER
+    das AS INTEGER
+    dh AS INTEGER
+    ld AS INTEGER
+    ins AS INTEGER
+    bigslick AS SINGLE
+    dsa AS INTEGER
+    bssh AS INTEGER
+    deck AS INTEGER
+    shf AS INTEGER
+    immed AS INTEGER
+    pbd AS INTEGER
+    b27po AS INTEGER
+    ms999 AS SINGLE
+    ss999 AS SINGLE
+    sp999 AS SINGLE
+    jp999 AS SINGLE
+    po6c27 AS SINGLE
+    po7c27 AS SINGLE
+    po8c27 AS SINGLE
+    po9c27 AS SINGLE
+    ms89T AS SINGLE
+    ss89T AS SINGLE
+    sp89T AS SINGLE
+    dd AS INTEGER
+    dd3 AS INTEGER
+    dd4 AS INTEGER
+    dd5 AS INTEGER
+    dd6 AS INTEGER
+    dd7 AS INTEGER
+    dd8 AS INTEGER
+    description AS STRING * 80
+END TYPE
+TYPE qbase
+    dat0 AS SINGLE
+    dat1 AS SINGLE
+    dat2 AS SINGLE
+    dat3 AS SINGLE
+    dat4 AS SINGLE
+    dat5 AS SINGLE
+    dat6 AS SINGLE
+    dat7 AS SINGLE
+    dat8 AS SINGLE
+    dat9 AS SINGLE
+    dat10 AS SINGLE
+    dat11 AS SINGLE
+    dat12 AS SINGLE
+    dat13 AS SINGLE
+    dat14 AS SINGLE
+END TYPE
+DIM pfar(104, 104, 81, 32) AS SINGLE
+DIM psar(104, 104, 81, 32) AS SINGLE
+DIM pbr(104, 104, 81, 32) AS SINGLE
+DIM pc1 AS INTEGER
+DIM pc2 AS INTEGER
+DIM dc1 AS INTEGER
+DIM dc2 AS INTEGER
+DIM sd AS bsrules
+DIM database AS qbase
+DIM djoke(23) AS INTEGER
+DIM dmult(23) AS INTEGER
+DIM dadd(23) AS INTEGER
+DIM dp(23) AS SINGLE
+DIM f(81, 32) AS SINGLE
+DIM mv(5) AS INTEGER
+DIM card(28) AS INTEGER
+DIM mc(48)
+DIM mc27po(11) AS SINGLE
+DIM dd(3 TO 8) AS INTEGER
+GOTO 226
+' Subroutine 777 relies upon the structure created by a nested next
+' loops to step through a set of possible combinations of playing
+' cards that the player might draw while forming the player's
+' complete hand.
+777 dmult(2) = (pc1 - 1) * (pc2 - 1)
+dadd(2) = pc1 + pc2 - 15
+dp(2) = 1: ' to simplify calculations subtract 15 from dadd(2)
+IF dadd(2) > k% THEN
+    f(I%, dadd(2)) = f(I%, dadd(2)) + dp(2)
+    GOTO 18
+END IF
+IF dmult(2) = 0 AND dadd(2) > j% THEN
+    mv(1) = dadd(2) + 13: f(I%, mv(1)) = f(I%, mv(1)) + dp(2)
+    GOTO 18
+END IF
+IF jo27% = 1 THEN
+    djoke(2) = pc1 * pc2
+    IF djoke(2) = 0 THEN
+        f(I%, 25) = f(I%, 25) + 1: GOTO 18
+    END IF
+END IF
+FOR s = 0 TO 13 STEP 1
+    dmult(3) = dmult(2) * (s - 1)
+    dadd(3) = dadd(2) + s
+    IF mc(s) < 1 THEN mc(17) = mc(s) ELSE mc(17) = 1
+    IF mc(s) = 0 THEN GOTO 19
+    dp(3) = dp(2) * mc(s) / mc(14)
+    mc(s) = mc(s) - mc(17)
+    mc(14) = mc(14) - mc(17)
+    IF b27po% = 1 THEN
+        IF dadd(3) = 12 THEN
+            IF pc1 = 9 AND pc2 = 9 THEN
+                po999 = mc27po(1) + mc27po(2)
+                IF dc1 = 9 AND dc2 = 9 THEN
+                    po999 = mc27po(3) + mc27po(11)
+                END IF
+                IF po999 <> 0 THEN
+                    f(I%, 26) = f(I%, 26) + dp(3)
+                    mc(s) = mc(s) + mc(17)
+                    mc(14) = mc(14) + mc(17): GOTO 19
+                END IF
+            END IF
+            IF pc1 = 8 THEN
+                IF pc2 = 9 OR pc2 = 10 THEN
+                    po89T = mc27po(8) + mc27po(9) + mc27po(10)
+                    IF po89T <> 0 THEN
+                        f(I%, 27) = f(I%, 27) + dp(3)
+                        mc(s) = mc(s) + mc(17)
+                        mc(14) = mc(14) + mc(17)
+                        GOTO 19
+                    END IF
+                END IF
+            END IF
+            IF pc1 = 9 THEN
+                IF pc2 = 8 OR pc2 = 10 THEN
+                    po89T = mc27po(8) + mc27po(9) + mc27po(10)
+                    IF po89T <> 0 THEN
+                        f(I%, 27) = f(I%, 27) + dp(3)
+                        mc(s) = mc(s) + mc(17)
+                        mc(14) = mc(14) + mc(17)
+                        GOTO 19
+                    END IF
+                END IF
+            END IF
+            IF pc1 = 10 THEN
+                IF pc2 = 8 OR pc2 = 9 THEN
+                    po89T = mc27po(8) + mc27po(9) + mc27po(10)
+                    IF po89T <> 0 THEN
+                        f(I%, 27) = f(I%, 27) + dp(3)
+                        mc(s) = mc(s) + mc(17)
+                        mc(14) = mc(14) + mc(17)
+                        GOTO 19
+                    END IF
+                END IF
+            END IF
+        END IF
+    END IF
+    IF jo27% = 1 THEN
+        djoke(3) = djoke(2) * s
+        IF djoke(3) = 0 THEN
+            f(I%, 25) = f(I%, 25) + dp(3)
+            mc(s) = mc(s) + mc(17)
+            mc(14) = mc(14) + mc(17)
+            GOTO 19
+        END IF
+    END IF
+    IF dadd(3) > k% THEN
+        f(I%, dadd(3)) = f(I%, dadd(3)) + dp(3)
+        mc(s) = mc(s) + mc(17)
+        mc(14) = mc(14) + mc(17)
+        GOTO 19
+    END IF
+    IF dmult(3) = 0 AND dadd(3) > j% AND dadd(3) < 0 THEN
+        mv(1) = dadd(3) + 13
+        f(I%, mv(1)) = f(I%, mv(1)) + dp(3)
+        mc(s) = mc(s) + mc(17)
+        mc(14) = mc(14) + mc(17)
+        GOTO 19
+    END IF
+    FOR t = 0 TO 13 STEP 1
+        dmult(4) = dmult(3) * (t - 1)
+        dadd(4) = dadd(3) + t
+        IF mc(t) < 1 THEN mc(18) = mc(t) ELSE mc(18) = 1
+        IF mc(t) = 0 THEN GOTO 20
+        dp(4) = dp(3) * mc(t) / mc(14)
+        mc(t) = mc(t) - mc(18)
+        mc(14) = mc(14) - mc(18)
+        IF jo27% = 1 THEN
+            djoke(4) = djoke(3) * t
+            IF djoke(4) = 0 THEN
+                f(I%, 25) = f(I%, 25) + dp(4)
+                mc(t) = mc(t) + mc(18)
+                mc(14) = mc(14) + mc(18)
+                GOTO 20
+            END IF
+        END IF
+        IF dadd(4) > k% THEN
+            f(I%, dadd(4)) = f(I%, dadd(4)) + dp(4)
+            mc(t) = mc(t) + mc(18)
+            mc(14) = mc(14) + mc(18)
+            GOTO 20
+        END IF
+        IF dmult(4) = 0 AND dadd(4) > j% AND dadd(4) < 0 THEN
+            mv(1) = dadd(4) + 13
+            f(I%, mv(1)) = f(I%, mv(1)) + dp(4): mc(t) = mc(t) + mc(18)
+            mc(14) = mc(14) + mc(18)
+            GOTO 20
+        END IF
+        FOR u = 0 TO 13 STEP 1
+            dmult(5) = dmult(4) * (u - 1)
+            dadd(5) = dadd(4) + u
+            IF mc(u) < 1 THEN mc(19) = mc(u) ELSE mc(19) = 1
+            IF mc(u) = 0 THEN GOTO 21
+            dp(5) = dp(4) * mc(u) / mc(14)
+            mc(u) = mc(u) - mc(19)
+            mc(14) = mc(14) - mc(19)
+            IF jo27% = 1 THEN
+                djoke(5) = djoke(4) * u
+                IF djoke(5) = 0 THEN
+                    f(I%, 25) = f(I%, 25) + dp(5)
+                    mc(u) = mc(u) + mc(19)
+                    mc(14) = mc(14) + mc(19)
+                    GOTO 21
+                END IF
+            END IF
+            IF dadd(5) > k% THEN
+                f(I%, dadd(5)) = f(I%, dadd(5)) + dp(5)
+                mc(u) = mc(u) + mc(19)
+                mc(14) = mc(14) + mc(19)
+                GOTO 21
+            END IF
+            IF dmult(5) = 0 AND dadd(5) > j% AND dadd(5) < 0 THEN
+                mv(1) = dadd(5) + 13
+                f(I%, mv(1)) = f(I%, mv(1)) + dp(5)
+                mc(u) = mc(u) + mc(19)
+                mc(14) = mc(14) + mc(19)
+                GOTO 21
+            END IF
+            FOR v = 0 TO 13 STEP 1
+                dmult(6) = dmult(5) * (v - 1)
+                dadd(6) = dadd(5) + v
+                IF mc(v) < 1 THEN mc(20) = mc(v) ELSE mc(20) = 1
+                IF mc(v) = 0 THEN GOTO 22
+                dp(6) = dp(5) * mc(v) / mc(14)
+                mc(v) = mc(v) - mc(20)
+                mc(14) = mc(14) - mc(20)
+                IF jo27% = 1 THEN
+                    djoke(6) = djoke(5) * v
+                    IF djoke(6) = 0 THEN
+                        f(I%, 25) = f(I%, 25) + dp(6)
+                        mc(v) = mc(v) + mc(20)
+                        mc(14) = mc(14) + mc(20)
+                        GOTO 22
+                    END IF
+                END IF
+                IF dadd(6) > k% THEN
+                    IF b27po% = 1 AND dadd(6) = 12 THEN
+                        IF mc27po(4) <> 0 THEN
+                            f(I%, 28) = f(I%, 28) + dp(6)
+                            mc(v) = mc(v) + mc(20)
+                            mc(14) = mc(14) + mc(20)
+                            GOTO 22
+                        END IF
+                    END IF
+                    f(I%, dadd(6)) = f(I%, dadd(6)) + dp(6)
+                    mc(v) = mc(v) + mc(20)
+                    mc(14) = mc(14) + mc(20)
+                    GOTO 22
+                END IF
+                IF dmult(6) = 0 AND dadd(6) > j% AND dadd(6) < 0 THEN
+                    mv(1) = dadd(6) + 13
+                    IF b27po% = 1 AND mv(1) = 12 THEN
+                        IF mc27po(4) <> 0 THEN
+                            f(I%, 28) = f(I%, 28) + dp(6)
+                            mc(v) = mc(v) + mc(20)
+                            mc(14) = mc(14) + mc(20)
+                            GOTO 22
+                        END IF
+                    END IF
+                    f(I%, mv(1)) = f(I%, mv(1)) + dp(6)
+                    mc(v) = mc(v) + mc(20)
+                    mc(14) = mc(14) + mc(20)
+                    GOTO 22
+                END IF
+                FOR w = 0 TO 13 STEP 1
+                    dmult(7) = dmult(6) * (w - 1)
+                    dadd(7) = dadd(6) + w
+                    IF mc(w) < 1 THEN mc(15) = mc(w) ELSE mc(15) = 1
+                    IF mc(w) = 0 THEN GOTO 23
+                    dp(7) = dp(6) * mc(w) / mc(14)
+                    mc(w) = mc(w) - mc(15)
+                    mc(14) = mc(14) - mc(15)
+                    IF jo27% = 1 THEN
+                        djoke(7) = djoke(6) * w
+                        IF djoke(7) = 0 THEN
+                            f(I%, 25) = f(I%, 25) + dp(7)
+                            mc(w) = mc(w) + mc(15)
+                            mc(14) = mc(14) + mc(15)
+                            GOTO 23
+                        END IF
+                    END IF
+                    IF dadd(7) > k% THEN
+                        IF b27po% = 1 AND dadd(7) = 12 THEN
+                            IF mc27po(5) <> 0 THEN
+                                f(I%, 29) = f(I%, 29) + dp(7)
+                                mc(w) = mc(w) + mc(15)
+                                mc(14) = mc(14) + mc(15)
+                                GOTO 23
+                            END IF
+                        END IF
+                        f(I%, dadd(7)) = f(I%, dadd(7)) + dp(7)
+                        mc(w) = mc(w) + mc(15)
+                        mc(14) = mc(14) + mc(15)
+                        GOTO 23
+                    END IF
+                    IF dmult(7) = 0 AND dadd(7) > j% AND dadd(7) < 0 THEN
+                        mv(1) = dadd(7) + 13
+                        IF b27po% = 1 AND mv(1) = 12 THEN
+                            IF mc27po(5) <> 0 THEN
+                                f(I%, 29) = f(I%, 29) + dp(7)
+                                mc(w) = mc(w) + mc(15)
+                                mc(14) = mc(14) + mc(15)
+                                GOTO 23
+                            END IF
+                        END IF
+                        f(I%, mv(1)) = f(I%, mv(1)) + dp(7)
+                        mc(w) = mc(w) + mc(15)
+                        mc(14) = mc(14) + mc(15)
+                        GOTO 23
+                    END IF
+                    FOR o = 0 TO 13 STEP 1
+                        dmult(8) = dmult(7) * (o - 1)
+                        dadd(8) = dadd(7) + o
+                        IF mc(o) < 1 THEN mc(21) = mc(o) ELSE mc(21) = 1
+                        IF mc(o) = 0 THEN GOTO 24
+                        dp(8) = dp(7) * mc(o) / mc(14)
+                        mc(o) = mc(o) - mc(21)
+                        mc(14) = mc(14) - mc(21)
+                        IF jo27% = 1 THEN
+                            djoke(8) = djoke(7) * o
+                            IF djoke(8) = 0 THEN
+                                f(I%, 25) = f(I%, 25) + dp(8)
+                                mc(o) = mc(o) + mc(21)
+                                mc(14) = mc(14) + mc(21)
+                                GOTO 24
+                            END IF
+                        END IF
+                        IF dadd(8) > k% THEN
+                            IF b27po% = 1 AND dadd(8) = 12 THEN
+                                IF mc27po(6) <> 0 THEN
+                                    f(I%, 30) = f(I%, 30) + dp(8)
+                                    mc(o) = mc(o) + mc(21)
+                                    mc(14) = mc(14) + mc(21)
+                                    GOTO 24
+                                END IF
+                            END IF
+                            f(I%, dadd(8)) = f(I%, dadd(8)) + dp(8)
+                            mc(o) = mc(o) + mc(21)
+                            mc(14) = mc(14) + mc(21)
+                            GOTO 24
+                        END IF
+                        IF dmult(8) = 0 AND dadd(8) > j% AND dadd(8) < 0 THEN
+                            mv(1) = dadd(8) + 13
+                            IF b27po% = 1 AND mv(1) = 12 THEN
+                                IF mc27po(6) <> 0 THEN
+                                    f(I%, 30) = f(I%, 30) + dp(8)
+                                    mc(o) = mc(o) + mc(21)
+                                    mc(14) = mc(14) + mc(21)
+                                    GOTO 24
+                                END IF
+                            END IF
+                            f(I%, mv(1)) = f(I%, mv(1)) + dp(8)
+                            mc(o) = mc(o) + mc(21)
+                            mc(14) = mc(14) + mc(21)
+                            GOTO 24
+                        END IF
+                        FOR r = 0 TO 13 STEP 1
+                            dmult(9) = dmult(8) * (r - 1)
+                            dadd(9) = dadd(8) + r
+                            IF mc(r) < 1 THEN mc(16) = mc(r) ELSE mc(16) = 1
+                            IF mc(r) = 0 THEN GOTO 25
+                            dp(9) = dp(8) * mc(r) / mc(14)
+                            mc(r) = mc(r) - mc(16)
+                            mc(14) = mc(14) - mc(16)
+                            IF jo27% = 1 THEN
+                                djoke(9) = djoke(8) * r
+                                IF djoke(9) = 0 THEN f(I%, 25) = f(I%, 25) + dp(9)
+                                mc(r) = mc(r) + mc(16): mc(14) = mc(14) + mc(16)
+                                GOTO 25
+                            END IF
+                            IF dadd(9) > k% THEN
+                                IF b27po% = 1 AND dadd(9) = 12 THEN
+                                    IF mc27po(7) <> 0 THEN
+                                        f(I%, 31) = f(I%, 31) + dp(9) * mc27po(7)
+                                        mc(r) = mc(r) + mc(16)
+                                        mc(14) = mc(14) + mc(16)
+                                        GOTO 25
+                                    END IF
+                                END IF
+                                IF nchw% = 1 AND dadd(9) < 13 THEN
+                                    f(I%, 32) = f(I%, 32) + dp(9)
+                                    mc(r) = mc(r) + mc(16)
+                                    mc(14) = mc(14) + mc(16)
+                                    GOTO 25
+                                END IF
+                                f(I%, dadd(9)) = f(I%, dadd(9)) + dp(9)
+                                mc(r) = mc(r) + mc(16)
+                                mc(14) = mc(14) + mc(16)
+                                GOTO 25
+                            END IF
+                            IF dmult(9) = 0 AND dadd(9) > j% AND dadd(9) < 0 THEN
+                                mv(1) = dadd(9) + 13
+                                IF b27po% = 1 AND mv(1) = 12 THEN
+                                    IF mc27po(7) <> 0 THEN
+                                        f(I%, 31) = f(I%, 31) + dp(9)
+                                        mc(r) = mc(r) + mc(16)
+                                        mc(14) = mc(14) + mc(16)
+                                        GOTO 25
+                                    END IF
+                                END IF
+                                IF nchw% = 1 AND dadd(9) < 13 THEN
+                                    f(I%, 32) = f(I%, 32) + dp(9)
+                                    mc(r) = mc(r) + mc(16)
+                                    mc(14) = mc(14) + mc(16)
+                                    GOTO 25
+                                END IF
+                                f(I%, mv(1)) = f(I%, mv(1)) + dp(9)
+                                mc(r) = mc(r) + mc(16)
+                                mc(14) = mc(14) + mc(16)
+                                GOTO 25
+                            END IF
+                            IF nchw% = 1 THEN
+                                f(I%, 32) = f(I%, 32) + dp(9)
+                                mc(r) = mc(r) + mc(16)
+                                mc(14) = mc(14) + mc(16)
+                                GOTO 25
+                            END IF
+                            mc(r) = mc(r) + mc(16)
+                            mc(14) = mc(14) + mc(16)
+                        25 NEXT r
+                        mc(o) = mc(o) + mc(21)
+                        mc(14) = mc(14) + mc(21)
+                    24 NEXT o
+                    mc(w) = mc(w) + mc(15)
+                    mc(14) = mc(14) + mc(15)
+                23 NEXT w
+                mc(v) = mc(v) + mc(20)
+                mc(14) = mc(14) + mc(20)
+            22 NEXT v
+            mc(u) = mc(u) + mc(19)
+            mc(14) = mc(14) + mc(19)
+        21 NEXT u
+        mc(t) = mc(t) + mc(18)
+        mc(14) = mc(14) + mc(18)
+    20 NEXT t
+    mc(s) = mc(s) + mc(17)
+    mc(14) = mc(14) + mc(17)
+19 NEXT s
+18 RETURN
+226 CLS: PRINT "The BIGS903 software application ";
+PRINT "enables the user to input into program memory"
+PRINT "a subset of game rules. The subset of game ";
+PRINT "rules specifies the number of decks"
+PRINT "in a stack, and the composition of each ";
+PRINT "deck. If the user-defined composition"
+PRINT "of each deck includes at least one joker, ";
+PRINT "then the subset of game rules"
+PRINT "includes a rule that specifies the value ";
+PRINT "assigned to each joker. The BIGS903"
+PRINT "software application enables the user to ";
+PRINT "select the rule from a group of rules"
+PRINT "consisting of a rule that specifies each ";
+PRINT "joker has a value of zero points, and"
+PRINT "a rule that specifies each joker has a ";
+PRINT "value of any number of points required"
+PRINT "to make a hand total of twenty-seven ";
+PRINT "points. Given the user-defined subset of"
+PRINT "rules, the BIGS903 software application ";
+PRINT "builds a set of databases of player-"
+PRINT "finish probabilities. Subsequently, ";
+PRINT "the BIGS903 software application saves the"
+PRINT "set of databases of player-finish ";
+PRINT "probabilities to a set of data files and"
+PRINT "the BIGS903 software application saves ";
+PRINT "the user-defined subset of game rules"
+PRINT "to a data file."
+PRINT " "
+' START OF THE SOFTWARE MEANS FOR MAKING A SUBSET OF RULES
+PRINT "press 'y' and enter for a standard deck composition"
+INPUT ans$
+PRINT " "
+IF ans$ = "y" THEN
+    FOR x = 1 TO 13
+    card(x) = 4: NEXT x: card(0) = 2: card(14) = 54
+END IF
+IF ans$ <> "y" THEN
+    PRINT "enter deck composition "
+    PRINT " "
+    FOR x = 0 TO 13
+        IF x = 1 THEN
+            PRINT "input the number of cards ";
+            PRINT "assigned a value "
+            PRINT "selected from a group ";
+            PRINT "consisting of 1 point and 14 points."
+            INPUT a
+            PRINT " "
+            card(1) = a
+            card(14) = card(14) + a
+        END IF
+        IF x <> 1 THEN
+            PRINT "input the number of cards ";
+            PRINT "assigned a value";
+            PRINT " of "; x; " points."
+            INPUT a
+            PRINT " "
+            card(x) = a
+            card(14) = card(14) + a
+        END IF
+    NEXT x
+END IF
+IF card(0) = 0 THEN
+    PRINT "input the number of cards assigned a value ";
+    PRINT "selected from a group consisting "
+    PRINT "of any number of points required to bring ";
+    PRINT "the sum of the point values"
+    PRINT "assigned to the cards ";
+    PRINT "in a hand to twenty-seven points."
+    INPUT a
+    PRINT " "
+    card(0) = a
+    card(14) = card(14) + a
+    jo27% = 1
+    PRINT " "
+END IF
+PRINT "input the number decks of cards"
+INPUT deck%
+PRINT " "
+' END OF THE SOFTWARE MEANS FOR MAKING A SUBSET OF RULES
+999 PRINT "enter the 'folder/filename prefix' of"
+PRINT "the files to be used to store application output."
+INPUT files$
+PRINT " "
+q$ = "open " + files$ + "i.txt to see a list of database parameters"
+OPEN files$ + "i.txt" FOR OUTPUT AS #1
+PRINT #1, "BIGS903 saves databases of player-finish probabilities"
+PRINT #1, "to a set of files."
+PRINT #1, " "
+PRINT #1, "BIGS903 PROMPTS FOR INPUT AND USER RESPONSES"
+PRINT #1, " "
+PRINT #1, "press 'y' and enter for a standard deck composition "
+PRINT #1, ans$
+PRINT #1, " "
+IF ans$ <> "y" THEN
+    PRINT #1, "enter deck composition "
+    PRINT #1, " "
+END IF
+FOR x = 0 TO 13
+    IF x = 1 THEN
+        PRINT #1, "input the number of cards ";
+        PRINT #1, "assigned a value "
+        PRINT #1, "selected from a group ";
+        PRINT #1, "consisting of 1 point and 14 points."
+        PRINT #1, card(1)
+        PRINT #1, " "
+    END IF
+    IF x <> 1 THEN
+        PRINT #1, "input the number of cards ";
+        PRINT #1, "assigned a value";
+        PRINT #1, " of "; x; " points."
+        IF jo27% <> 1 OR x <> 0 THEN
+            PRINT #1, card(x)
+        END IF
+        IF jo27% = 1 AND x = 0 THEN
+            PRINT #1, " 0"
+        END IF
+        PRINT #1, " "
+    END IF
+NEXT x
+IF jo27% = 1 THEN
+    PRINT #1, "input the number of cards assigned a value ";
+    PRINT #1, "selected from a group consisting "
+    PRINT #1, "of any number of points required to bring ";
+    PRINT #1, "the sum of the point values"
+    PRINT #1, "assigned to the cards ";
+    PRINT #1, "in a hand to twenty-seven points."
+    PRINT #1, card(0)
+    PRINT #1, " "
+END IF
+PRINT #1, "input the number of decks used"
+PRINT #1, deck%
+PRINT #1, " "
+PRINT #1, "enter the 'folder/filename prefix' of"
+PRINT #1, "the files to be used to store application output."
+PRINT #1, files$
+PRINT #1, " "
+PRINT #1, "a brief description of the databases reads as follows: "
+PRINT #1, q$
+CLOSE #1
+d28p% = 0
+dwt% = 0
+dbc% = 0
+nchw% = 1
+ls% = 1
+splt% = 1
+das% = 1
+most% = 4
+rsa% = 1
+dsa% = 1
+dh% = 0
+alr% = 0
+ld% = 0
+bigslick = 1.5
+bssh% = 1
+immed% = 0
+pbd% = 0
+b27po% = 1
+FOR x = 4 TO 7
+    mc27po(x) = 1
+NEXT x
+ms89T = 1: ss89T = 1: sp89T = 1: ms999 = 1
+IF deck% > 2 THEN ss999 = 1
+IF deck% > 1 THEN sp999 = 1
+IF deck% > 2 THEN jp999 = 1
+IF card(9) <> 0 THEN
+    mc27po(1) = (card(9) * deck%) * (card(9) * deck% - 1)
+    mc27po(1) = mc27po(1) * (card(9) * deck% - 2)
+    mc27po(2) = deck% * (deck% - 1) * (deck% - 2) * 4 / mc27po(1)
+    mc27po(1) = ms999
+    mc27po(11) = (jp999 - sp999) * mc27po(2)
+    mc27po(3) = sp999: mc27po(2) = (ss999 - ms999) * mc27po(2)
+END IF
+IF card(8) * card(9) * card(10) <> 0 THEN
+    mc27po(8) = card(8) * card(9) * card(10) * deck% ^ 3
+    mc27po(9) = deck% ^ 3 * 4 / mc27po(8)
+    mc27po(10) = deck% ^ 3 * 1 / mc27po(8)
+    mc27po(8) = ms89T
+    mc27po(10) = (sp89T - ss89T) * mc27po(10)
+    mc27po(9) = (ss89T - ms89T) * mc27po(9)
+END IF
+v$ = files$ + "a.dat"
+OPEN v$ FOR RANDOM AS #1 LEN = LEN(sd)
+sd.c0 = card(0)
+sd.c1 = card(1)
+sd.c2 = card(2)
+sd.c3 = card(3)
+sd.c4 = card(4)
+sd.c5 = card(5)
+sd.c6 = card(6)
+sd.c7 = card(7)
+sd.c8 = card(8)
+sd.c9 = card(9)
+sd.cT = card(10)
+sd.cJ = card(11)
+sd.cQ = card(12)
+sd.cK = card(13)
+sd.jojo = jojo%
+sd.jojopo = jojopo
+sd.joanca = joanca%
+sd.joancash = joancash%
+sd.joancapo = joancapo
+sd.jowi = jo27%
+sd.d28p = d28p%
+sd.bshw = bshw%
+sd.dhf = dhf%
+sd.j = j
+sd.dwt = dwt%
+sd.dbc = dbc%
+sd.nchw = nchw%
+sd.ls = ls%
+sd.splt = splt%
+sd.nsh = most%
+sd.rsa = rsa%
+sd.das = das%
+sd.dh = dh%
+sd.ld = ld%
+sd.bigslick = bigslick
+sd.dsa = dsa%
+sd.bssh = bssh%
+sd.deck = deck%
+sd.shf = shf
+sd.immed = immed%
+sd.pbd = pbd%
+sd.b27po = b27po%
+sd.po6c27 = mc27po(4)
+sd.po7c27 = mc27po(5)
+sd.po8c27 = mc27po(6)
+sd.po9c27 = mc27po(7)
+sd.ms89T = ms89T
+sd.ss89T = ss89T
+sd.sp89T = sp89T
+sd.ms999 = ms999
+sd.ss999 = ss999
+sd.sp999 = sp999
+sd.jp999 = jp999
+sd.dd = dd%
+sd.dd3 = dd(3)
+sd.dd4 = dd(4)
+sd.dd5 = dd(5)
+sd.dd6 = dd(6)
+sd.dd7 = dd(7)
+sd.dd8 = dd(8)
+IF LEN(q$) > 80 THEN
+    sd.description = MID$(q$, 1, 80)
+END IF
+IF LEN(q$) < 81 THEN
+    sd.description = q$
+END IF
+PUT #1, , sd
+CLOSE #1
+OPEN files$ + "i.txt" FOR APPEND AS #1
+PRINT #1, ""
+PRINT #1, ""
+PRINT #1, "START: "; DATE$; " "; TIME$
+CLOSE #1
+FOR k = 13 TO 0 STEP -1
+    FOR l = 13 TO k STEP -1
+        FOR m = 13 TO 0 STEP -1
+            FOR e = 13 TO m STEP -1
+                pc1 = k: pc2 = l: dc1 = m: dc2 = e
+                pn% = pc1 / 2 * (27 - pc1) + pc2
+                dn% = dc1 / 2 * (27 - dc1) + dc2
+                FOR x = 0 TO 14
+                mc(x) = card(x) * deck%: NEXT x
+                IF mc(pc1) < 1 THEN mc(22) = mc(pc1) ELSE mc(22) = 1
+                IF mc(pc1) = 0 THEN GOTO 456
+                mc(pc1) = mc(pc1) - mc(22)
+                mc(14) = mc(14) - mc(22)
+                IF mc(pc2) < 1 THEN mc(22) = mc(pc2) ELSE mc(22) = 1
+                IF mc(pc2) = 0 THEN GOTO 456
+                mc(pc2) = mc(pc2) - mc(22)
+                mc(14) = mc(14) - mc(22)
+                IF mc(dc1) < 1 THEN mc(22) = mc(dc1) ELSE mc(22) = 1
+                IF mc(dc1) = 0 THEN GOTO 456
+                mc(dc1) = mc(dc1) - mc(22)
+                mc(14) = mc(14) - mc(22)
+                IF mc(dc2) < 1 THEN mc(22) = mc(dc2) ELSE mc(22) = 1
+                IF mc(dc2) = 0 THEN GOTO 456
+                mc(dc2) = mc(dc2) - mc(22)
+                mc(14) = mc(14) - mc(22)
+                FOR g = 15 TO 27
+                    FOR h = 5 TO 13
+                        IF h + 14 < g THEN h = g - 14
+                        I% = I% + 1: j% = h - 15: k% = g - 16
+                        GOSUB 777
+                        IF (pc1 - 1) * (pc2 - 1) = 0 THEN
+                            IF pc1 + pc2 > 6 AND h < 6 THEN
+                                IF I% < 46 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 7 AND h < 7 THEN
+                                IF I% < 54 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 8 AND h < 8 THEN
+                                IF I% < 61 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 9 AND h < 9 THEN
+                                IF I% < 67 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 10 AND h < 10 THEN
+                                IF I% < 72 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 11 AND h < 11 THEN
+                                IF I% < 76 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 12 AND h < 12 THEN
+                                IF I% < 79 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 13 AND h < 13 THEN
+                                IF I% < 81 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                        END IF
+                        IF (pc1 - 1) * (pc2 - 1) <> 0 THEN
+                            IF pc1 + pc2 > 5 AND h < 6 THEN
+                                IF I% < 46 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 6 AND h < 7 THEN
+                                IF I% < 54 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 7 AND h < 8 THEN
+                                IF I% < 61 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 8 AND h < 9 THEN
+                                IF I% < 67 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 9 AND h < 10 THEN
+                                IF I% < 72 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 10 AND h < 11 THEN
+                                IF I% < 76 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 11 AND h < 12 THEN
+                                IF I% < 79 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                            IF pc1 + pc2 > 12 AND h < 13 THEN
+                                IF I% < 81 THEN
+                                    I% = I% + 1: h = h + 1
+                                END IF
+                            END IF
+                        END IF
+                NEXT h: NEXT g: I% = 0
+                FOR x = 0 TO 81
+                    FOR y = 0 TO 32
+                        pbr(pn%, dn%, x, y) = f(x, y)
+                NEXT y: NEXT x
+                ERASE f
+                IF (pc1 <> pc2 OR splt% <> 1) THEN GOTO 333 ELSE split% = 1
+                FOR pc2 = 13 TO 0 STEP -1
+                    IF pc1 <= pc2 THEN pn% = pc1 / 2 * (27 - pc1) + pc2
+                    IF pc1 > pc2 THEN pn% = pc2 / 2 * (27 - pc2) + pc1
+                    IF pc1 <> 1 OR dsa% = 1 THEN
+                        FOR x = 0 TO 14
+                        mc(x) = card(x) * deck%: NEXT x
+                        IF mc(pc1) < 1 THEN mc(22) = mc(pc1) ELSE mc(22) = 1
+                        IF mc(pc1) = 0 THEN GOTO 444
+                        mc(pc1) = mc(pc1) - mc(22)
+                        mc(14) = mc(14) - mc(22)
+                        IF mc(pc1) < 1 THEN mc(22) = mc(pc1) ELSE mc(22) = 1
+                        IF mc(pc1) = 0 THEN GOTO 444
+                        mc(pc1) = mc(pc1) - mc(22)
+                        mc(14) = mc(14) - mc(22)
+                        IF mc(pc2) < 1 THEN mc(22) = mc(pc2) ELSE mc(22) = 1
+                        IF mc(pc2) = 0 THEN GOTO 444
+                        mc(pc2) = mc(pc2) - mc(22)
+                        mc(14) = mc(14) - mc(22)
+                        IF mc(dc1) < 1 THEN mc(22) = mc(dc1) ELSE mc(22) = 1
+                        IF mc(dc1) = 0 THEN GOTO 444
+                        mc(dc1) = mc(dc1) - mc(22)
+                        mc(14) = mc(14) - mc(22)
+                        IF mc(dc2) < 1 THEN mc(22) = mc(dc2) ELSE mc(22) = 1
+                        IF mc(dc2) = 0 THEN GOTO 444 ELSE
+                        mc(dc2) = mc(dc2) - mc(22)
+                        mc(14) = mc(14) - mc(22)
+                        FOR g = 15 TO 27
+                            FOR h = 5 TO 13
+                                IF h + 14 < g THEN h = g - 14
+                                I% = I% + 1: j% = h - 15: k% = g - 16
+                                GOSUB 777
+                                ' Values given to variable g represent the target numerical sum
+                                ' given for the play of the player's hard hands given by a strategy
+                                ' for the use of the hit option selected from a group of
+                                ' eighty-one supported strategies for the use of the hit option.
+                                ' Values given to variable h represent the target numerical sum
+                                ' given for the play of the player's soft hands given by a strategy
+                                ' for the use of the hit option selected from a group of
+                                ' eighty-one supported strategies for the use of the hit option.
+                                ' Using variables g and h the BIGS903 software application models
+                                ' the combinations of hard/soft target numerical sums specified by
+                                ' each of eighty-one supported strategies for the use of the hit option.
+                                ' The following nineteen lines of source code enable the BIGS903
+                                ' software application to vary the number of strategies for the use
+                                ' of the hit option that are evaluated by the BIGS903 software
+                                ' application according to the sum of the point values assigned
+                                ' to the playing cards in the player's initial hand.
+                                IF (pc1 - 1) * (pc2 - 1) = 0 THEN
+                                    IF pc1 + pc2 > 6 AND h < 6 THEN
+                                        IF I% < 46 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 7 AND h < 7 THEN
+                                        IF I% < 54 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 8 AND h < 8 THEN
+                                        IF I% < 61 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 9 AND h < 9 THEN
+                                        IF I% < 67 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 10 AND h < 10 THEN
+                                        IF I% < 72 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 11 AND h < 11 THEN
+                                        IF I% < 76 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 12 AND h < 12 THEN
+                                        IF I% < 79 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 13 AND h < 13 THEN
+                                        IF I% < 81 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                END IF
+                                IF (pc1 - 1) * (pc2 - 1) <> 0 THEN
+                                    IF pc1 + pc2 > 5 AND h < 6 THEN
+                                        IF I% < 46 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 6 AND h < 7 THEN
+                                        IF I% < 54 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 7 AND h < 8 THEN
+                                        IF I% < 61 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 8 AND h < 9 THEN
+                                        IF I% < 67 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 9 AND h < 10 THEN
+                                        IF I% < 72 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 10 AND h < 11 THEN
+                                        IF I% < 76 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 11 AND h < 12 THEN
+                                        IF I% < 79 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                    IF pc1 + pc2 > 12 AND h < 13 THEN
+                                        IF I% < 81 THEN
+                                            I% = I% + 1: h = h + 1
+                                        END IF
+                                    END IF
+                                END IF
+                        NEXT h: NEXT g: I% = 0
+                        IF pc1 > pc2 THEN
+                            FOR x = 0 TO 81
+                                FOR y = 0 TO 32
+                                    pfar(pn%, dn%, x, y) = f(x, y)
+                            NEXT y: NEXT x
+                        END IF
+                        IF pc1 = pc2 THEN
+                            FOR x = 0 TO 81
+                                FOR y = 0 TO 32
+                                    pfar(pn%, dn%, x, y) = f(x, y)
+                                    psar(pn%, dn%, x, y) = f(x, y)
+                            NEXT y: NEXT x
+                        END IF
+                        IF pc1 < pc2 THEN
+                            FOR x = 0 TO 81
+                                FOR y = 0 TO 32
+                                    psar(pn%, dn%, x, y) = f(x, y)
+                            NEXT y: NEXT x
+                        END IF
+                        ERASE f
+                    END IF
+                444 NEXT pc2
+                pc2 = pc1
+                pn% = pc1 / 2 * (27 - pc1) + pc2
+                333 PRINT "           player cards are";
+                PRINT pc1; "and"; pc2; "dealer cards are"; dc1; "and"; dc2
+456 split% = 0: NEXT e: NEXT m: NEXT l: NEXT k
+v$ = files$ + "q.dat"
+w = 0
+OPEN v$ FOR RANDOM AS #1 LEN = LEN(database)
+FOR x = 0 TO 6
+    FOR y = 0 TO 104
+        FOR r = 0 TO 81
+            FOR f = 0 TO 32
+                w = w + 1
+                database.dat0 = pbr(x * 15 + 0, y, r, f)
+                database.dat1 = pbr(x * 15 + 1, y, r, f)
+                database.dat2 = pbr(x * 15 + 2, y, r, f)
+                database.dat3 = pbr(x * 15 + 3, y, r, f)
+                database.dat4 = pbr(x * 15 + 4, y, r, f)
+                database.dat5 = pbr(x * 15 + 5, y, r, f)
+                database.dat6 = pbr(x * 15 + 6, y, r, f)
+                database.dat7 = pbr(x * 15 + 7, y, r, f)
+                database.dat8 = pbr(x * 15 + 8, y, r, f)
+                database.dat9 = pbr(x * 15 + 9, y, r, f)
+                database.dat10 = pbr(x * 15 + 10, y, r, f)
+                database.dat11 = pbr(x * 15 + 11, y, r, f)
+                database.dat12 = pbr(x * 15 + 12, y, r, f)
+                database.dat13 = pbr(x * 15 + 13, y, r, f)
+                database.dat14 = pbr(x * 15 + 14, y, r, f)
+                PUT #1, w, database
+            NEXT f
+        NEXT r
+    NEXT y
+NEXT x
+CLOSE #1
+v$ = files$ + "r.dat"
+w = 0
+OPEN v$ FOR RANDOM AS #1 LEN = LEN(database)
+FOR x = 0 TO 6
+    FOR y = 0 TO 104
+        FOR r = 0 TO 81
+            FOR f = 0 TO 32
+                w = w + 1
+                database.dat0 = pfar(x * 15 + 0, y, r, f)
+                database.dat1 = pfar(x * 15 + 1, y, r, f)
+                database.dat2 = pfar(x * 15 + 2, y, r, f)
+                database.dat3 = pfar(x * 15 + 3, y, r, f)
+                database.dat4 = pfar(x * 15 + 4, y, r, f)
+                database.dat5 = pfar(x * 15 + 5, y, r, f)
+                database.dat6 = pfar(x * 15 + 6, y, r, f)
+                database.dat7 = pfar(x * 15 + 7, y, r, f)
+                database.dat8 = pfar(x * 15 + 8, y, r, f)
+                database.dat9 = pfar(x * 15 + 9, y, r, f)
+                database.dat10 = pfar(x * 15 + 10, y, r, f)
+                database.dat11 = pfar(x * 15 + 11, y, r, f)
+                database.dat12 = pfar(x * 15 + 12, y, r, f)
+                database.dat13 = pfar(x * 15 + 13, y, r, f)
+                database.dat14 = pfar(x * 15 + 14, y, r, f)
+                PUT #1, w, database
+            NEXT f
+        NEXT r
+    NEXT y
+NEXT x
+CLOSE #1
+v$ = files$ + "s.dat"
+w = 0
+OPEN v$ FOR RANDOM AS #1 LEN = LEN(database)
+FOR x = 0 TO 6
+    FOR y = 0 TO 104
+        FOR r = 0 TO 81
+            FOR f = 0 TO 32
+                w = w + 1
+                database.dat0 = psar(x * 15 + 0, y, r, f)
+                database.dat1 = psar(x * 15 + 1, y, r, f)
+                database.dat2 = psar(x * 15 + 2, y, r, f)
+                database.dat3 = psar(x * 15 + 3, y, r, f)
+                database.dat4 = psar(x * 15 + 4, y, r, f)
+                database.dat5 = psar(x * 15 + 5, y, r, f)
+                database.dat6 = psar(x * 15 + 6, y, r, f)
+                database.dat7 = psar(x * 15 + 7, y, r, f)
+                database.dat8 = psar(x * 15 + 8, y, r, f)
+                database.dat9 = psar(x * 15 + 9, y, r, f)
+                database.dat10 = psar(x * 15 + 10, y, r, f)
+                database.dat11 = psar(x * 15 + 11, y, r, f)
+                database.dat12 = psar(x * 15 + 12, y, r, f)
+                database.dat13 = psar(x * 15 + 13, y, r, f)
+                database.dat14 = psar(x * 15 + 14, y, r, f)
+                PUT #1, w, database
+            NEXT f
+        NEXT r
+    NEXT y
+NEXT x
+CLOSE #1
+OPEN files$ + "i.txt" FOR APPEND AS #1
+PRINT #1, ""
+PRINT #1, "END:   "; DATE$; " "; TIME$
+CLOSE #1
+END

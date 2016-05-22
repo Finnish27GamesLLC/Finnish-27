@@ -22,7 +22,7 @@
 'hand and the dealer's initial hand. If the user-defined set of
 'game rules does give the option to split to the player, then the
 'set of combination-dependent-playing-strategy tables consists of
-'three tables. The first table is a combination-dependent-
+'three tables. The first table is a combination-dependent- 
 'playing-strategy table found for the eleven-thousand-twenty-five
 'unique combinations of card ranks that are possible for the four
 'cards in the set of hands consisting of the player's initial

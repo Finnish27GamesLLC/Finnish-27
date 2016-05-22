@@ -23,7 +23,7 @@
 'of suits consisting of spades, hearts, clubs, and diamonds,
 'and so that each deck of the at least one deck of cards
 'consists of the same complement of cards and thereby has the
-'same deck composition.
+'same deck composition. 
 
 'Each user-defined set of game rules does specify assigning a
 'value to each card in said at least one deck of cards in

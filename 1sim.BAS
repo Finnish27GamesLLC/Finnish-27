@@ -5590,19 +5590,19 @@ IF ss999 <> 0 THEN
     IF ptm(13) <> 1 THEN PRINT #1, " : 1 Odds "
     IF ptm(13) = 1 THEN PRINT #1, " times table minimum"
 END IF
-IF sp999 <> 0 THEN
+IF jp999 <> 0 THEN
     PRINT #1, "ms999+dealer 99";
     PRINT #1, USING "#############"; mc27po(3, 1) - mc27po(3, 2);
     PRINT #1, "             ";
-    PRINT #1, USING "##########.#"; sp999;
+    PRINT #1, USING "##########.#"; jp999;
     IF ptm(13) <> 1 THEN PRINT #1, " : 1 Odds "
     IF ptm(13) = 1 THEN PRINT #1, " times table minimum"
 END IF
-IF jp999 <> 0 THEN
+IF sp999 <> 0 THEN
     PRINT #1, "ss999+dealer 99";
     PRINT #1, USING "#############"; mc27po(11, 1) - mc27po(11, 2);
     PRINT #1, "             ";
-    PRINT #1, USING "##########.#"; jp999;
+    PRINT #1, USING "##########.#"; sp999;
     IF ptm(13) <> 1 THEN PRINT #1, " : 1 Odds "
     IF ptm(13) = 1 THEN PRINT #1, " times table minimum"
     PRINT #1, ""
@@ -9482,7 +9482,7 @@ IF jp999 <> 0 THEN
     PRINT #1, "ms999+dealer 99";
     PRINT #1, USING "#############"; mc27po(3, 1);
     PRINT #1, "             ";
-    PRINT #1, USING "##########.#"; sp999;
+    PRINT #1, USING "##########.#"; jp999;
     IF ptm(13) <> 1 THEN PRINT #1, " : 1 Odds "
     IF ptm(13) = 1 THEN PRINT #1, " times table minimum"
 END IF
@@ -9490,7 +9490,7 @@ IF sp999 <> 0 THEN
     PRINT #1, "ss999+dealer 99";
     PRINT #1, USING "#############"; mc27po(11, 1);
     PRINT #1, "             ";
-    PRINT #1, USING "##########.#"; jp999;
+    PRINT #1, USING "##########.#"; sp999;
     IF ptm(13) <> 1 THEN PRINT #1, " : 1 Odds "
     IF ptm(13) = 1 THEN PRINT #1, " times table minimum"
     PRINT #1, ""

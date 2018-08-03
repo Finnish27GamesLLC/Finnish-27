@@ -209,7 +209,7 @@ DIM denom(486) AS INTEGER
 DIM suit(486) AS INTEGER
 DIM suitp(6) AS INTEGER
 DIM suito(6) AS INTEGER
-DIM iphr(104, 13, 11, 2) AS LONG
+DIM iphr(104, 13, 11, 5) AS LONG
 DIM psc(16, 27) AS INTEGER
 DIM pscp(16, 27) AS INTEGER
 DIM dcs(27) AS INTEGER
@@ -245,7 +245,7 @@ DIM phrank(19) AS LONG
 DIM roc(27, 1) AS INTEGER
 DIM ros(27, 1) AS INTEGER
 DIM wc(792) AS INTEGER
-DIM phr(11, 11) AS DOUBLE
+DIM phr(11, 17) AS DOUBLE
 DIM phcah(27) AS INTEGER
 DIM pscah(27) AS INTEGER
 DIM dcsah(27) AS INTEGER
@@ -373,7 +373,12 @@ FOR p = 0 TO 1
             GOTO 63
         END IF
         IF taketurn% = 1 THEN
-            phr(10, 2) = phr(10, 2) + 1
+            IF phc(x, 0) <> 27 OR only27phpo% <> 1 THEN
+                phr(10, 2) = phr(10, 2) + 1
+            END IF
+            IF phc(x, 0) = 27 AND only27phpo% = 1 THEN
+                phr(10, 14) = phr(10, 14) + 1
+            END IF
             c = 10
             GOTO 63
         END IF
@@ -687,8 +692,14 @@ FOR p = 0 TO 1
 NEXT p
 IF taketurn% = 1 THEN
     IF best(1) > best(0) THEN
-        phr(c, 1) = phr(c, 1) + 1
-        iphr(n%, dc(2), c, 1) = iphr(n%, dc(2), c, 1) + 1
+        IF phc(x, 0) <> 27 OR only27phpo% <> 1 THEN
+            phr(c, 1) = phr(c, 1) + 1
+            iphr(n%, dc(2), c, 1) = iphr(n%, dc(2), c, 1) + 1
+        END IF
+        IF phc(x, 0) = 27 AND only27phpo% = 1 THEN
+            phr(c, 13) = phr(c, 13) + 1
+            iphr(n%, dc(2), c, 4) = iphr(n%, dc(2), c, 4) + 1
+        END IF
         IF ptm(c) <> 1 AND wager% = 0 THEN
             IF phc(x, 0) = 27 OR only27phpo% <> 1 THEN
                 v(x) = v(x) + v(x) * phpo(c)
@@ -696,11 +707,23 @@ IF taketurn% = 1 THEN
         END IF
     END IF
     IF best(1) < best(0) + 1 THEN
-        phr(c, 0) = phr(c, 0) + 1
-        iphr(n%, dc(2), c, 0) = iphr(n%, dc(2), c, 0) + 1
+        IF phc(x, 0) <> 27 OR only27phpo% <> 1 THEN
+            phr(c, 0) = phr(c, 0) + 1
+            iphr(n%, dc(2), c, 0) = iphr(n%, dc(2), c, 0) + 1
+        END IF
+        IF phc(x, 0) = 27 AND only27phpo% = 1 THEN
+            phr(c, 12) = phr(c, 12) + 1
+            iphr(n%, dc(2), c, 3) = iphr(n%, dc(2), c, 3) + 1
+        END IF
     END IF
-    phr(c, 2) = phr(c, 2) + 1
-    iphr(n%, dc(2), c, 2) = iphr(n%, dc(2), c, 2) + 1
+    IF phc(x, 0) <> 27 OR only27phpo% <> 1 THEN
+        phr(c, 2) = phr(c, 2) + 1
+        iphr(n%, dc(2), c, 2) = iphr(n%, dc(2), c, 2) + 1
+    END IF
+    IF phc(x, 0) = 27 AND only27phpo% = 1 THEN
+        phr(c, 14) = phr(c, 14) + 1
+        iphr(n%, dc(2), c, 5) = iphr(n%, dc(2), c, 5) + 1
+    END IF
     IF best(1) < best(0) + 1 THEN
         IF pcomp% = 1 THEN
             c = 10
@@ -2503,48 +2526,50 @@ END IF
         GOTO 81
     END IF
     IF qfcphw% = 1 THEN
-        IF phc(x, 0) < 28 AND phc(0, x) > 4 THEN
-            IF phcat(x) >= minrank% AND phcat(x) <> 10 THEN
-                IF pcomp% = 1 THEN
-                    taketurn% = 0
-                    GOSUB 54
-                    taketurn% = 1
-                END IF
-                IF pcomp% <> 1 OR best(0) < best(1) THEN
-                    IF wager% = 1 OR wager% = 2 THEN
-                        b(25) = b(25) + v(x) * bet&
-                        b(27) = b(27) + v(x)
-                        b(66) = b(66) + 1
-                        IF dh(1) > 27 THEN
-                            b(91) = b(91) + v(x) * bet&
-                            b(34) = b(34) + v(x)
-                            b(73) = b(73) + 1
-                        END IF
+        IF immedd27% <> 1 OR dh(1) <> 27 THEN
+            IF phc(x, 0) < 28 AND phc(0, x) > 4 THEN
+                IF phcat(x) >= minrank% AND phcat(x) <> 10 THEN
+                    IF pcomp% = 1 THEN
+                        taketurn% = 0
+                        GOSUB 54
+                        taketurn% = 1
                     END IF
-                    GOSUB 54
-                    IF wager% = 0 THEN
-                        b(23) = b(23) + v(x) * bet&
-                        b(26) = b(26) + v(x)
-                        b(60) = b(60) + 1
-                        IF ptm(c) = 1 THEN
-                            IF phc(x, 0) = 27 OR only27phpo% <> 1 THEN
-                                b(23) = b(23) + mini& * 2 * phpo(c)
-                                b(26) = b(26) + 2 * phpo(c)
+                    IF pcomp% <> 1 OR best(0) < best(1) THEN
+                        IF wager% = 1 OR wager% = 2 THEN
+                            b(25) = b(25) + v(x) * bet&
+                            b(27) = b(27) + v(x)
+                            b(66) = b(66) + 1
+                            IF dh(1) > 27 THEN
+                                b(91) = b(91) + v(x) * bet&
+                                b(34) = b(34) + v(x)
+                                b(73) = b(73) + 1
                             END IF
                         END IF
-                        IF dh(1) > 27 THEN
-                            b(85) = b(85) + v(x) * bet&
-                            b(20) = b(20) + v(x)
-                            b(65) = b(65) + 1
+                        GOSUB 54
+                        IF wager% = 0 THEN
+                            b(23) = b(23) + v(x) * bet&
+                            b(26) = b(26) + v(x)
+                            b(60) = b(60) + 1
                             IF ptm(c) = 1 THEN
                                 IF phc(x, 0) = 27 OR only27phpo% <> 1 THEN
-                                    b(85) = b(85) + mini& * 2 * phpo(c)
-                                    b(20) = b(20) + 2 * phpo(c)
+                                    b(23) = b(23) + mini& * 2 * phpo(c)
+                                    b(26) = b(26) + 2 * phpo(c)
+                                END IF
+                            END IF
+                            IF dh(1) > 27 THEN
+                                b(85) = b(85) + v(x) * bet&
+                                b(20) = b(20) + v(x)
+                                b(65) = b(65) + 1
+                                IF ptm(c) = 1 THEN
+                                    IF phc(x, 0) = 27 OR only27phpo% <> 1 THEN
+                                        b(85) = b(85) + mini& * 2 * phpo(c)
+                                        b(20) = b(20) + 2 * phpo(c)
+                                    END IF
                                 END IF
                             END IF
                         END IF
+                        GOTO 81
                     END IF
-                    GOTO 81
                 END IF
             END IF
         END IF
@@ -5621,14 +5646,6 @@ PRINT #1, ""
 PRINT #1, ""
 PRINT #1, ""
 IF pbonus% = 1 THEN
-    phr(11, 0) = 0
-    phr(11, 1) = 0
-    phr(11, 2) = 0
-    FOR x = 0 TO 10
-        phr(11, 0) = phr(11, 0) + phr(x, 0)
-        phr(11, 1) = phr(11, 1) + phr(x, 1)
-        phr(11, 2) = phr(11, 2) + phr(x, 2)
-    NEXT x
     PRINT #1, "The user defined set of game rules is described as follows:"
     PRINT #1, ""
     PRINT #1, q$
@@ -5638,7 +5655,7 @@ IF pbonus% = 1 THEN
     PRINT #1, "about the best category of five-card-poker hand made from ";
     PRINT #1, "a choice of five"
     PRINT #1, "of the playing cards in each of those player hands that ";
-    PRINT #1, "won the game."
+    PRINT #1, "won the game"
     PRINT #1, "For each category, the table includes data about the ";
     PRINT #1, "number of hands made,"
     PRINT #1, "the number of hands made that ranked higher than the ";
@@ -5649,9 +5666,139 @@ IF pbonus% = 1 THEN
     PRINT #1, "five-card-poker hand"
     PRINT #1, "made during the same game by the dealer, and the size ";
     PRINT #1, "of the bonus payout."
-    PRINT #1,
+    IF only27phpo% = 1 THEN
+        phr(11, 12) = 0
+        phr(11, 13) = 0
+        phr(11, 14) = 0
+        FOR x = 0 TO 10
+            phr(11, 12) = phr(11, 12) + phr(x, 12)
+            phr(11, 13) = phr(11, 13) + phr(x, 13)
+            phr(11, 14) = phr(11, 14) + phr(x, 14)
+        NEXT x
+        PRINT #1, ""
+        PRINT #1, "PLAYER HANDS THAT HAVE A VALUE OF 27"
+        PRINT #1, ""
+        PRINT #1, "Hand Category          Number      Higher  Not Higher    ";
+        PRINT #1, "Bonus Payout"
+        PRINT #1, ""
+        PRINT #1, "Not enough cards ";
+        PRINT #1, USING "############"; phr(10, 14) - phr(10, 17)
+        PRINT #1, "High Card        ";
+        PRINT #1, USING "############"; phr(0, 14) - phr(0, 17);
+        PRINT #1, USING "############"; phr(0, 13) - phr(0, 16);
+        PRINT #1, USING "############"; phr(0, 12) - phr(0, 15);
+        PRINT #1, USING "#####.#"; phpo(0);
+        IF ptm(0) <> 1 THEN PRINT #1, " : 1 Odds "
+        IF ptm(0) = 1 THEN PRINT #1, " times table minimum"
+        FOR y = 1 TO 9
+            IF y = phrank(1) / 1000000 THEN
+                PRINT #1, "One Pair         ";
+                PRINT #1, USING "############"; phr(1, 14) - phr(1, 17);
+                PRINT #1, USING "############"; phr(1, 13) - phr(1, 16);
+                PRINT #1, USING "############"; phr(1, 12) - phr(1, 15);
+                PRINT #1, USING "#####.#"; phpo(1);
+                IF ptm(1) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(1) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(2) / 1000000 THEN
+                PRINT #1, "Two Pair         ";
+                PRINT #1, USING "############"; phr(2, 14) - phr(2, 17);
+                PRINT #1, USING "############"; phr(2, 13) - phr(2, 16);
+                PRINT #1, USING "############"; phr(2, 12) - phr(2, 15);
+                PRINT #1, USING "#####.#"; phpo(2);
+                IF ptm(2) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(2) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(3) / 1000000 THEN
+                PRINT #1, "Three of a Kind  ";
+                PRINT #1, USING "############"; phr(3, 14) - phr(3, 17);
+                PRINT #1, USING "############"; phr(3, 13) - phr(3, 16);
+                PRINT #1, USING "############"; phr(3, 12) - phr(3, 15);
+                PRINT #1, USING "#####.#"; phpo(3);
+                IF ptm(3) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(3) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(4) / 1000000 THEN
+                PRINT #1, "Straight         ";
+                PRINT #1, USING "############"; phr(4, 14) - phr(4, 17);
+                PRINT #1, USING "############"; phr(4, 13) - phr(4, 16);
+                PRINT #1, USING "############"; phr(4, 12) - phr(4, 15);
+                PRINT #1, USING "#####.#"; phpo(4);
+                IF ptm(4) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(4) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(5) / 1000000 THEN
+                PRINT #1, "Flush            ";
+                PRINT #1, USING "############"; phr(5, 14) - phr(5, 17);
+                PRINT #1, USING "############"; phr(5, 13) - phr(5, 16);
+                PRINT #1, USING "############"; phr(5, 12) - phr(5, 15);
+                PRINT #1, USING "#####.#"; phpo(5);
+                IF ptm(5) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(5) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(6) / 1000000 THEN
+                PRINT #1, "Full House       ";
+                PRINT #1, USING "############"; phr(6, 14) - phr(6, 17);
+                PRINT #1, USING "############"; phr(6, 13) - phr(6, 16);
+                PRINT #1, USING "############"; phr(6, 12) - phr(6, 15);
+                PRINT #1, USING "#####.#"; phpo(6);
+                IF ptm(6) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(6) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(7) / 1000000 THEN
+                PRINT #1, "Four of a Kind   ";
+                PRINT #1, USING "############"; phr(7, 14) - phr(7, 17);
+                PRINT #1, USING "############"; phr(7, 13) - phr(7, 16);
+                PRINT #1, USING "############"; phr(7, 12) - phr(7, 15);
+                PRINT #1, USING "#####.#"; phpo(7);
+                IF ptm(7) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(7) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(8) / 1000000 THEN
+                PRINT #1, "Five of a Kind   ";
+                PRINT #1, USING "############"; phr(8, 14) - phr(8, 17);
+                PRINT #1, USING "############"; phr(8, 13) - phr(8, 16);
+                PRINT #1, USING "############"; phr(8, 12) - phr(8, 15);
+                PRINT #1, USING "#####.#"; phpo(8);
+                IF ptm(8) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(8) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(9) / 1000000 THEN
+                PRINT #1, "Straight Flush   ";
+                PRINT #1, USING "############"; phr(9, 14) - phr(9, 17);
+                PRINT #1, USING "############"; phr(9, 13) - phr(9, 16);
+                PRINT #1, USING "############"; phr(9, 12) - phr(9, 15);
+                PRINT #1, USING "#####.#"; phpo(9);
+                IF ptm(9) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(9) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+        NEXT y
+        PRINT #1, ""
+        PRINT #1, "Total           ";
+        PRINT #1, USING "#############"; phr(11, 14) - phr(11, 17);
+        PRINT #1, USING "############"; phr(11, 13) - phr(11, 16);
+        PRINT #1, USING "############"; phr(11, 12) - phr(11, 15)
+        PRINT #1, ""
+        PRINT #1, ""
+        PRINT #1, ""
+        PRINT #1, "PLAYER HANDS THAT DO NOT HAVE A VALUE OF 27"
+    END IF
+    phr(11, 0) = 0
+    phr(11, 1) = 0
+    phr(11, 2) = 0
+    FOR x = 0 TO 10
+        phr(11, 0) = phr(11, 0) + phr(x, 0)
+        phr(11, 1) = phr(11, 1) + phr(x, 1)
+        phr(11, 2) = phr(11, 2) + phr(x, 2)
+    NEXT x
+    PRINT #1, ""
     PRINT #1, "Hand Category          Number      Higher  Not Higher    ";
-    PRINT #1, "Bonus Payout"
+    IF only27phpo% <> 1 THEN
+        PRINT #1, "Bonus Payout"
+    END IF
+    IF only27phpo% = 1 THEN
+        PRINT #1, " "
+    END IF
     PRINT #1, ""
     PRINT #1, "Not enough cards ";
     PRINT #1, USING "############"; phr(10, 2) - phr(10, 7)
@@ -5659,90 +5806,140 @@ IF pbonus% = 1 THEN
     PRINT #1, USING "############"; phr(0, 2) - phr(0, 7);
     PRINT #1, USING "############"; phr(0, 1) - phr(0, 6);
     PRINT #1, USING "############"; phr(0, 0) - phr(0, 5);
-    PRINT #1, USING "#####.#"; phpo(0);
-    IF ptm(0) <> 1 THEN PRINT #1, " : 1 Odds "
-    IF ptm(0) = 1 THEN PRINT #1, " times table minimum"
+    IF only27phpo% <> 1 THEN
+        PRINT #1, USING "#####.#"; phpo(0);
+        IF ptm(0) <> 1 THEN PRINT #1, " : 1 Odds "
+        IF ptm(0) = 1 THEN PRINT #1, " times table minimum"
+    END IF
+    IF only27phpo% = 1 THEN
+        PRINT #1, " "
+    END IF
     FOR y = 1 TO 9
         IF y = phrank(1) / 1000000 THEN
             PRINT #1, "One Pair         ";
             PRINT #1, USING "############"; phr(1, 2) - phr(1, 7);
             PRINT #1, USING "############"; phr(1, 1) - phr(1, 6);
             PRINT #1, USING "############"; phr(1, 0) - phr(1, 5);
-            PRINT #1, USING "#####.#"; phpo(1);
-            IF ptm(1) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(1) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(1);
+                IF ptm(1) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(1) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(2) / 1000000 THEN
             PRINT #1, "Two Pair         ";
             PRINT #1, USING "############"; phr(2, 2) - phr(2, 7);
             PRINT #1, USING "############"; phr(2, 1) - phr(2, 6);
             PRINT #1, USING "############"; phr(2, 0) - phr(2, 5);
-            PRINT #1, USING "#####.#"; phpo(2);
-            IF ptm(2) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(2) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(2);
+                IF ptm(2) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(2) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(3) / 1000000 THEN
             PRINT #1, "Three of a Kind  ";
             PRINT #1, USING "############"; phr(3, 2) - phr(3, 7);
             PRINT #1, USING "############"; phr(3, 1) - phr(3, 6);
             PRINT #1, USING "############"; phr(3, 0) - phr(3, 5);
-            PRINT #1, USING "#####.#"; phpo(3);
-            IF ptm(3) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(3) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(3);
+                IF ptm(3) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(3) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(4) / 1000000 THEN
             PRINT #1, "Straight         ";
             PRINT #1, USING "############"; phr(4, 2) - phr(4, 7);
             PRINT #1, USING "############"; phr(4, 1) - phr(4, 6);
             PRINT #1, USING "############"; phr(4, 0) - phr(4, 5);
-            PRINT #1, USING "#####.#"; phpo(4);
-            IF ptm(4) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(4) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(4);
+                IF ptm(4) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(4) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(5) / 1000000 THEN
             PRINT #1, "Flush            ";
             PRINT #1, USING "############"; phr(5, 2) - phr(5, 7);
             PRINT #1, USING "############"; phr(5, 1) - phr(5, 6);
             PRINT #1, USING "############"; phr(5, 0) - phr(5, 5);
-            PRINT #1, USING "#####.#"; phpo(5);
-            IF ptm(5) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(5) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(5);
+                IF ptm(5) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(5) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(6) / 1000000 THEN
             PRINT #1, "Full House       ";
             PRINT #1, USING "############"; phr(6, 2) - phr(6, 7);
             PRINT #1, USING "############"; phr(6, 1) - phr(6, 6);
             PRINT #1, USING "############"; phr(6, 0) - phr(6, 5);
-            PRINT #1, USING "#####.#"; phpo(6);
-            IF ptm(6) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(6) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(6);
+                IF ptm(6) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(6) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(7) / 1000000 THEN
             PRINT #1, "Four of a Kind   ";
             PRINT #1, USING "############"; phr(7, 2) - phr(7, 7);
             PRINT #1, USING "############"; phr(7, 1) - phr(7, 6);
             PRINT #1, USING "############"; phr(7, 0) - phr(7, 5);
-            PRINT #1, USING "#####.#"; phpo(7);
-            IF ptm(7) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(7) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(7);
+                IF ptm(7) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(7) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(8) / 1000000 THEN
             PRINT #1, "Five of a Kind   ";
             PRINT #1, USING "############"; phr(8, 2) - phr(8, 7);
             PRINT #1, USING "############"; phr(8, 1) - phr(8, 6);
             PRINT #1, USING "############"; phr(8, 0) - phr(8, 5);
-            PRINT #1, USING "#####.#"; phpo(8);
-            IF ptm(8) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(8) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(8);
+                IF ptm(8) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(8) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(9) / 1000000 THEN
             PRINT #1, "Straight Flush   ";
             PRINT #1, USING "############"; phr(9, 2) - phr(9, 7);
             PRINT #1, USING "############"; phr(9, 1) - phr(9, 6);
             PRINT #1, USING "############"; phr(9, 0) - phr(9, 5);
-            PRINT #1, USING "#####.#"; phpo(9);
-            IF ptm(9) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(9) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(9);
+                IF ptm(9) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(9) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
     NEXT y
     PRINT #1, ""
@@ -5929,11 +6126,12 @@ IF pbonus% = 1 THEN
     FOR x = 0 TO 11
         FOR y = 0 TO 2
             phr(x, y + 5) = phr(x, y)
+            phr(x, y + 15) = phr(x, y + 12)
     NEXT y: NEXT x
     CLOSE #1
     v$ = files$ + "p.txt"
     OPEN v$ FOR OUTPUT AS #1
-    PRINT #1, "BIGS988 PROGRAM OUTPUT"
+    PRINT #1, "1sim.BAS PROGRAM OUTPUT"
     PRINT #1, ""
     PRINT #1, "The user defined set of game rules is described as follows:"
     PRINT #1, ""
@@ -5955,9 +6153,131 @@ IF pbonus% = 1 THEN
     PRINT #1, "five-card-poker hand"
     PRINT #1, "made during the same game by the dealer, and the size ";
     PRINT #1, "of the bonus payout."
-    PRINT #1,
+    IF only27phpo% = 1 THEN
+        PRINT #1, ""
+        PRINT #1, "PLAYER HANDS THAT HAVE A VALUE OF 27"
+        PRINT #1, ""
+        PRINT #1, "Hand Category          Number      Higher  Not Higher    ";
+        PRINT #1, "Bonus Payout"
+        PRINT #1, ""
+        PRINT #1, "Not enough cards ";
+        PRINT #1, USING "############"; phr(10, 14)
+        PRINT #1, "High Card        ";
+        PRINT #1, USING "############"; phr(0, 14);
+        PRINT #1, USING "############"; phr(0, 13);
+        PRINT #1, USING "############"; phr(0, 12);
+        PRINT #1, USING "#####.#"; phpo(0);
+        IF ptm(0) <> 1 THEN PRINT #1, " : 1 Odds "
+        IF ptm(0) = 1 THEN PRINT #1, " times table minimum"
+        FOR y = 1 TO 9
+            IF y = phrank(1) / 1000000 THEN
+                PRINT #1, "One Pair         ";
+                PRINT #1, USING "############"; phr(1, 14);
+                PRINT #1, USING "############"; phr(1, 13);
+                PRINT #1, USING "############"; phr(1, 12);
+                PRINT #1, USING "#####.#"; phpo(1);
+                IF ptm(1) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(1) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(2) / 1000000 THEN
+                PRINT #1, "Two Pair         ";
+                PRINT #1, USING "############"; phr(2, 14);
+                PRINT #1, USING "############"; phr(2, 13);
+                PRINT #1, USING "############"; phr(2, 12);
+                PRINT #1, USING "#####.#"; phpo(2);
+                IF ptm(2) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(2) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(3) / 1000000 THEN
+                PRINT #1, "Three of a Kind  ";
+                PRINT #1, USING "############"; phr(3, 14);
+                PRINT #1, USING "############"; phr(3, 13);
+                PRINT #1, USING "############"; phr(3, 12);
+                PRINT #1, USING "#####.#"; phpo(3);
+                IF ptm(3) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(3) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(4) / 1000000 THEN
+                PRINT #1, "Straight         ";
+                PRINT #1, USING "############"; phr(4, 14);
+                PRINT #1, USING "############"; phr(4, 13);
+                PRINT #1, USING "############"; phr(4, 12);
+                PRINT #1, USING "#####.#"; phpo(4);
+                IF ptm(4) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(4) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(5) / 1000000 THEN
+                PRINT #1, "Flush            ";
+                PRINT #1, USING "############"; phr(5, 14);
+                PRINT #1, USING "############"; phr(5, 13);
+                PRINT #1, USING "############"; phr(5, 12);
+                PRINT #1, USING "#####.#"; phpo(5);
+                IF ptm(5) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(5) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(6) / 1000000 THEN
+                PRINT #1, "Full House       ";
+                PRINT #1, USING "############"; phr(6, 14);
+                PRINT #1, USING "############"; phr(6, 13);
+                PRINT #1, USING "############"; phr(6, 12);
+                PRINT #1, USING "#####.#"; phpo(6);
+                IF ptm(6) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(6) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(7) / 1000000 THEN
+                PRINT #1, "Four of a Kind   ";
+                PRINT #1, USING "############"; phr(7, 14);
+                PRINT #1, USING "############"; phr(7, 13);
+                PRINT #1, USING "############"; phr(7, 12);
+                PRINT #1, USING "#####.#"; phpo(7);
+                IF ptm(7) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(7) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(8) / 1000000 THEN
+                PRINT #1, "Five of a Kind   ";
+                PRINT #1, USING "############"; phr(8, 14);
+                PRINT #1, USING "############"; phr(8, 13);
+                PRINT #1, USING "############"; phr(8, 12);
+                PRINT #1, USING "#####.#"; phpo(8);
+                IF ptm(8) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(8) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF y = phrank(9) / 1000000 THEN
+                PRINT #1, "Straight Flush   ";
+                PRINT #1, USING "############"; phr(9, 14);
+                PRINT #1, USING "############"; phr(9, 13);
+                PRINT #1, USING "############"; phr(9, 12);
+                PRINT #1, USING "#####.#"; phpo(9);
+                IF ptm(9) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(9) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+        NEXT y
+        PRINT #1, ""
+        PRINT #1, "Total           ";
+        PRINT #1, USING "#############"; phr(11, 14);
+        PRINT #1, USING "############"; phr(11, 13);
+        PRINT #1, USING "############"; phr(11, 12)
+        PRINT #1, ""
+        PRINT #1, ""
+        PRINT #1, ""
+        PRINT #1, "PLAYER HANDS THAT DO NOT HAVE A VALUE OF 27"
+    END IF
+    phr(11, 0) = 0
+    phr(11, 1) = 0
+    phr(11, 2) = 0
+    FOR x = 0 TO 10
+        phr(11, 0) = phr(11, 0) + phr(x, 0)
+        phr(11, 1) = phr(11, 1) + phr(x, 1)
+        phr(11, 2) = phr(11, 2) + phr(x, 2)
+    NEXT x
+    PRINT #1, ""
     PRINT #1, "Hand Category          Number      Higher  Not Higher    ";
-    PRINT #1, "Bonus Payout"
+    IF only27phpo% <> 1 THEN
+        PRINT #1, "Bonus Payout"
+    END IF
+    IF only27phpo% = 1 THEN
+        PRINT #1, " "
+    END IF
     PRINT #1, ""
     PRINT #1, "Not enough cards ";
     PRINT #1, USING "############"; phr(10, 2)
@@ -5965,90 +6285,140 @@ IF pbonus% = 1 THEN
     PRINT #1, USING "############"; phr(0, 2);
     PRINT #1, USING "############"; phr(0, 1);
     PRINT #1, USING "############"; phr(0, 0);
-    PRINT #1, USING "#####.#"; phpo(0);
-    IF ptm(0) <> 1 THEN PRINT #1, " : 1 Odds "
-    IF ptm(0) = 1 THEN PRINT #1, " times table minimum"
+    IF only27phpo% <> 1 THEN
+        PRINT #1, USING "#####.#"; phpo(0);
+        IF ptm(0) <> 1 THEN PRINT #1, " : 1 Odds "
+        IF ptm(0) = 1 THEN PRINT #1, " times table minimum"
+    END IF
+    IF only27phpo% = 1 THEN
+        PRINT #1, " "
+    END IF
     FOR y = 1 TO 9
         IF y = phrank(1) / 1000000 THEN
             PRINT #1, "One Pair         ";
             PRINT #1, USING "############"; phr(1, 2);
             PRINT #1, USING "############"; phr(1, 1);
             PRINT #1, USING "############"; phr(1, 0);
-            PRINT #1, USING "#####.#"; phpo(1);
-            IF ptm(1) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(1) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(1);
+                IF ptm(1) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(1) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(2) / 1000000 THEN
             PRINT #1, "Two Pair         ";
             PRINT #1, USING "############"; phr(2, 2);
             PRINT #1, USING "############"; phr(2, 1);
             PRINT #1, USING "############"; phr(2, 0);
-            PRINT #1, USING "#####.#"; phpo(2);
-            IF ptm(2) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(2) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(2);
+                IF ptm(2) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(2) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(3) / 1000000 THEN
             PRINT #1, "Three of a Kind  ";
             PRINT #1, USING "############"; phr(3, 2);
             PRINT #1, USING "############"; phr(3, 1);
             PRINT #1, USING "############"; phr(3, 0);
-            PRINT #1, USING "#####.#"; phpo(3);
-            IF ptm(3) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(3) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(3);
+                IF ptm(3) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(3) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(4) / 1000000 THEN
             PRINT #1, "Straight         ";
             PRINT #1, USING "############"; phr(4, 2);
             PRINT #1, USING "############"; phr(4, 1);
             PRINT #1, USING "############"; phr(4, 0);
-            PRINT #1, USING "#####.#"; phpo(4);
-            IF ptm(4) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(4) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(4);
+                IF ptm(4) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(4) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(5) / 1000000 THEN
             PRINT #1, "Flush            ";
             PRINT #1, USING "############"; phr(5, 2);
             PRINT #1, USING "############"; phr(5, 1);
             PRINT #1, USING "############"; phr(5, 0);
-            PRINT #1, USING "#####.#"; phpo(5);
-            IF ptm(5) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(5) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(5);
+                IF ptm(5) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(5) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(6) / 1000000 THEN
             PRINT #1, "Full House       ";
             PRINT #1, USING "############"; phr(6, 2);
             PRINT #1, USING "############"; phr(6, 1);
             PRINT #1, USING "############"; phr(6, 0);
-            PRINT #1, USING "#####.#"; phpo(6);
-            IF ptm(6) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(6) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(6);
+                IF ptm(6) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(6) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(7) / 1000000 THEN
             PRINT #1, "Four of a Kind   ";
             PRINT #1, USING "############"; phr(7, 2);
             PRINT #1, USING "############"; phr(7, 1);
             PRINT #1, USING "############"; phr(7, 0);
-            PRINT #1, USING "#####.#"; phpo(7);
-            IF ptm(7) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(7) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(7);
+                IF ptm(7) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(7) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(8) / 1000000 THEN
             PRINT #1, "Five of a Kind   ";
             PRINT #1, USING "############"; phr(8, 2);
             PRINT #1, USING "############"; phr(8, 1);
             PRINT #1, USING "############"; phr(8, 0);
-            PRINT #1, USING "#####.#"; phpo(8);
-            IF ptm(8) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(8) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(8);
+                IF ptm(8) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(8) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
         IF y = phrank(9) / 1000000 THEN
             PRINT #1, "Straight Flush   ";
             PRINT #1, USING "############"; phr(9, 2);
             PRINT #1, USING "############"; phr(9, 1);
             PRINT #1, USING "############"; phr(9, 0);
-            PRINT #1, USING "#####.#"; phpo(9);
-            IF ptm(9) <> 1 THEN PRINT #1, " : 1 Odds "
-            IF ptm(9) = 1 THEN PRINT #1, " times table minimum"
+            IF only27phpo% <> 1 THEN
+                PRINT #1, USING "#####.#"; phpo(9);
+                IF ptm(9) <> 1 THEN PRINT #1, " : 1 Odds "
+                IF ptm(9) = 1 THEN PRINT #1, " times table minimum"
+            END IF
+            IF only27phpo% = 1 THEN
+                PRINT #1, " "
+            END IF
         END IF
     NEXT y
     PRINT #1, ""
@@ -6056,6 +6426,7 @@ IF pbonus% = 1 THEN
     PRINT #1, USING "#############"; phr(11, 2);
     PRINT #1, USING "############"; phr(11, 1);
     PRINT #1, USING "############"; phr(11, 0)
+    PRINT #1, ""
     PRINT #1, ""
     IF track% = 1 THEN
         PRINT #1, ""
@@ -6442,6 +6813,15 @@ q$ = sd.description
 CLOSE #1
 IF hu% = 0 THEN hu% = 27
 IF su% = 0 THEN su% = 27
+IF immed% < 2 THEN
+    immedd27% = 0
+END IF
+IF immed% > 1 THEN
+    immedd27% = 1
+END IF
+IF immed% > 2 THEN
+    immed% = 1
+END IF
 mc(14) = 0
 FOR x = 0 TO 13 STEP 1
     mc(14) = mc(14) + mc(x)
@@ -6639,97 +7019,64 @@ PRINT "make qualifying-five-card-poker-hands, else press enter"
 INPUT pbonus%
 PRINT " "
 IF pbonus% = 1 THEN
-    PRINT "Press 1 and enter for (fully wild rule) ";
-    PRINT "enables the holder of"
-    PRINT "a winning hand that consists of at least five playing cards"
-    PRINT "to use each joker included in the winning hand to represent"
-    PRINT "the suit and rank of any other playing card."
+    169 PRINT "enter the 'folder/filename prefix' of the files"
+    PRINT "containing data about poker hand values and hand totals "
+    PRINT "to be loaded into program memory."
+    INPUT D$
     PRINT " "
-    PRINT "Else press enter for (bug rule) enables the holder of"
-    PRINT "a winning hand that consists of at least five playing cards"
-    PRINT "to use each joker included in the winning hand to perform a"
-    PRINT "function selected from a group consisting of ";
-    PRINT "represent an ace,"
-    PRINT "complete a straight, complete a flush ";
-    PRINT "and complete a straight-flush."
-    PRINT " "
-    INPUT wildcardrules%
-    PRINT " "
-    PRINT "Press enter to input the rank of each of ";
-    PRINT "nine categories of poker hands."
-    PRINT "Press 1 and enter to use default hand ranking rules "
-    INPUT default%
-    PRINT " "
-    IF default% = 1 AND wildcardrules% = 0 THEN
-        phrank(1) = 1: phrank(11) = 1
-        phrank(2) = 2: phrank(12) = 2
-        phrank(3) = 3: phrank(13) = 3
-        phrank(4) = 4: phrank(14) = 4
-        phrank(5) = 5: phrank(15) = 5
-        phrank(6) = 6: phrank(16) = 6
-        phrank(7) = 7: phrank(17) = 7
-        phrank(8) = 9: phrank(18) = 9
-        phrank(9) = 8: phrank(19) = 8
-    END IF
-    IF default% = 1 AND wildcardrules% = 1 THEN
-        phrank(1) = 1: phrank(11) = 1
-        phrank(2) = 2: phrank(12) = 2
-        phrank(3) = 3: phrank(13) = 3
-        phrank(4) = 4: phrank(14) = 4
-        phrank(5) = 7: phrank(15) = 6
-        phrank(6) = 5: phrank(16) = 7
-        phrank(7) = 6: phrank(17) = 5
-        phrank(8) = 9: phrank(18) = 9
-        phrank(9) = 8: phrank(19) = 8
+    v$ = D$ + "3.dat"
+    OPEN v$ FOR RANDOM AS #1 LEN = LEN(phrules)
+    GET #1, , phrules
+    wildcardrules% = phrules.wcr
+    phrank(1) = phrules.rc1
+    phrank(2) = phrules.rc2
+    phrank(3) = phrules.rc3
+    phrank(4) = phrules.rc4
+    phrank(5) = phrules.rc5
+    phrank(6) = phrules.rc6
+    phrank(7) = phrules.rc7
+    phrank(8) = phrules.rc8
+    phrank(9) = phrules.rc9
+    phrank(11) = phrules.rc11
+    phrank(12) = phrules.rc12
+    phrank(13) = phrules.rc13
+    phrank(14) = phrules.rc14
+    phrank(15) = phrules.rc15
+    phrank(16) = phrules.rc16
+    phrank(17) = phrules.rc17
+    phrank(18) = phrules.rc18
+    phrank(19) = phrules.rc19
+    q1$ = phrules.description
+    CLOSE #1
+    FOR x = 1 TO 9
+        phrank(x) = FIX(phrank(x) / 1000000)
+    NEXT x
+    PRINT "the description of the databases reads as follows:"
+    PRINT q1$
+    PRINT "if this is acceptable type 'y' and press enter,";
+    PRINT " else press enter "
+    INPUT ans$
+    IF ans$ <> "y" THEN
+        GOTO 169
     END IF
     PRINT " "
-    IF default% <> 1 THEN
-        PRINT "a set of user-defined poker-hand-ranking ";
-        PRINT "rules create a hierarchy"
-        PRINT "wherein poker hands of the high card category ";
-        PRINT "are assigned the lowest rank,"
-        PRINT "and wherein poker hands of each ";
-        PRINT "category assigned a higher rank"
-        PRINT "outrank poker hands of all categories ";
-        PRINT "assigned lower ranks."
-        PRINT ""
-        PRINT "input the rank (1-9) assigned to one pair "
-        INPUT phrank(1)
-        PRINT " "
-        phrank(10 + phrank(1)) = 1
-        PRINT "input the rank (1-9) assigned to two pair "
-        INPUT phrank(2)
-        PRINT " "
-        phrank(10 + phrank(2)) = 2
-        PRINT "input the rank (1-9) assigned to three of a kind "
-        INPUT phrank(3)
-        PRINT " "
-        phrank(10 + phrank(3)) = 3
-        PRINT "input the rank (1-9) assigned to a straight "
-        INPUT phrank(4)
-        PRINT " "
-        phrank(10 + phrank(4)) = 4
-        PRINT "input the rank (1-9) assigned to a flush "
-        INPUT phrank(5)
-        PRINT " "
-        phrank(10 + phrank(5)) = 5
-        PRINT "input the rank (1-9) assigned to a full house "
-        INPUT phrank(6)
-        PRINT " "
-        phrank(10 + phrank(6)) = 6
-        PRINT "input the rank (1-9) assigned to four of a kind "
-        INPUT phrank(7)
-        PRINT " "
-        phrank(10 + phrank(7)) = 7
-        PRINT "input the rank (1-9) assigned to five of a kind "
-        INPUT phrank(8)
-        PRINT " "
-        phrank(10 + phrank(8)) = 8
-        PRINT "input the rank (1-9) assigned to a straight flush "
-        INPUT phrank(9)
-        PRINT " "
-        phrank(10 + phrank(9)) = 9
-    END IF
+
+    OPEN files$ + "i.txt" FOR APPEND AS #1
+    PRINT #1, "enter the 'folder/filename prefix' of the files"
+    PRINT #1, "containing data about the poker hand values and hand totals "
+    PRINT #1, "to be loaded into program memory."
+    PRINT #1, D$
+    PRINT #1, " "
+    PRINT #1, "the description of the databases reads as follows: "
+    PRINT #1, q1$
+    PRINT #1, " "
+    PRINT #1, "if this is acceptable type 'y' and press enter,";
+    PRINT #1, " else press enter "
+    PRINT #1, ans$
+    PRINT #1, ""
+    CLOSE #1
+
+    
     PRINT "a qualifying-five-card-poker hand is ";
     PRINT "a five-card-poker hand of a rank that"
     PRINT "is at least equal to a minimum rank ";
@@ -7046,98 +7393,7 @@ PRINT #1, "make qualifying-five-card-poker-hands, else press enter."
 PRINT #1, pbonus%
 PRINT #1, " "
 IF pbonus% = 1 THEN
-    PRINT #1, "Press 1 and enter for (fully wild rule) ";
-    PRINT #1, "enables the holder of"
-    PRINT #1, "a winning hand that consists of ";
-    PRINT #1, "at least five playing cards"
-    PRINT #1, "to use each joker included ";
-    PRINT #1, "in the winning hand to represent"
-    PRINT #1, "the suit and rank of any other playing card."
-    PRINT #1, " "
-    PRINT #1, "Else press enter for (bug rule) enables the holder of"
-    PRINT #1, "a winning hand that consists of ";
-    PRINT #1, "at least five playing cards"
-    PRINT #1, "to use each joker included ";
-    PRINT #1, "in the winning hand to perform a"
-    PRINT #1, "function selected from a group ";
-    PRINT #1, "consisting of represent an ace,"
-    PRINT #1, "complete a straight, complete a flush and complete a ";
-    PRINT #1, "straight-flush."
-    PRINT #1, " "
-    PRINT #1, wildcardrules%
-    PRINT #1, " "
-    PRINT #1, "Press enter to input the rank of each of ";
-    PRINT #1, "nine categories of poker hands."
-    PRINT #1, "Press 1 and enter to use default hand ranking rules "
-    PRINT #1, default%
-    PRINT #1, " "
-    IF default% <> 1 THEN
-        PRINT #1, "a set of user-defined poker-hand-ranking ";
-        PRINT #1, "rules create a hierarchy"
-        PRINT #1, "wherein poker hands of the high card category ";
-        PRINT #1, "are assigned the lowest rank,"
-        PRINT #1, "and wherein poker hands of each ";
-        PRINT #1, "category assigned a higher rank"
-        PRINT #1, "outrank poker hands of all categories ";
-        PRINT #1, "assigned lower ranks."
-        PRINT #1, ""
-        FOR y = 1 TO 9
-            IF y = phrank(1) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to one pair "
-                PRINT #1, phrank(1)
-                PRINT #1, " "
-            END IF
-            IF y = phrank(2) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to two pair "
-                PRINT #1, phrank(2)
-                PRINT #1, " "
-            END IF
-            IF y = phrank(3) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to three of a kind "
-                PRINT #1, phrank(3)
-                PRINT #1, " "
-            END IF
-            IF y = phrank(4) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to a straight "
-                PRINT #1, phrank(4)
-                PRINT #1, " "
-            END IF
-            IF y = phrank(5) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to a flush "
-                PRINT #1, phrank(5)
-                PRINT #1, " "
-            END IF
-            IF y = phrank(6) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to a full house "
-                PRINT #1, phrank(6)
-                PRINT #1, " "
-            END IF
-            IF y = phrank(7) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to four of a kind "
-                PRINT #1, phrank(7)
-                PRINT #1, " "
-            END IF
-            IF y = phrank(8) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to five of a kind "
-                PRINT #1, phrank(8)
-                PRINT #1, " "
-            END IF
-            IF y = phrank(9) THEN
-                PRINT #1, "input the rank (1-9) ";
-                PRINT #1, "assigned to a straight flush "
-                PRINT #1, phrank(9)
-                PRINT #1, " "
-            END IF
-        NEXT y
-    END IF
+
     PRINT #1, "a qualifying-five-card-poker hand is ";
     PRINT #1, "a five-card-poker hand of a rank that"
     PRINT #1, "is at least equal to a minimum rank ";
@@ -7853,30 +8109,30 @@ IF wager% = 0 THEN
         ptm(16) = ptbm%
     END IF
     IF b27po% = 1 THEN
-	    IF ms89T + ss89T + sp89T <> 0 THEN
-	        PRINT "Press 1 and enter for dealer makes ";
-	        PRINT "bonus payouts a multiple of the table minimum"
-	        PRINT "on 8-9-10 hands, else press enter "
-	        INPUT ptbm%
-	        PRINT " "
-	        ptm(12) = ptbm%
-	    END IF
-	    IF ms999 + ss999 + sp999 + jp999 <> 0 THEN
-	        PRINT "Press 1 and enter for dealer makes ";
-	        PRINT "bonus payouts a multiple of the table minimum"
-	        PRINT "on 9-9-9 hands, else press enter "
-	        INPUT ptbm%
-	        PRINT " "
-	        ptm(13) = ptbm%
-	    END IF
-	    IF ms999 + ss999 < sp999 + jp999 THEN
-	        PRINT "input the minimum wager required to qualify ";
-	        PRINT "for the super bonus payouts on"
-	        PRINT "mixed suits 9-9-9 against any dealer 9-9"
-	        PRINT "and same suit 9-9-9 against any dealer 9-9"
-	        INPUT qmb&
-	        PRINT " "
-	    END IF
+        IF ms89T + ss89T + sp89T <> 0 THEN
+            PRINT "Press 1 and enter for dealer makes ";
+            PRINT "bonus payouts a multiple of the table minimum"
+            PRINT "on 8-9-10 hands, else press enter "
+            INPUT ptbm%
+            PRINT " "
+            ptm(12) = ptbm%
+        END IF
+        IF ms999 + ss999 + sp999 + jp999 <> 0 THEN
+            PRINT "Press 1 and enter for dealer makes ";
+            PRINT "bonus payouts a multiple of the table minimum"
+            PRINT "on 9-9-9 hands, else press enter "
+            INPUT ptbm%
+            PRINT " "
+            ptm(13) = ptbm%
+        END IF
+        IF ms999 + ss999 < sp999 + jp999 THEN
+            PRINT "input the minimum wager required to qualify ";
+            PRINT "for the super bonus payouts on"
+            PRINT "mixed suits 9-9-9 against any dealer 9-9"
+            PRINT "and same suit 9-9-9 against any dealer 9-9"
+            INPUT qmb&
+            PRINT " "
+        END IF
     END IF
 END IF
 PRINT "press 1 and enter to add rules to specify the following."
@@ -8144,27 +8400,27 @@ IF joancapo > 1 AND joanca% = 2 THEN
 END IF
 IF b27po% = 1 THEN
     IF ms89T + ss89T + sp89T <> 0 THEN
-	    PRINT #1, "Press 1 and enter for dealer makes ";
-	    PRINT #1, "bonus payouts a multiple of the table minimum"
-	    PRINT #1, "on 8-9-10 hands, else press enter "
-	    PRINT #1, ptm(12)
-	    PRINT #1, " "
-	END IF
+        PRINT #1, "Press 1 and enter for dealer makes ";
+        PRINT #1, "bonus payouts a multiple of the table minimum"
+        PRINT #1, "on 8-9-10 hands, else press enter "
+        PRINT #1, ptm(12)
+        PRINT #1, " "
+    END IF
     IF ms999 + ss999 + sp999 + jp999 <> 0 THEN
-	    PRINT #1, "Press 1 and enter for dealer makes ";
-	    PRINT #1, "bonus payouts a multiple of the table minimum"
-	    PRINT #1, "on 9-9-9 hands, else press enter "
-	    PRINT #1, ptm(13)
-	    PRINT #1, " "
-		IF ms999 + ss999 < sp999 + jp999 THEN
-		    PRINT #1, "input the minimum wager required to qualify ";
-		    PRINT #1, "for the super bonus payouts on"
-		    PRINT #1, "mixed suits 9-9-9 against any dealer 9-9"
-		    PRINT #1, "and same suit 9-9-9 against any dealer 9-9"
-		    PRINT #1, qmb&
-		    PRINT #1, " "
-		END IF
-	END IF
+        PRINT #1, "Press 1 and enter for dealer makes ";
+        PRINT #1, "bonus payouts a multiple of the table minimum"
+        PRINT #1, "on 9-9-9 hands, else press enter "
+        PRINT #1, ptm(13)
+        PRINT #1, " "
+        IF ms999 + ss999 < sp999 + jp999 THEN
+            PRINT #1, "input the minimum wager required to qualify ";
+            PRINT #1, "for the super bonus payouts on"
+            PRINT #1, "mixed suits 9-9-9 against any dealer 9-9"
+            PRINT #1, "and same suit 9-9-9 against any dealer 9-9"
+            PRINT #1, qmb&
+            PRINT #1, " "
+        END IF
+    END IF
 END IF
 PRINT #1, "press 1 and enter to add rules to specify the following."
 PRINT #1, "If rules limit the player's options to ";
@@ -8388,7 +8644,7 @@ IF pbonus% = 1 THEN
     FOR x = 0 TO 104
         FOR y = 0 TO 13
             FOR r = 0 TO 11
-                FOR f = 0 TO 2
+                FOR f = 0 TO 5
                     w = w + 1
                     idatabase.idat = iphr(x, y, r, f)
                     PUT #1, w, idatabase
@@ -8403,7 +8659,7 @@ PRINT #1, ""
 PRINT #1, "END:   "; DATE$; " "; TIME$
 CLOSE #1
 OPEN files$ + "d.txt" FOR OUTPUT AS #1
-PRINT #1, "BIGS988 PROGRAM OUTPUT"
+PRINT #1, "1sim.BAS PROGRAM OUTPUT"
 PRINT #1, " "
 PRINT #1, "number of rounds played during each session is           : ";
 PRINT #1, USING "##########"; scr&

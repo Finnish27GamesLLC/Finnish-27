@@ -512,12 +512,12 @@ PRINT USING "##"; dhf%;: PRINT " - 27) "
 INPUT dsf%: dsf3% = dsf%
 PRINT " "
 PRINT "input soft total that the dealer must stand at"
-PRINT "when holding a hand consisting of three cards or more (";
+PRINT "when holding a hand consisting of three cards (";
 PRINT USING "##"; dhf%;: PRINT " - 27) "
 INPUT dsf3%
 PRINT " "
 PRINT "input soft total that the dealer must stand at"
-PRINT "when holding a hand consisting of four cards or more (";
+PRINT "when holding a hand consisting of four cards (";
 PRINT USING "##"; dhf%;: PRINT " - 27) "
 INPUT dsf4%
 PRINT " "
@@ -688,6 +688,13 @@ PRINT "is a predetermined-winning-complete hand, "
 PRINT "else press enter "
 INPUT immed%
 PRINT " "
+PRINT "press 1 and enter for in most cases any dealer's hand "
+PRINT "that has a numerical sum value of twenty-seven points"
+PRINT "is a predetermined-winning-complete hand, "
+PRINT "else press enter "
+INPUT immedd27%
+PRINT " "
+
 p27d27push% = 0
 PRINT "press 1 and enter for a player's initial hand ";
 PRINT "with a value of 27 points"
@@ -832,12 +839,12 @@ PRINT #1, USING "##"; dhf%;: PRINT #1, " - 27) "
 PRINT #1, dsf%
 PRINT #1, " "
 PRINT #1, "input soft total that the dealer must stand at"
-PRINT #1, "when holding a hand consisting of three cards or more (";
+PRINT #1, "when holding a hand consisting of three cards (";
 PRINT #1, USING "##"; dhf%;: PRINT #1, " - 27) "
 PRINT #1, dsf3%
 PRINT #1, " "
 PRINT #1, "input soft total that the dealer must stand at"
-PRINT #1, "when holding a hand consisting of four cards or more (";
+PRINT #1, "when holding a hand consisting of four cards (";
 PRINT #1, USING "##"; dhf%;: PRINT #1, " - 27) "
 PRINT #1, dsf4%
 PRINT #1, " "
@@ -1156,6 +1163,12 @@ PRINT #1, "is a predetermined-winning-complete hand, "
 PRINT #1, "else press enter "
 PRINT #1, immed%
 PRINT #1, " "
+PRINT #1, "press 1 and enter for in most cases any dealer hand "
+PRINT #1, "that has a numerical sum value of twenty-seven points"
+PRINT #1, "is a predetermined-winning-complete hand, "
+PRINT #1, "else press enter "
+PRINT #1, immedd27%
+PRINT #1, " "
 IF dwt% <> 0 AND immed% <> 1 THEN
     PRINT #1, "Press 1 and enter to add a rule to specify ";
     PRINT #1, "the following."
@@ -1261,6 +1274,7 @@ PRINT #1, "a brief description of the game rules reads as follows: "
 PRINT #1, q$
 PRINT #1, ""
 CLOSE #1
+
 ' END OF A SOFTWARE MEANS FOR INPUT OF THE SET OF GAME RULES
 
 269 OPEN files$ + "i.txt" FOR APPEND AS #1
@@ -1323,7 +1337,7 @@ sd.dsa = dsa%
 sd.bssh = bssh%
 sd.deck = deck%
 sd.shf = shf
-sd.immed = immed%
+sd.immed = immed% + immedd27% * 2
 sd.pbd = pbd%
 sd.ptm1 = ptm(1)
 sd.ptm2 = ptm(2)
@@ -1633,30 +1647,35 @@ FOR a = 0 TO 14 STEP 1
                                                 IF total(dh%) > 27 THEN
                                                     roi(ph%, dh%) = 1
                                                 END IF
+                                                IF total(dh%) = 27 AND immedd27% = 1 THEN
+                                                    roi(ph%, dh%) = -1
+                                                END IF
                                                 IF total(dh%) < 28 THEN
-                                                    IF ph% < 8568 THEN
-                                                        IF dh% > 8567 THEN
-                                                            roi(ph%, dh%) = 1
-                                                        END IF
-                                                        IF dh% < 8568 THEN
-                                                            IF phv0(ph%) > phv0(dh%) THEN
+                                                    IF total(dh%) < 27 OR immedd27% <> 1 THEN
+                                                        IF ph% < 8568 THEN
+                                                            IF dh% > 8567 THEN
                                                                 roi(ph%, dh%) = 1
                                                             END IF
-                                                            IF phv0(ph%) < phv0(dh%) THEN
-                                                                roi(ph%, dh%) = -1
+                                                            IF dh% < 8568 THEN
+                                                                IF phv0(ph%) > phv0(dh%) THEN
+                                                                    roi(ph%, dh%) = 1
+                                                                END IF
+                                                                IF phv0(ph%) < phv0(dh%) THEN
+                                                                    roi(ph%, dh%) = -1
+                                                                END IF
                                                             END IF
                                                         END IF
-                                                    END IF
-                                                    IF ph% > 8567 THEN
-                                                        IF dh% < 8568 THEN
-                                                            roi(ph%, dh%) = -1
-                                                        END IF
-                                                        IF dh% > 8567 THEN
-                                                            IF total(ph%) > total(dh%) THEN
-                                                                roi(ph%, dh%) = 1
-                                                            END IF
-                                                            IF total(ph%) < total(dh%) THEN
+                                                        IF ph% > 8567 THEN
+                                                            IF dh% < 8568 THEN
                                                                 roi(ph%, dh%) = -1
+                                                            END IF
+                                                            IF dh% > 8567 THEN
+                                                                IF total(ph%) > total(dh%) THEN
+                                                                    roi(ph%, dh%) = 1
+                                                                END IF
+                                                                IF total(ph%) < total(dh%) THEN
+                                                                    roi(ph%, dh%) = -1
+                                                                END IF
                                                             END IF
                                                         END IF
                                                     END IF
@@ -1746,7 +1765,7 @@ NEXT pc1
 'of card ranks combines to form an initial hand that qualifies as predetermined'
 '-winning-complete hands, then code skips the step of filling the arrays with'
 'data. After cycling through all combinations, the arrays only contains data'
-'about those combinations of card ranks that call for the play to make a'
+'about those combinations of card ranks that call for the player to make a'
 'decision about how to play the player's hand. In subsequently code, this'
 'data is used to find the best strategy for the play of the player's hand.'
 

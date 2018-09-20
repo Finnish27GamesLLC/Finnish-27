@@ -178,7 +178,7 @@ DIM sd AS bsrules
 DIM pid AS programid
 DIM mdc AS comp
 DIM ez AS rec
-DIM mc27po(17, 2) AS SINGLE
+DIM mc27po(17, 2) AS DOUBLE
 DIM sample(1000) AS DOUBLE
 DIM aq(195, 13, 679) AS DOUBLE
 DIM wp(195, 13, 679) AS DOUBLE

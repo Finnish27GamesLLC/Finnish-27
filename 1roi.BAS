@@ -3831,16 +3831,16 @@ FOR pc1 = h% TO 13 STEP 1
                 FOR y = 0 TO j%
                     IF y = 0 THEN
                         IF l3% = 679 THEN
-                            PRINT #1, MID$(g$, I% + pc1, 1);
-                            PRINT #1, MID$(g$, I% + pc2, 1);
+                            PRINT #1, MID$(g$, 1 + pc1, 1);
+                            PRINT #1, MID$(g$, 1 + pc2, 1);
                             IF a < 14 THEN
-                                PRINT #1, MID$(g$, I% + a, 1);
+                                PRINT #1, MID$(g$, 1 + a, 1);
                             END IF
                             IF a = 14 THEN
                                 PRINT #1, " ";
                             END IF
                             IF b < 14 THEN
-                                PRINT #1, MID$(g$, I% + b, 1);
+                                PRINT #1, MID$(g$, 1 + b, 1);
                             END IF
                             IF b = 14 THEN
                                 PRINT #1, " ";
@@ -3892,16 +3892,16 @@ FOR pc1 = h% TO 13 STEP 1
                     END IF
                 NEXT y
                 IF l3% = 679 THEN
-                    PRINT #1, MID$(g$, I% + pc1, 1);
-                    PRINT #1, MID$(g$, I% + pc2, 1);
+                    PRINT #1, MID$(g$, 1 + pc1, 1);
+                    PRINT #1, MID$(g$, 1 + pc2, 1);
                     IF a < 14 THEN
-                        PRINT #1, MID$(g$, I% + a, 1);
+                        PRINT #1, MID$(g$, 1 + a, 1);
                     END IF
                     IF a = 14 THEN
                         PRINT #1, " ";
                     END IF
                     IF b < 14 THEN
-                        PRINT #1, MID$(g$, I% + b, 1);
+                        PRINT #1, MID$(g$, 1 + b, 1);
                     END IF
                     IF b = 14 THEN
                         PRINT #1, " ";
@@ -3926,16 +3926,16 @@ FOR pc1 = h% TO 13 STEP 1
                 FOR y = 0 TO j%
                     IF y = 0 THEN
                         IF l3% < 679 AND l3% > 664 THEN
-                            PRINT #1, MID$(g$, I% + pc1, 1);
-                            PRINT #1, MID$(g$, I% + pc2, 1);
+                            PRINT #1, MID$(g$, 1 + pc1, 1);
+                            PRINT #1, MID$(g$, 1 + pc2, 1);
                             IF a < 14 THEN
-                                PRINT #1, MID$(g$, I% + a, 1);
+                                PRINT #1, MID$(g$, 1 + a, 1);
                             END IF
                             IF a = 14 THEN
                                 PRINT #1, " ";
                             END IF
                             IF b < 14 THEN
-                                PRINT #1, MID$(g$, I% + b, 1);
+                                PRINT #1, MID$(g$, 1 + b, 1);
                             END IF
                             IF b = 14 THEN
                                 PRINT #1, " ";
@@ -3987,16 +3987,16 @@ FOR pc1 = h% TO 13 STEP 1
                     END IF
                 NEXT y
                 IF l3% < 679 AND l3% > 664 THEN
-                    PRINT #1, MID$(g$, I% + pc1, 1);
-                    PRINT #1, MID$(g$, I% + pc2, 1);
+                    PRINT #1, MID$(g$, 1 + pc1, 1);
+                    PRINT #1, MID$(g$, 1 + pc2, 1);
                     IF a < 14 THEN
-                        PRINT #1, MID$(g$, I% + a, 1);
+                        PRINT #1, MID$(g$, 1 + a, 1);
                     END IF
                     IF a = 14 THEN
                         PRINT #1, " ";
                     END IF
                     IF b < 14 THEN
-                        PRINT #1, MID$(g$, I% + b, 1);
+                        PRINT #1, MID$(g$, 1 + b, 1);
                     END IF
                     IF b = 14 THEN
                         PRINT #1, " ";
@@ -4021,16 +4021,16 @@ FOR pc1 = h% TO 13 STEP 1
                 FOR y = 0 TO j%
                     IF y = 0 THEN
                         IF l3% < 665 THEN
-                            PRINT #1, MID$(g$, I% + pc1, 1);
-                            PRINT #1, MID$(g$, I% + pc2, 1);
+                            PRINT #1, MID$(g$, 1 + pc1, 1);
+                            PRINT #1, MID$(g$, 1 + pc2, 1);
                             IF a < 14 THEN
-                                PRINT #1, MID$(g$, I% + a, 1);
+                                PRINT #1, MID$(g$, 1 + a, 1);
                             END IF
                             IF a = 14 THEN
                                 PRINT #1, " ";
                             END IF
                             IF b < 14 THEN
-                                PRINT #1, MID$(g$, I% + b, 1);
+                                PRINT #1, MID$(g$, 1 + b, 1);
                             END IF
                             IF b = 14 THEN
                                 PRINT #1, " ";
@@ -4082,16 +4082,16 @@ FOR pc1 = h% TO 13 STEP 1
                     END IF
                 NEXT y
                 IF l3% < 665 THEN
-                    PRINT #1, MID$(g$, I% + pc1, 1);
-                    PRINT #1, MID$(g$, I% + pc2, 1);
+                    PRINT #1, MID$(g$, 1 + pc1, 1);
+                    PRINT #1, MID$(g$, 1 + pc2, 1);
                     IF a < 14 THEN
-                        PRINT #1, MID$(g$, I% + a, 1);
+                        PRINT #1, MID$(g$, 1 + a, 1);
                     END IF
                     IF a = 14 THEN
                         PRINT #1, " ";
                     END IF
                     IF b < 14 THEN
-                        PRINT #1, MID$(g$, I% + b, 1);
+                        PRINT #1, MID$(g$, 1 + b, 1);
                     END IF
                     IF b = 14 THEN
                         PRINT #1, " ";
@@ -4661,16 +4661,16 @@ FOR pc1 = h% TO 13 STEP 1
                         IF l3% = 679 THEN
                             PRINT #1, "    <tr>"
                             PRINT #1, "    <td>";
-                            PRINT #1, MID$(g$, I% + pc1, 1);
-                            PRINT #1, MID$(g$, I% + pc2, 1);
+                            PRINT #1, MID$(g$, 1 + pc1, 1);
+                            PRINT #1, MID$(g$, 1 + pc2, 1);
                             IF a < 14 THEN
-                                PRINT #1, MID$(g$, I% + a, 1);
+                                PRINT #1, MID$(g$, 1 + a, 1);
                             END IF
                             IF a = 14 THEN
                                 PRINT #1, " ";
                             END IF
                             IF b < 14 THEN
-                                PRINT #1, MID$(g$, I% + b, 1);
+                                PRINT #1, MID$(g$, 1 + b, 1);
                             END IF
                             IF b = 14 THEN
                                 PRINT #1, " ";
@@ -4759,16 +4759,16 @@ FOR pc1 = h% TO 13 STEP 1
                         IF l3% < 679 AND l3% > 664 THEN
                             PRINT #1, "    <tr>"
                             PRINT #1, "    <td>";
-                            PRINT #1, MID$(g$, I% + pc1, 1);
-                            PRINT #1, MID$(g$, I% + pc2, 1);
+                            PRINT #1, MID$(g$, 1 + pc1, 1);
+                            PRINT #1, MID$(g$, 1 + pc2, 1);
                             IF a < 14 THEN
-                                PRINT #1, MID$(g$, I% + a, 1);
+                                PRINT #1, MID$(g$, 1 + a, 1);
                             END IF
                             IF a = 14 THEN
                                 PRINT #1, " ";
                             END IF
                             IF b < 14 THEN
-                                PRINT #1, MID$(g$, I% + b, 1);
+                                PRINT #1, MID$(g$, 1 + b, 1);
                             END IF
                             IF b = 14 THEN
                                 PRINT #1, " ";
@@ -4857,16 +4857,16 @@ FOR pc1 = h% TO 13 STEP 1
                         IF l3% < 665 THEN
                             PRINT #1, "    <tr>"
                             PRINT #1, "    <td>";
-                            PRINT #1, MID$(g$, I% + pc1, 1);
-                            PRINT #1, MID$(g$, I% + pc2, 1);
+                            PRINT #1, MID$(g$, 1 + pc1, 1);
+                            PRINT #1, MID$(g$, 1 + pc2, 1);
                             IF a < 14 THEN
-                                PRINT #1, MID$(g$, I% + a, 1);
+                                PRINT #1, MID$(g$, 1 + a, 1);
                             END IF
                             IF a = 14 THEN
                                 PRINT #1, " ";
                             END IF
                             IF b < 14 THEN
-                                PRINT #1, MID$(g$, I% + b, 1);
+                                PRINT #1, MID$(g$, 1 + b, 1);
                             END IF
                             IF b = 14 THEN
                                 PRINT #1, " ";

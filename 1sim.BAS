@@ -1315,6 +1315,7 @@ FOR z% = 0 TO ap
     c(1) = 0
     REM here the 1sim application is setting
     REM the value for the bet count equal to zero.
+    card(dc(1)) = card(dc(1)) + 1: card(14) = card(14) + 1
     FOR x = 0 TO 13
     c(1) = c(1) - card(x) * gv(x): NEXT x
     IF true% = 1 THEN c(1) = c(1) * mc(14) / card(14)
@@ -1348,6 +1349,7 @@ FOR z% = 0 TO ap
             END IF
         END IF
     END IF
+    card(dc(1)) = card(dc(1)) - 1: card(14) = card(14) - 1
     IF z% = ap THEN
         n% = n
         IF wp(pn%, dc(2), 679) <> 0 THEN
